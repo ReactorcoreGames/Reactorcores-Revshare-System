@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Credits System Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a2520 0%, #1a1816 50%, #2d2420 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(42, 37, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(218, 196, 160, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 184, 150, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #dac4a0 0%, #d4b896 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 184, 150, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dac4a0;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(218, 196, 160, 0.3);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4b896;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #dac4a0;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d4b896;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 118, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .highlight-box {
+            background: rgba(201, 168, 118, 0.1);
+            border-left: 4px solid #c9a876;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .comparison-box {
+            background: rgba(212, 184, 150, 0.08);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .comparison-box h3 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(26, 24, 22, 0.4);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: rgba(201, 168, 118, 0.2);
+            color: #dac4a0;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(201, 168, 118, 0.1);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: rgba(212, 184, 150, 0.05);
+        }
+
+        .option-card {
+            background: rgba(212, 184, 150, 0.08);
+            border: 2px solid rgba(212, 184, 150, 0.3);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .option-card h3 {
+            margin-top: 0;
+            color: #dac4a0;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .pros, .cons {
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .pros {
+            background: rgba(150, 200, 150, 0.1);
+            border-left: 3px solid #90c890;
+        }
+
+        .cons {
+            background: rgba(200, 150, 150, 0.1);
+            border-left: 3px solid #c89090;
+        }
+
+        .pros h4, .cons h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .pros h4 {
+            color: #a0d8a0;
+        }
+
+        .cons h4 {
+            color: #d8a0a0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            body {
+                padding: 20px 15px;
+            }
+
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to App</a>
+
+        <h1>Rockstar Credits System Guide</h1>
+
+        <p>This guide presents two ways to create contributor credits that go beyond the typical autoscrolling or slideshow style. The goal is to make credits more than just a name and a role — to transform them into an <strong>interactive hall of fame</strong> that celebrates contributors and promotes their skills for future opportunities.</p>
+
+        <div class="highlight-box">
+            <p><strong>Core Philosophy:</strong> Credits should celebrate every contributor like a rock star, providing a platform for self-promotion, portfolio building, and community connection — not just a forgettable list of names.</p>
+        </div>
+
+        <hr>
+
+        <h2>Why Traditional Credits Fall Short</h2>
+
+        <p>Most games use one of these outdated approaches:</p>
+
+        <ul>
+            <li><strong>Autoscrolling text</strong> — Boring, impossible to read at a comfortable pace, easily skipped</li>
+            <li><strong>Slideshow with names</strong> — Annoying to browse, not flexible</li>
+            <li><strong>Wall of text</strong> — Overwhelming and not interactive</li>
+        </ul>
+
+        <p>These approaches don't celebrate the creators. They don't help players understand who made what. They don't provide any way for contributors to build their reputation or get discovered for future work. They don't highlight that special factor that would give each creator an interesting character to anchor to in the player's mind.</p>
+
+        <hr>
+
+        <h2>The Interactive Credits Approach</h2>
+
+        <p>We recommend creating an interactive, browsable credits system where each contributor gets their own card/section with:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Description</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Avatar / Image</strong></td>
+                    <td>16:9 image or portrait chosen by the contributor</td>
+                    <td>Can be stylized art, photo, or symbolic image</td>
+                </tr>
+                <tr>
+                    <td><strong>Name / Alias</strong></td>
+                    <td>Real name, alias, or both</td>
+                    <td>Example: Jordan "SynthByte" Lee</td>
+                </tr>
+                <tr>
+                    <td><strong>Freeform Text</strong></td>
+                    <td>Up to 300 characters</td>
+                    <td>Roles, thoughts, self-promo, message to players, anything!</td>
+                </tr>
+                <tr>
+                    <td><strong>Links (up to 3)</strong></td>
+                    <td>Websites, social profiles, portfolios</td>
+                    <td>Clickable links that open in user's web browser</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>All elements are optional</strong> — contributors can include as much or as little as they like.</p>
+
+        <hr>
+
+        <h2>Example Entry</h2>
+
+        <div class="comparison-box">
+            <h3>Jordan "SynthByte" Lee</h3>
+            <p><em>[Image would appear here: 16:9 stylized portrait with synthwave aesthetic]</em></p>
+            <p>"I did: Music, Cover Art, Writing. Always been a fan of synthwave aesthetics, I aimed for a nostalgic yet futuristic vibe. Did you notice the lizard easter egg on level 5?"</p>
+            <p><strong>Links:</strong></p>
+            <ul>
+                <li><em>Portfolio: synthbyte.dev</em></li>
+                <li><em>Twitter: @synthbyte</em></li>
+                <li><em>SoundCloud: soundcloud.com/synthbyte</em></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Implementation: Two Options</h2>
+
+        <p>You have two main approaches to implementing this system, each with different trade-offs:</p>
+
+        <div class="option-card">
+            <h3>Option A: Fully In-Game Credits</h3>
+
+            <p>Build the credits system directly into your game engine with a scrollable or navigable interface.</p>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>Pros</h4>
+                    <ul>
+                        <li>Fully integrated experience</li>
+                        <li>No external browser needed to view credits list itself, though opening links does require the web</li>
+                        <li>Can leverage game engine's own fancy effects and assets</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>Cons</h4>
+                    <ul>
+                        <li>May be harder/slower to implement compared to the alternative below</li>
+                        <li>Updates to credits require updating the game itself</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Implementation Notes:</strong></p>
+            <ul>
+                <li>Should be easily and quickly scrollable or navigable with gamepad/keyboard/mouse</li>
+                <li>Each contributor card can be made distinct and celebratory (consider background colors, animations, shaders, particle effects, etc.)</li>
+                <li>Clickable links should open in player's default web browser (this part not feasible on consoles)</li>
+                <li>Order can be alphabetical, or divided by contributor tiers (core team, contributors, special thanks)</li>
+                <li>Include a "Back to Main Menu" or "Continue" button at the end</li>
+            </ul>
+        </div>
+
+        <div class="option-card">
+            <h3>Option B: HTML/CSS Credits Page (Recommended)</h3>
+
+            <p>Create a standalone offline HTML/CSS page bundled with your game that opens in the user's web browser when they click "Credits" in-game.</p>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>Pros</h4>
+                    <ul>
+                        <li>Much faster and easier to create and iterate</li>
+                        <li>Easy to update without patching the game itself</li>
+                        <li>Links work natively</li>
+                        <li>Can use powerful web styling/animations</li>
+                        <li>Easier to make beautiful and responsive</li>
+                        <li>Can be put together by AI with vibecoding</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>Cons</h4>
+					<ul>
+						<li>May feel unconventional at first</li>
+						<li>Not viable for gaming console releases</li>
+					</ul>
+            </div>
+
+            <p><strong>Implementation Notes:</strong></p>
+            <ul>
+                <li>Bundle the HTML file with your game (e.g., <code>/credits/index.html</code>)</li>
+                <li>In-game credits button opens this file in user's default browser</li>
+                <li>You can still have a minimal in-game credits screen that lists names and roles, with a button to "View Full Credits" that opens the HTML page</li>
+                <li>Can be styled to match your game's aesthetic using CSS</li>
+                <li>Easy to add animations, hover effects, and other polish</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Contributor Submission Instructions</h2>
+
+        <p>When asking contributors to submit their information, request:</p>
+
+        <ol>
+            <li><strong>A 16:9 image</strong> (PNG/JPG, ≤2MB) — can be a photo, avatar, artwork, or anything that represents them</li>
+            <li><strong>Their name or alias</strong> — however they want to be credited</li>
+            <li><strong>A short message</strong> (≤300 characters) — what they worked on, thoughts about the project, self-promotion, etc.</li>
+            <li><strong>Up to 3 links</strong> — any web URLs to their portfolio, social media, or other relevant pages</li>
+        </ol>
+
+        <p>Emphasize that <strong>all fields are optional</strong>. Some contributors may prefer minimal information, others will want to share everything. A thing that can make the credits feel interesting and valuable to player is to include nuggets of developer commentary in the short messages, fascinating tidbits about development or clues about the game or tricks that only a developer would know.</p>
+
+        <hr>
+
+        <h2>Technical Considerations</h2>
+
+        <h3>For In-Game Implementation</h3>
+        <ul>
+            <li>Plan for text overflow and different text lengths</li>
+            <li>Test with gamepad, keyboard, and mouse controls (if supporting all three, otherwise just focus on what you actually need)</li>
+            <li>Ensure images load properly and look good at your target resolution and aspect ratio (like 16:9 vs 4:3 on PC)</li>
+            <li>Implement smooth scrolling or page navigation with clickable buttons or whatever else makes most sense (easy, reliable, flexible)</li>
+            <li>Optionally add visual polish: animations, hover states, transitions, particle effects, colored backgrounds per card</li>
+            <li>Test on all target platforms (Windows, Mac, Linux, consoles - again, this only applies if you're targeting all those, one platform is enough)</li>
+        </ul>
+
+        <h3>For HTML/CSS Implementation</h3>
+        <ul>
+            <li>Make it responsive for different screen sizes (landscape for PC, portrait for smartphones or narrow windows)</li>
+            <li>Test in multiple browsers (Chrome, Firefox, Safari, Edge - usually plain HTML/CSS/JS will work universally)</li>
+            <li>Keep file size reasonable if bundling with game, optimize images, etc.</li>
+            <li>Use relative paths for images bundled with the game so they open correctly regardless where the game is installed/unzipped</li>
+        </ul>
+
+        <hr>
+
+        <h2>Why This Matters</h2>
+
+        <div class="highlight-box">
+            <p>Traditional credits don't truly showcase the developer in a way that will stick with the player and form a connection with them.</p>
+
+            <p>When you give contributors a platform to showcase themselves properly with a picture, a message and actual links to their own stuff, you:</p>
+            <ul>
+                <li><strong>Make them look cool</strong> like a rockstar who did something awesome</li>
+                <li><strong>Show respect</strong> for their contributions</li>
+                <li><strong>Help them build their careers</strong> by providing portfolio links and visibility</li>
+                <li><strong>Create goodwill</strong> that makes people want to work with you again</li>
+                <li><strong>Build community</strong> by making contributors feel valued</li>
+                <li><strong>Stand out</strong> from other games with outdated ineffective author crediting formats</li>
+            </ul>
+
+            <p>The personal touch the credits page this page advocates for will resonate with player, make them care about the humans who worked on the game.</p>
+        </div>
+
+        <hr>
+
+        <h2>Conclusion</h2>
+
+        <p>Whether you choose the fully in-game approach or the HTML/CSS route (or likely both), the key principle remains: <strong>make credits more than just a name and a role</strong>. Celebrate your contributors properly, give them a platform to promote themselves, and create a hall of fame that honors everyone who made your game possible.</p>
+
+        <p>Your contributors and yourself deserve it, and your project(s) will be better for it.</p>
+
+        <a href="../index.html" class="back-button" style="margin-top: 40px;">← Back to App</a>
+    </div>
+</body>
+</html>

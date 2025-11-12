@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licensing Guide for Your Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a2520 0%, #1a1816 50%, #2d2420 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(42, 37, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(218, 196, 160, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 184, 150, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #dac4a0 0%, #d4b896 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 184, 150, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dac4a0;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(218, 196, 160, 0.3);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4b896;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #dac4a0;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d4b896;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 118, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .highlight-box {
+            background: rgba(201, 168, 118, 0.1);
+            border-left: 4px solid #c9a876;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .recommendation-box {
+            background: rgba(212, 184, 150, 0.15);
+            border: 2px solid rgba(212, 184, 150, 0.3);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .recommendation-box h3 {
+            margin-top: 0;
+            color: #dac4a0;
+        }
+
+        .decision-box {
+            background: rgba(201, 168, 118, 0.12);
+            border: 2px solid rgba(201, 168, 118, 0.25);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .decision-box h3 {
+            margin-top: 0;
+            color: #d4b896;
+        }
+
+        pre {
+            background: rgba(26, 24, 22, 0.8);
+            border: 1px solid rgba(201, 168, 118, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #e8e8e8;
+        }
+
+        code {
+            background: rgba(26, 24, 22, 0.6);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #dac4a0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .license-type {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(201, 168, 118, 0.2);
+            color: #dac4a0;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            background: rgba(26, 24, 22, 0.5);
+            border-left: 4px solid #d4b896;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+
+        blockquote p {
+            margin-bottom: 0;
+        }
+
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            body {
+                padding: 20px 15px;
+            }
+
+            pre {
+                padding: 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to App</a>
+
+        <h1>Licensing Guide for Your Project</h1>
+
+        <p>Given the context of why IP law often does more harm than good (especially for indie game developers), this guide strongly suggests using a permissive open licensing approach for your project. This approach maximizes collaboration, community goodwill, and long-term sustainability while still protecting your team's interests.</p>
+
+        <hr>
+
+        <div class="recommendation-box">
+            <h3>Recommended Licensing Structure</h3>
+            <p>For a balanced, fair, and collaborative approach, we recommend the following licensing structure:</p>
+
+            <p><span class="license-type">MIT License</span> <strong>Game Code / Entire Game Project</strong></p>
+            <p><span class="license-type">CC0 (Public Domain)</span> <strong>Boilerplate Assets</strong><br>
+            <em>Examples: Things you don't mind giving away for free and without credit, due to how abstract and awkward they are outside the game's context. Or due to how cheap/automatic they are to make that it makes no sense to sell them.</em></p>
+            <p><span class="license-type">CC-BY 4.0</span> <strong>Instantly Valuable Creative Assets</strong><br>
+            <em>Examples: Things you want to clearly attach your name to, due to them showcasing your skill as an artist in an easy transferrable way. Or to resell them because they are excellent value, be it as an asset pack, OST, collection or any other side hustle.</em></p>
+        </div>
+
+        <h2>How This Works in Practice</h2>
+
+        <p><strong>Game itself as a whole will be MIT licensed</strong>, while assets and writing are either <strong>CC0</strong> (context-dependent boilerplate assets) or <strong>CC-BY 4.0</strong> (instantly valuable assets with standalone worth).</p>
+
+        <p>The key distinction isn't about "unique vs generic" — it's about <strong>commercial value and transferability</strong>:</p>
+
+        <ul>
+            <li><strong>CC0 for things that are awkward outside your game's context</strong> — UI elements specific to your interface, procedurally generated assets, quick placeholders, or things so simple they took 5 minutes to create</li>
+            <li><strong>CC-BY 4.0 for things that showcase skill and have resale potential</strong> — character art perfect for portfolios, music tracks that work standalone, 3D models sellable as asset packs, writing worthy of anthologies</li>
+        </ul>
+
+        <p><strong>What this means for your team:</strong></p>
+        <ul>
+            <li><strong>Credit belongs to the artist that made them</strong> — individual contributors get recognition for their specific work</li>
+            <li><strong>Artists can resell their CC-BY 4.0 work</strong> as asset packs, albums, ebooks by themselves (with their name attached)</li>
+            <li><strong>Artists can use/reuse their work anywhere they want</strong> in any future projects</li>
+            <li><strong>But no restrictions on use</strong> for the base game project or spin-off games that any paid tier member might venture off to make</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>In other words:</strong> The team gets credit for the project, individual artists get credit (and commercial control) for valuable standalone work, but no one person owns the IP nor restricts what its assets can be used for within the project ecosystem.</p>
+        </div>
+
+        <hr>
+
+        <h2>Decision Framework for Contributors</h2>
+
+        <p>Not sure which license to use for your contribution? Follow this practical decision tree:</p>
+
+        <div class="decision-box">
+            <h3>Step 1: Could I sell this standalone or use it in my portfolio effectively?</h3>
+            <p><strong>YES</strong> → Use <span class="license-type">CC-BY 4.0</span></p>
+            <p><strong>NO</strong> → Continue to Step 2</p>
+
+            <h3>Step 2: Did this take significant effort or skill to create?</h3>
+            <p><strong>YES</strong> → Use <span class="license-type">CC-BY 4.0</span> (protect your work and reputation)</p>
+            <p><strong>NO</strong> → Continue to Step 3</p>
+
+            <h3>Step 3: Is this awkward or meaningless outside this specific game's context?</h3>
+            <p><strong>YES</strong> → Use <span class="license-type">CC0</span></p>
+            <p><strong>NO or UNSURE</strong> → Default to <span class="license-type">CC-BY 4.0</span></p>
+        </div>
+
+        <p><strong>The core principle:</strong></p>
+        <ul>
+            <li><strong>CC0</strong> = "I don't need credit for this because it's either trivial, context-specific to this game, or not worth my time to track attribution"</li>
+            <li><strong>CC-BY 4.0</strong> = "This showcases my skills and has standalone value — I want my name attached for career and commercial reasons"</li>
+        </ul>
+
+        <hr>
+
+        <h2>Why MIT License for the Game?</h2>
+
+        <p>The <strong>MIT License</strong> is one of the most permissive and widely-used open-source licenses. It allows anyone to:</p>
+
+        <ul>
+            <li>Use the game code commercially or non-commercially</li>
+            <li>Modify and create derivative works</li>
+            <li>Distribute and sell copies</li>
+            <li>Sublicense under different terms</li>
+        </ul>
+
+        <p><strong>The only requirements are:</strong></p>
+        <ul>
+            <li>Include the original copyright notice</li>
+            <li>Include the license text</li>
+            <li>Don't hold the original authors liable</li>
+        </ul>
+
+        <h3>Standard MIT License Template</h3>
+
+        <pre><code>MIT License
+
+Copyright (c) [Year] [Your Team Name]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</code></pre>
+
+        <hr>
+
+        <h2>Why CC0 and CC-BY 4.0 for Assets?</h2>
+
+        <h3>CC0 (Public Domain Dedication)</h3>
+
+        <p><strong>CC0</strong> is the "no copyright reserved" option. It's perfect for assets that are either context-dependent, trivial to create, or have minimal standalone value outside your specific game.</p>
+
+        <p><strong>Use CC0 for:</strong></p>
+        <ul>
+            <li><strong>Context-specific UI elements</strong> — buttons, menus, HUD elements that only make sense in your game's interface</li>
+            <li><strong>Procedurally generated content</strong> — textures, patterns, or assets created through automated processes</li>
+            <li><strong>Quick placeholder assets</strong> — temporary art or sounds made in 5-10 minutes during prototyping that stuck around</li>
+            <li><strong>Simple utility scripts</strong> — basic helper functions or boilerplate code with no unique value</li>
+            <li><strong>Background ambiance</strong> — environmental sounds or music that only works within your game's specific atmosphere</li>
+            <li><strong>Generic variations</strong> — the 47th slightly-different footstep sound or the 23rd minor UI button variant</li>
+        </ul>
+
+        <p><strong>Why CC0 works here:</strong> These assets have minimal standalone value. Requiring attribution would be more hassle than benefit. You're not losing anything by releasing them freely — they're awkward to reuse elsewhere anyway.</p>
+
+        <h3>CC-BY 4.0 (Creative Commons Attribution)</h3>
+
+        <p><strong>CC-BY 4.0</strong> allows anyone to use, modify, and distribute the work — even commercially — as long as they give appropriate credit to the original creator.</p>
+
+        <p><strong>Use CC-BY 4.0 for:</strong></p>
+        <ul>
+            <li><strong>Character art and designs</strong> — illustrations that showcase your art style and work well in isolation</li>
+            <li><strong>Music compositions with standalone listening value</strong> — tracks that could be released as an OST or streamed independently</li>
+            <li><strong>Story content and dialogue</strong> — writing that could be anthologized, adapted, or appreciated outside the game</li>
+            <li><strong>Custom 3D models</strong> — high-quality models that could be sold as asset packs or used in other projects</li>
+            <li><strong>Unique animations</strong> — complex animation work that demonstrates technical skill</li>
+            <li><strong>Level designs with interesting architecture</strong> — environments that showcase world-building or design prowess</li>
+            <li><strong>Original concept art</strong> — sketches and designs that tell a story or demonstrate creative vision</li>
+        </ul>
+
+        <p><strong>Why CC-BY 4.0 matters:</strong> This allows artists to build their portfolios and reputation. When someone uses their work elsewhere, the artist's name travels with it, creating opportunities for commissions, job offers, and collaborations. Plus, artists retain the right to resell these assets independently for additional income.</p>
+
+        <hr>
+
+        <h2>Practical Implementation</h2>
+
+        <h3>1. Add a LICENSE file to your project root</h3>
+
+        <pre><code>your-game-project/
+├── LICENSE.md
+├── CREDITS.md
+├── README.md
+├── src/
+├── assets/
+└── ...</code></pre>
+
+        <h3>2. Create a comprehensive LICENSE.md file</h3>
+
+        <pre><code># License
+
+## Game Code and Software
+
+This game and its source code are licensed under the **MIT License**.
+
+Copyright (c) [Year] [Team Name]
+
+[Full MIT License text here]
+
+---
+
+## Assets and Creative Content
+
+### Boilerplate Assets (CC0)
+Context-dependent or trivial assets are released into the **public domain**
+under the CC0 license. These are assets with minimal standalone value or
+those so simple that attribution would be more hassle than benefit.
+
+### Instantly Valuable Creative Assets (CC-BY 4.0)
+Assets with standalone commercial value, portfolio worth, or significant
+creative skill are licensed under **Creative Commons Attribution 4.0 
+International (CC-BY 4.0)**.
+
+**This means:**
+- You can use, modify, and distribute these assets
+- You can use them commercially
+- You must give appropriate credit to the original creator
+- You cannot restrict others from using the original assets
+
+For a full list of contributors and asset credits, see CREDITS.md
+
+---
+
+## Summary for Spin-offs and Forks
+
+You are free to:
+- Create derivative works and spin-offs
+- Release them commercially or for free
+- Modify any part of the game or assets
+
+You must:
+- Give credit to the original team and individual creators
+- Use a different title/branding to avoid confusion
+- Include this license information
+- Not misrepresent yourself as the original developers</code></pre>
+
+        <h3>3. Streamlined Credits Workflow (The Fast Way)</h3>
+
+        <p><strong>Goal:</strong> Get credits done quickly without drowning in tedious documentation. Your team wants to build great stuff, not write boring legal lists.</p>
+
+        <h4>Step 1: Export Team Credits from the Web App</h4>
+        <p>The Revenue Share System web app has a built-in <strong>"Export Credits"</strong> button in the Team & Credits tab. Click it to instantly generate a <code>TEAM-CREDITS.txt</code> file containing:</p>
+        <ul>
+            <li>All team members organized by tier</li>
+            <li>Their roles and contributions</li>
+            <li>General credits information</li>
+        </ul>
+        <p>This file is already formatted and ready to use. <strong>Rename it to <code>!CREDITS.md</code></strong> when you're done with Step 3.</p>
+
+        <h4>Step 2: Each Artist Creates Their Own Asset List (Only If They Want Credit)</h4>
+        <p>Tell each team member who created CC-BY 4.0 assets (the valuable stuff worth crediting):</p>
+        <blockquote>
+            <p><em>"If you made something you want your name on (for portfolio/resale purposes), send me a text file listing those assets. Only list what matters to you — skip the boring stuff. Format: filename - brief description (optional)."</em></p>
+        </blockquote>
+
+        <p><strong>Example of what an artist sends you:</strong></p>
+        <pre><code>## Jane Doe - Character Artist
+
+Character_Hero.png - Main protagonist design
+Character_Villain.png - Antagonist design  
+Character_NPC_Merchant.png - Memorable merchant character
+Cutscene_Illustration_01.png - Opening cinematic art
+Cutscene_Illustration_05.png - Final battle artwork
+
+(CC-BY 4.0 - All my work can be used with credit)</code></pre>
+
+        <p><strong>Artists only list what they care about.</strong> If they made 500 generic tree variants, they don't need to list all 500 — those can fall into the CC0 catchall at the end.</p>
+
+        <h4>Step 3: Auto-Merge Everything Together</h4>
+        <p>Once you've collected text files from contributors:</p>
+        <ol>
+            <li>Go to <a href="https://reactorcore.itch.io/verti-horiz-text-file-merger" target="_blank"><strong>Verti-Horiz Text File Merger</strong></a> (free online tool)</li>
+            <li>Upload all the artist asset list files</li>
+            <li>Click <strong>"Vertical Merge (Alphabetical)"</strong></li>
+            <li>Download the merged result as <code>ASSET-CREDITS.txt</code></li>
+        </ol>
+
+        <h4>Step 4: Combine and Add CC0 Disclaimer</h4>
+        <p>Manually combine your two files into the final <code>!CREDITS.md</code>:</p>
+        <pre><code># Credits
+
+[Paste TEAM-CREDITS.txt content here]
+
+---
+
+# Asset Credits (CC-BY 4.0)
+
+[Paste ASSET-CREDITS.txt content here]
+
+---
+
+# Licensing Note
+
+All assets not explicitly listed above with individual credit are released 
+under **CC0 (Public Domain)**. This includes context-dependent assets, 
+procedurally generated content, and other work with minimal standalone value.
+
+All CC-BY 4.0 contributors retain the right to reuse, resell, or relicense 
+their individual contributions in their own projects.</code></pre>
+
+        <p><strong>Why this works:</strong> Only valuable assets get detailed attribution. Everything else falls into the CC0 bucket automatically. No one wastes time documenting every single button or sound effect variant.</p>
+
+        <div class="highlight-box">
+            <h4>Pro Tips</h4>
+            <ul>
+                <li><strong>For small teams (2-5 people):</strong> Skip Step 2-3 entirely. Just use the exported team credits and add a blanket "Individual asset credits available on request" note.</li>
+                <li><strong>For content-heavy games:</strong> This workflow scales beautifully. Artists self-select what matters to them, avoiding the nightmare of manually tracking thousands of assets.</li>
+                <li><strong>Update periodically:</strong> Re-export and re-merge credits every few months during development, or before each major release.</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>In-Game Credits: Keep It Simple</h2>
+
+        <p>Your !CREDITS.md file is for legal/documentation purposes. But what about the credits that actually appear <strong>in your game</strong>?</p>
+
+        <h3>The Minimalist Approach (Recommended)</h3>
+
+        <p>For in-game credits screens, keep it short and friendly. Players don't need to read legal jargon — they just want to know who made the cool thing they're playing.</p>
+
+        <h4>Main Credits Screen (Show in-game)</h4>
+        <pre><code>════════════════════════════════════
+         [YOUR GAME TITLE]
+════════════════════════════════════
+
+Made by [Team Name]
+
+[Export the team list from the web app here]
+• Project Lead - [Name]
+• Programming - [Name], [Name]
+• Art - [Name], [Name], [Name]
+• Music & Sound - [Name]
+• Writing - [Name]
+• Special Thanks - [Names]
+
+════════════════════════════════════
+
+This game is open-source under the MIT License.
+Individual assets may have different licenses.
+
+Full credits and licensing: [link to your !CREDITS.md file]
+
+════════════════════════════════════</code></pre>
+
+        <h4>Quick Footer/Splash Screen Options</h4>
+
+        <p>For loading screens, main menus, or end credits, use one of these short versions:</p>
+
+        <h4>Option A — Professional & Clear</h4>
+        <pre><code>Made by [Team Name] • Open MIT License
+Full credits at [website/github link]</code></pre>
+
+        <h4>Option B — Friendly Indie Vibe</h4>
+        <pre><code>Built with love by [Team Name]
+Open-source • See full credits at [link]</code></pre>
+
+        <h4>Option C — Ultra-Minimal</h4>
+        <pre><code>[Team Name] • [Year] • MIT License</code></pre>
+
+        <h4>Option D — Community-Focused</h4>
+        <pre><code>Created by [Team Name] and contributors
+It's open — build on it, share it, credit us ♥</code></pre>
+
+        <h3>Where to Host Your !CREDITS.md File</h3>
+
+        <ul>
+            <li><strong>GitHub repository</strong> — If your game is open-source, put it in the repo root</li>
+            <li><strong>Itch.io game page</strong> — Upload as a devlog post or in the "More information" section</li>
+            <li><strong>Game website</strong> — Create a /credits page</li>
+            <li><strong>Google Drive / Dropbox</strong> — Public share link (easy but not ideal for discovery)</li>
+        </ul>
+
+        <p><strong>Pro tip:</strong> Put a clickable link in your game's main menu: <code>Credits & Licenses</code> that opens the full !CREDITS.md file in a browser or text viewer.</p>
+
+        <div class="highlight-box">
+            <h4>Remember: Players Don't Care About Licenses</h4>
+            <p>Your in-game credits should celebrate your team and be easy to read. Save the detailed licensing stuff for !CREDITS.md. Link to it, but don't force players to read it unless they're curious.</p>
+        </div>
+
+        <hr>
+
+        <h2>Key Principles to Communicate to Your Team</h2>
+
+        <ol>
+            <li><strong>No one owns the IP</strong> — everyone contributes to a shared creative project</li>
+            <li><strong>Individual credit matters</strong> — artists get recognition and can reuse their work</li>
+            <li><strong>License choice protects commercial interests</strong> — CC-BY 4.0 lets artists build careers and income from their valuable work</li>
+            <li><strong>Forks and spin-offs are welcome</strong> — as long as they use different branding and give credit</li>
+            <li><strong>Revenue sharing still works</strong> — official releases, Patreon, donations are all still split according to agreements</li>
+            <li><strong>Trust over control</strong> — build community goodwill instead of legal barriers</li>
+        </ol>
+
+        <div class="highlight-box">
+            <h3>Remember</h3>
+            <p>This approach isn't about giving up value — it's about <strong>creating more value by being open</strong>. You still get credit, you still get paid for official releases, and artists can commercialize their individually valuable contributions. You build a reputation that opens doors far beyond what a locked-down IP ever could.</p>
+        </div>
+
+        <hr>
+
+        <h2>Additional Notes</h2>
+
+        <p><strong>Note:</strong> While MIT is the generally recommended default, depending on your specific project and team composition, you may choose to adopt another license that makes more sense for your situation. The important principles remain the same: openness, proper credit, and community collaboration.</p>
+
+        <p>If you have team members in different countries or specific legal concerns, consider consulting with someone familiar with international copyright law to ensure your licensing structure works across jurisdictions.</p>
+
+        <a href="../index.html" class="back-button" style="margin-top: 40px;">← Back to App</a>
+    </div>
+</body>
+</html>

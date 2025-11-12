@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Share System - Cover Images</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        /* Color scheme from your main app */
+        :root {
+            --bg-primary: #1a1612;
+            --bg-secondary: #252118;
+            --bg-gradient-start: #1a1612;
+            --bg-gradient-end: #2d2620;
+
+            --platinum-light: #f5f5f5;
+            --platinum-medium: #e0e0e0;
+
+            --gold-primary: #c9a961;
+            --gold-bright: #e6d5a8;
+            --gold-dark: #a08645;
+            --gold-glow: rgba(201, 169, 97, 0.3);
+
+            --text-primary: #f8f9fa;
+            --text-secondary: #d3d8de;
+
+            --shadow-light: rgba(201, 169, 97, 0.25);
+            --shadow-medium: rgba(201, 169, 97, 0.35);
+            --shadow-heavy: rgba(0, 0, 0, 0.6);
+            --shadow-glow: 0 0 20px rgba(201, 169, 97, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            color: var(--text-primary);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .instructions {
+            max-width: 1200px;
+            margin: 0 auto 3rem auto;
+            background: rgba(25, 22, 18, 0.8);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--gold-primary);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .instructions h1 {
+            color: var(--gold-bright);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px var(--shadow-light);
+        }
+
+        .instructions p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions strong {
+            color: var(--gold-bright);
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: var(--bg-primary);
+            border: 2px solid var(--gold-primary);
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-primary));
+            border-color: var(--gold-bright);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--platinum-light);
+            border-color: var(--platinum-medium);
+        }
+
+        .btn-secondary:hover {
+            background: var(--platinum-light);
+            color: var(--bg-primary);
+            border-color: var(--platinum-light);
+        }
+
+        .image-container {
+            max-width: 1920px;
+            margin: 0 auto 4rem auto;
+            position: relative;
+        }
+
+        .guides-toggle {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .image-wrapper {
+            position: relative;
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        .image-zone {
+            background:
+                /* Vertical grid */
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 49px,
+                    rgba(245, 245, 245, 0.02) 49px,
+                    rgba(245, 245, 245, 0.02) 50px
+                ),
+                /* Horizontal grid */
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 49px,
+                    rgba(245, 245, 245, 0.02) 49px,
+                    rgba(245, 245, 245, 0.02) 50px
+                ),
+                /* Gold glow left */
+                radial-gradient(circle at 25% 50%, rgba(201, 169, 97, 0.10) 0%, transparent 50%),
+                /* Platinum glow right */
+                radial-gradient(circle at 75% 50%, rgba(245, 245, 245, 0.05) 0%, transparent 50%),
+                /* Dark gradient overlay */
+                linear-gradient(135deg, rgba(26, 22, 18, 0.98) 0%, rgba(45, 38, 32, 0.99) 100%),
+                /* Solid base color */
+                #1a1612;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 3rem;
+            box-shadow:
+                inset 0 0 100px rgba(0, 0, 0, 0.5),
+                0 8px 32px rgba(0, 0, 0, 0.8);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            color: var(--gold-bright);
+            text-shadow:
+                0 0 40px var(--shadow-light),
+                0 0 80px var(--shadow-medium),
+                4px 4px 12px var(--shadow-heavy);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            color: var(--platinum-light);
+            text-shadow: 2px 2px 8px var(--shadow-heavy);
+            line-height: 1.4;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .accent-line {
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            margin: 2rem auto;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Hero Image - 1920x1080 */
+        #hero-zone {
+            width: 1920px;
+            height: 1080px;
+        }
+
+        #hero-zone .logo-text {
+            font-size: 7.5rem;
+        }
+
+        #hero-zone .tagline {
+            font-size: 2.8rem;
+        }
+
+        /* Square Image - 630x500 */
+        #square-zone {
+            width: 630px;
+            height: 500px;
+        }
+
+        #square-zone .logo-text {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        #square-zone .tagline {
+            font-size: 1.5rem;
+            line-height: 1.5;
+        }
+
+        #square-zone .accent-line {
+            width: 120px;
+            margin: 1.5rem auto;
+        }
+
+        /* Banner Image - 1920x400 */
+        #banner-zone {
+            width: 1920px;
+            height: 400px;
+            flex-direction: row;
+            gap: 4rem;
+        }
+
+        #banner-zone .logo-text {
+            font-size: 4.5rem;
+            margin-bottom: 0;
+            line-height: 1.15;
+        }
+
+        #banner-zone .tagline {
+            font-size: 2.0rem;
+            line-height: 1.4;
+        }
+
+        #banner-zone .accent-line {
+            display: none;
+        }
+
+        /* Guide overlay */
+        .guide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 4px dashed var(--gold-primary);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+
+        .show-guides .guide-overlay {
+            opacity: 1;
+        }
+
+        .guide-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--gold-primary);
+            color: var(--bg-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .dimension-label {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(201, 169, 97, 0.9);
+            color: var(--bg-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--gold-bright);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px var(--shadow-light);
+        }
+
+        .export-btn {
+            display: block;
+            margin: 1rem auto;
+        }
+
+        /* Responsive warning */
+        .warning {
+            background: rgba(255, 152, 0, 0.2);
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 1920px) {
+            .image-container {
+                overflow-x: auto;
+            }
+
+            .warning {
+                display: block;
+            }
+        }
+
+        /* Loading overlay for export */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 22, 18, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loading-content {
+            text-align: center;
+            color: var(--gold-bright);
+        }
+
+        .spinner {
+            border: 4px solid rgba(201, 169, 97, 0.3);
+            border-top: 4px solid var(--gold-primary);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h1>Cover Image Generator - Revenue Share System</h1>
+        <p><strong>Instructions:</strong></p>
+        <p><strong>Method 1 (Recommended):</strong> Toggle guides, press F11 for fullscreen, scroll to each image, and take screenshots using your OS screenshot tool (Windows: Win+Shift+S, Mac: Cmd+Shift+4).</p>
+        <p><strong>Method 2:</strong> Click the "Export as PNG" button below each image to automatically download it (may have slight quality variations).</p>
+        <p><strong>Tip:</strong> For best results, zoom your browser to 100% before taking screenshots or exporting.</p>
+
+        <div class="controls">
+            <button class="btn" id="toggle-guides">Toggle Screenshot Guides</button>
+            <button class="btn btn-secondary" id="hide-instructions">Hide Instructions (F11 after)</button>
+        </div>
+
+        <div class="warning" style="display: none;">
+            <strong>⚠️ Note:</strong> Your screen is smaller than 1920px wide. You may need to scroll horizontally or use the export buttons for full-size images.
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Generating image...</p>
+        </div>
+    </div>
+
+    <!-- Hero Image - 1920x1080 -->
+    <div class="image-container">
+        <h2 class="section-title">Hero/Thumbnail Image (1920x1080 - 16:9)</h2>
+        <div class="image-wrapper show-guides" id="hero-wrapper">
+            <div class="image-zone" id="hero-zone">
+                <div class="content">
+                    <div class="logo-text">Reactorcore's<br>Revenue Share System</div>
+                    <div class="accent-line"></div>
+                    <div class="tagline">Zero-Budget Revshare Solution for Indie Teams</div>
+                </div>
+            </div>
+            <div class="guide-overlay">
+                <div class="guide-label">HERO IMAGE</div>
+                <div class="dimension-label">1920 × 1080</div>
+            </div>
+        </div>
+        <button class="btn export-btn" onclick="exportImage('hero-zone', 'revshare-hero-1920x1080.png')">Export Hero as PNG</button>
+    </div>
+
+    <!-- Square Image - 630x500 -->
+    <div class="image-container">
+        <h2 class="section-title">Square Promotional Image (630x500)</h2>
+        <div class="image-wrapper show-guides" id="square-wrapper">
+            <div class="image-zone" id="square-zone">
+                <div class="content">
+                    <div class="logo-text">Reactorcore's<br>RevShare<br>System</div>
+                    <div class="accent-line"></div>
+                    <div class="tagline">Fair Compensation<br>Zero Legal Complexity</div>
+                </div>
+            </div>
+            <div class="guide-overlay">
+                <div class="guide-label">SQUARE IMAGE</div>
+                <div class="dimension-label">630 × 500</div>
+            </div>
+        </div>
+        <button class="btn export-btn" onclick="exportImage('square-zone', 'revshare-square-630x500.png')">Export Square as PNG</button>
+    </div>
+
+    <!-- Banner Image - 1920x400 -->
+    <div class="image-container">
+        <h2 class="section-title">Horizontal Banner (1920x400)</h2>
+        <div class="image-wrapper show-guides" id="banner-wrapper">
+            <div class="image-zone" id="banner-zone">
+                <div class="content">
+                    <div class="logo-text">Reactorcore's<br>Revenue Share System</div>
+                </div>
+                <div class="content">
+                    <div class="tagline">Zero-Budget Solution<br>for Creative Teams.</div>
+                </div>
+            </div>
+            <div class="guide-overlay">
+                <div class="guide-label">BANNER IMAGE</div>
+                <div class="dimension-label">1920 × 400</div>
+            </div>
+        </div>
+        <button class="btn export-btn" onclick="exportImage('banner-zone', 'revshare-banner-1920x400.png')">Export Banner as PNG</button>
+    </div>
+
+    <script>
+        // Toggle guides
+        document.getElementById('toggle-guides').addEventListener('click', function() {
+            document.querySelectorAll('.image-wrapper').forEach(wrapper => {
+                wrapper.classList.toggle('show-guides');
+            });
+        });
+
+        // Hide instructions
+        document.getElementById('hide-instructions').addEventListener('click', function() {
+            document.querySelector('.instructions').style.display = 'none';
+        });
+
+        // Export function using html2canvas
+        async function exportImage(elementId, filename) {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.classList.add('active');
+
+            try {
+                const element = document.getElementById(elementId);
+
+                // Wait a moment for rendering
+                await new Promise(resolve => setTimeout(resolve, 100));
+
+                const canvas = await html2canvas(element, {
+                    backgroundColor: null, // Let CSS handle background
+                    scale: 2, // Higher quality
+                    logging: false,
+                    allowTaint: true,
+                    useCORS: true,
+                    foreignObjectRendering: false,
+                    removeContainer: true,
+                    width: element.offsetWidth,
+                    height: element.offsetHeight
+                });
+
+                // Convert to blob and download
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+
+                    loadingOverlay.classList.remove('active');
+                }, 'image/png', 1.0);
+            } catch (error) {
+                console.error('Export failed:', error);
+                alert('Export failed. Please try the manual screenshot method instead.');
+                loadingOverlay.classList.remove('active');
+            }
+        }
+
+        // Show warning if screen is too small
+        if (window.innerWidth < 1920) {
+            document.querySelector('.warning').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

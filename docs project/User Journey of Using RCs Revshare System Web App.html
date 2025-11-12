@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide: Using the Revshare System Web App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a2520 0%, #1a1816 50%, #2d2420 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(42, 37, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(218, 196, 160, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 184, 150, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #dac4a0 0%, #d4b896 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 184, 150, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dac4a0;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(218, 196, 160, 0.3);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4b896;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #dac4a0;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d4b896;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 118, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .intro-box {
+            background: rgba(212, 184, 150, 0.15);
+            border: 2px solid rgba(212, 184, 150, 0.3);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .step-box {
+            background: rgba(26, 24, 22, 0.6);
+            border: 1px solid rgba(201, 168, 118, 0.2);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .step-box h3 {
+            margin-top: 0;
+            color: #dac4a0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box {
+            background: rgba(201, 168, 118, 0.1);
+            border-left: 4px solid #c9a876;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .tip-box {
+            background: rgba(212, 184, 150, 0.08);
+            border: 1px solid rgba(212, 184, 150, 0.25);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 25px 0;
+        }
+
+        .tip-box h4 {
+            font-family: 'Outfit', sans-serif;
+            color: #dac4a0;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            body {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to App</a>
+
+        <h1>User Guide: Using the Revshare System Web App</h1>
+
+        <div class="intro-box">
+            <p>This guide walks you through how to use the Revenue Share System web application as a project leader. The app is designed to help you manage your team, calculate fair payouts, and maintain complete transparency throughout your project's lifetime.</p>
+        </div>
+
+        <hr>
+
+        <h2>Overview</h2>
+
+        <p>The Revshare System web app is a standalone tool that works entirely offline. All your data is stored in a <strong>team-project data file</strong> that you keep on your local device. This file contains:</p>
+
+        <ul>
+            <li>All team member information and tier assignments</li>
+            <li>Complete payout history and timeline</li>
+            <li>Project introduction and settings</li>
+        </ul>
+
+        <p>You can share read-only copies of this file with your team for transparency, and you can load it back into the app anytime to continue managing your project.</p>
+		
+		<p>Only the file managed by the project leader is the valid one, known as the "master file". To prevent anyone from tampering with the team-project data file, the project leader must always keep their version of it secure and backed up without anyone else allowed to change it. <em>Any copies of the file provided by other members should generally be considered untrustworthy and rejected unless its an emergency.</em></p>
+
+        <hr>
+
+        <h2>Step-by-Step User Journey</h2>
+
+        <div class="step-box">
+            <h3><span class="step-number">1</span>First Time Setup</h3>
+
+            <p><strong>When you first open the web app:</strong></p>
+
+            <ol>
+                <li>Read the introduction to understand what the system does and how it works</li>
+                <li>Review the Quick Start guide to get the gist of when to use it and how to use it</li>
+                <li>Fill out all details for your team:
+                    <ul>
+                        <li>Team member names, roles, and contact information</li>
+                        <li>Tier assignments (Main, Assistant, Special Thanks, Fan)</li>
+                        <li>Payment preferences for each member</li>
+                    </ul>
+                </li>
+                <li>Add your project information:
+                    <ul>
+                        <li>Project name and description</li>
+                        <li>Any custom settings or notes</li>
+                    </ul>
+                </li>
+                <li><strong>Save your data</strong> to create your first <strong>team-project data file</strong></li>
+            </ol>
+
+            <div class="tip-box">
+                <h4>💡 Pro Tip</h4>
+                <p>The saved file will include the date and time in its filename (e.g., "MyProject_2025-11-03_14-30.json"). This makes it easy to identify the latest version if you have multiple files.</p>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h3><span class="step-number">2</span>Explore the Documentation</h3>
+
+            <p>After initial setup, visit the <strong>Info & FAQ</strong> page to access detailed documentation:</p>
+
+            <ul>
+                <li><strong>Revenue Share System v3.0</strong> - Complete explanation of the tier system, formulas, and payout mechanics</li>
+                <li><strong>Teamwork Style</strong> - Recommended philosophy for running a collaborative revshare project</li>
+                <li><strong>Licensing Guide</strong> - How to handle intellectual property for your project</li>
+                <li><strong>Business Models</strong> - Various strategies for releasing and monetizing your game</li>
+                <li><strong>FAQ Section</strong> - Common questions and answers about the system</li>
+            </ul>
+
+            <p>These documents give you the full picture of how to use the revshare system effectively and what benefits it offers.</p>
+        </div>
+
+        <div class="step-box">
+            <h3><span class="step-number">3</span>Loading Your Data (Returning Sessions)</h3>
+
+            <p><strong>When you open the web app again after closing it:</strong></p>
+
+            <p>The app won't have any data loaded by default (this is intentional for privacy and security). To continue where you left off:</p>
+
+            <h4>Option A: Drag & Drop</h4>
+            <ul>
+                <li>Simply drag your team-project data file from anywhere on your computer</li>
+                <li>Drop it anywhere on the web app interface</li>
+                <li>The app will detect and load your data instantly</li>
+            </ul>
+
+            <h4>Option B: Browse & Select</h4>
+            <ul>
+                <li>Click the "Load Data" or "Import File" button</li>
+                <li>Browse your computer to find your team-project data file</li>
+                <li>Select it to load all your previous data</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Why this system?</strong> The web app works standalone and offline, with no cloud storage or cache. This gives you complete control over your data and allows you to easily share read-only copies with team members for transparency.</p>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h3><span class="step-number">4</span>Ongoing Management</h3>
+
+            <p><strong>With your team-project data file loaded, you can:</strong></p>
+
+            <h4>Team Management</h4>
+            <ul>
+                <li><strong>Add new members</strong> - Bring in new contributors and assign them to appropriate tiers</li>
+                <li><strong>Edit member details</strong> - Update contact info, payment preferences, or contribution notes</li>
+                <li><strong>Promote members</strong> - Move contributors to higher tiers based on increased impact (promotions are permanent!)</li>
+                <li><strong>Remove members</strong> - Only in extreme cases of bad behavior (see Bad Actors policy)</li>
+            </ul>
+
+            <h4>Payout Calculations</h4>
+            <ul>
+                <li><strong>Mock Payouts</strong> - Calculate hypothetical distributions to preview how money would be split</li>
+                <li><strong>Real Payouts</strong> - Calculate actual distributions and commit them to the timeline
+                    <ul>
+                        <li>Enter the total revenue amount after platform cuts</li>
+                        <li>Review the automated calculations showing each member's share</li>
+                        <li>Verify everything looks correct</li>
+                        <li>Commit the payout to create a permanent record in the timeline</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Reports & Transparency</h4>
+            <ul>
+                <li><strong>Export payout logs</strong> - Generate reports showing:
+                    <ul>
+                        <li>Individual payout amounts for the latest cycle</li>
+                        <li>Total earnings per member across all payouts</li>
+                        <li>Complete transaction history</li>
+                    </ul>
+                </li>
+                <li><strong>Share with team</strong> - Export these logs to show team members how distributions were calculated</li>
+            </ul>
+
+            <div class="tip-box">
+                <h4>💡 Important</h4>
+                <p>Always <strong>save a new copy</strong> of your team-project data file after making any changes. This ensures you don't lose your updates and creates a backup history.</p>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h3><span class="step-number">5</span>Processing Actual Payouts</h3>
+
+            <p><strong>When it's time to distribute money to your team:</strong></p>
+
+            <ol>
+                <li><strong>Calculate in the app</strong> - Run the payout calculation with your actual revenue amount</li>
+                <li><strong>Review the breakdown</strong> - Verify all amounts and tier assignments are correct</li>
+                <li><strong>Commit to timeline</strong> - Save this payout as a permanent record</li>
+                <li><strong>Process payments manually</strong> - Use your preferred payment method (bank transfer, PayPal, Stripe, etc.) to send each member their share</li>
+                <li><strong>Document everything</strong> - Take screenshots of transactions, save receipts, and update your transparency folder</li>
+                <li><strong>Export and share</strong> - Generate a payout log and share it with contributing members so they can verify the distribution</li>
+            </ol>
+
+            <div class="highlight-box">
+                <p><strong>Remember:</strong> The web app calculates the splits, but you still manually send the payments. This gives you full control and ensures compliance with your local banking and tax requirements.</p>
+            </div>
+        </div>
+
+        <div class="step-box">
+            <h3><span class="step-number">6</span>Repeat & Maintain</h3>
+
+            <p><strong>From here, your workflow becomes a cycle:</strong></p>
+
+            <ol>
+                <li>Load your latest team-project data file when opening the app</li>
+                <li>Make any needed updates (add members, promotions, etc.)</li>
+                <li>Calculate payouts when revenue reaches thresholds</li>
+                <li>Process and document the distributions</li>
+                <li>Save an updated team-project data file</li>
+                <li>Share updated file and logs with team for transparency</li>
+            </ol>
+
+            <p>This process continues for the lifetime of your project, ensuring fair and transparent revenue sharing forever.</p>
+        </div>
+
+        <hr>
+
+        <h2>Best Practices</h2>
+
+        <h3>File Management</h3>
+        <ul>
+            <li><strong>Keep backups</strong> - Store copies of your team-project data files in multiple locations (external drive, cloud storage, etc.)</li>
+            <li><strong>Use version control</strong> - The automatic date-time filenames help you track which is the latest version</li>
+            <li><strong>Share read-only copies</strong> - Give contributing members access to the latest file so they can verify fairness</li>
+        </ul>
+
+        <h3>Transparency</h3>
+        <ul>
+            <li><strong>Document all payouts</strong> - Take screenshots of platform earnings and payment confirmations</li>
+            <li><strong>Maintain a shared folder</strong> - Use Google Drive or similar to give team view-only access to all records</li>
+            <li><strong>Communicate regularly</strong> - Let team members know when payouts are coming and when they've been processed</li>
+        </ul>
+
+        <h3>Security & Privacy</h3>
+        <ul>
+            <li><strong>Minimize personal info</strong> - Only include what's necessary (name/alias, email, role, tier)</li>
+            <li><strong>Scrub sensitive data</strong> - Remove bank account numbers, full addresses, or other identifying information before sharing files</li>
+            <li><strong>Vet new members</strong> - Be careful who gets access to team files and transparency folders</li>
+        </ul>
+
+        <hr>
+
+        <h2>Troubleshooting</h2>
+
+        <h3>Can't load my data file?</h3>
+        <p>Make sure you're using the correct file format (typically .json). If the file is corrupted, restore from a backup copy.</p>
+
+        <h3>Calculations seem wrong?</h3>
+        <p>Double-check your team composition and tier assignments. The self-adjusting algorithm may be activating if you have many assistant/special thanks members compared to main tier members.</p>
+
+        <h3>Lost my data file?</h3>
+        <p>This is why backups are crucial! Check your computer's recent files, cloud storage, or transparency folder for the latest copy. If all else fails, you'll need to recreate your data from documentation.</p>
+
+        <hr>
+
+        <div class="intro-box">
+            <h3>Need More Help?</h3>
+            <p>Visit the <strong>Info & FAQ</strong> section for detailed documentation on:</p>
+            <ul style="margin-bottom: 0;">
+                <li>The complete revenue share system and its formulas</li>
+                <li>Team management best practices</li>
+                <li>Common questions and edge cases</li>
+                <li>Philosophy and principles behind the system</li>
+            </ul>
+        </div>
+
+        <a href="../index.html" class="back-button" style="margin-top: 40px;">← Back to App</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Share System v3.0 - For Creative Project Teams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a2520 0%, #1a1816 50%, #2d2420 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(42, 37, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(218, 196, 160, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 184, 150, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #dac4a0 0%, #d4b896 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 184, 150, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dac4a0;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(218, 196, 160, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            color: #c9a876;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .version-info {
+            font-size: 0.95rem;
+            color: #b8b8b8;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4b896;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #dac4a0;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #dac4a0;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d4b896;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 118, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .highlight-box {
+            background: rgba(201, 168, 118, 0.1);
+            border-left: 4px solid #c9a876;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .tldr-box {
+            background: rgba(212, 184, 150, 0.15);
+            border: 2px solid rgba(212, 184, 150, 0.3);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .tier-card {
+            background: rgba(26, 24, 22, 0.6);
+            border: 1px solid rgba(201, 168, 118, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .tier-card h3 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: rgba(26, 24, 22, 0.8);
+            border: 1px solid rgba(201, 168, 118, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #e8e8e8;
+        }
+
+        code {
+            background: rgba(26, 24, 22, 0.6);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #dac4a0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .example-box {
+            background: rgba(212, 184, 150, 0.08);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .example-box h3 {
+            margin-top: 0;
+        }
+
+        .toc {
+            background: rgba(26, 24, 22, 0.4);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+            font-size: 1.5rem;
+        }
+
+        .toc ol {
+            margin-left: 20px;
+        }
+
+        .toc a {
+            color: #d4b896;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .toc a:hover {
+            color: #dac4a0;
+        }
+
+        .warning-box {
+            background: rgba(212, 168, 118, 0.15);
+            border: 2px solid rgba(212, 168, 118, 0.4);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 25px 0;
+        }
+
+        .warning-box h4 {
+            margin-top: 0;
+            color: #e8c896;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            body {
+                padding: 20px 15px;
+            }
+
+            pre {
+                padding: 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to App</a>
+
+        <h1>Revenue Share System v3.0</h1>
+        <p class="subtitle">For Creative Project Teams</p>
+        <p class="version-info"><em>A manual, simple, transparent, robust, flexible, fair, and scalable system for indie gamedev revshare teams</em></p>
+
+        <hr>
+
+        <h2>⚡ TL;DR</h2>
+
+        <div class="tldr-box">
+            <p>This is a transparent, self-balancing revenue share system designed for indie creative teams who want fairness without the legal overhead. It solves the classic problem: how do you compensate people fairly when contributions vary wildly in scope and impact? How do you do it long term yet keep it simple without making the leader's or the team member's heads explode?</p>
+
+            <p><strong>The system handles this elegantly:</strong></p>
+
+            <ul>
+                <li><strong>🏆 Tiered Structure</strong> – Contributors are grouped by projected lifetime impact to the project:
+                    <ul>
+                        <li><strong>Main Tier</strong>: Core creators essential to the project or exceptional contributors; game wouldn't exist without them</li>
+                        <li><strong>Assistant Tier</strong>: Strong contributors adding medium value to game, but not essential</li>
+                        <li><strong>Special Thanks Tier</strong>: Supporters who made smaller but meaningful non-trivial contributions worth of compensation</li>
+                        <li><strong>Fan Tier</strong>: Playtesters, feedback providers, minimal contributors or helpers who get credited but no monetary payout</li>
+                    </ul>
+                    <p>(Each tier earns a proportional share of total revenue whenever there's a payout, automatically balanced as the team evolves.)</p>
+                </li>
+                <li><strong>⚖️ Self-balancing protection</strong> - The math keeps payouts fair no matter how big the team grows. Main contributors never get drowned out, and assistants never get shortchanged if they collectively carry major weight.</li>
+                <li><strong>💵 Lifetime rewards</strong> - Once you earn a tier, you keep receiving payouts forever (no demotions, no performance anxiety)</li>
+                <li><strong>📈 Smart payout timing</strong> - Monthly when revenue is strong, quarterly when it's lean (minimizing bank transfer fee waste)</li>
+                <li><strong>♾️ Zero legal complexity</strong> - No contracts, no equity battles, no corporate structure required - just clear math, MIT License and mutual trust/honor</li>
+                <li><strong>🔍 Fully transparent</strong> - Open calculations, exportable reports, and secure tamper-proof read-only access to all team data</li>
+            </ul>
+
+            <p><strong>By default the split is a clean 50/50% for any starting team:</strong></p>
+            <ul>
+                <li>The coder</li>
+                <li>The project lead/designer/artist/marketer/everything else</li>
+            </ul>
+
+            <p>...with robust support to keep things fair if the team ever expands.</p>
+        </div>
+
+        <hr>
+
+        <div class="toc">
+            <h2>📋 Index</h2>
+            <ol>
+                <li><a href="#who-this-is-for">Who This Is For</a></li>
+                <li><a href="#tier-system">The Tier System</a></li>
+                <li><a href="#mathematical-formulas">Mathematical Formulas</a></li>
+                <li><a href="#payout-examples">Payout Examples</a></li>
+                <li><a href="#payout-thresholds">Payout Thresholds</a></li>
+                <li><a href="#how-payouts-work">How Payouts Work</a></li>
+                <li><a href="#managing-system">Managing the System</a></li>
+                <li><a href="#team-philosophy">Team Philosophy</a></li>
+                <li><a href="#platform-strategy">Platform Strategy</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ol>
+        </div>
+
+        <p><em>(Note: this document is written from a Project Leader's perspective.)</em></p>
+
+        <hr>
+
+        <h2 id="who-this-is-for">👥 Who This Is For</h2>
+
+        <h3>🎯 Perfect For</h3>
+        <ul>
+            <li><strong>Game Development Teams</strong>: Manage revenue from Steam, Itch.io, mobile stores</li>
+            <li><strong>Creative Collectives</strong>: Artists, musicians, content creators working together</li>
+            <li><strong>Open Source Projects</strong>: Fair compensation for contributors</li>
+            <li><strong>Freelance Groups</strong>: Transparent profit sharing for collaborative work</li>
+        </ul>
+
+        <h3>👑 For Project Leaders</h3>
+        <ul>
+            <li><strong>Transparent Process</strong>: Clear, documented revenue sharing rules</li>
+            <li><strong>Reduced Conflicts</strong>: Automated calculations eliminate disputes</li>
+            <li><strong>Easy Management</strong>: Simple interface for complex team dynamics</li>
+            <li><strong>Professional Reports</strong>: Export data for tax and legal purposes</li>
+        </ul>
+
+        <h3>👥 For Team Members</h3>
+        <ul>
+            <li><strong>Fair Compensation</strong>: Algorithm ensures equitable distribution</li>
+            <li><strong>Clear Visibility</strong>: See exactly how revenue is calculated</li>
+            <li><strong>Flexible System</strong>: Accommodates different contribution levels</li>
+            <li><strong>Regular Updates</strong>: Track earnings and payment history</li>
+        </ul>
+
+        <h3>🚀 For Teams</h3>
+        <ul>
+            <li><strong>Scalable</strong>: Handles teams from 2 to 200+ members and beyond</li>
+            <li><strong>Adaptable</strong>: Modify tiers and percentages as project evolves</li>
+            <li><strong>Portable</strong>: No cloud dependency, works entirely offline</li>
+            <li><strong>Universal</strong>: Use for any revenue-sharing scenario</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="tier-system">🏆 The Tier System</h2>
+
+        <p>A four-tier system based on contribution level and project importance:</p>
+
+        <div class="tier-card">
+            <h3>🥇 Main Tier - Essential Contributors</h3>
+            <p><strong>Examples:</strong> Lead coder, project leader, main designer, main artist, heavy content developer, OST maker, main soundscape designer, main writer, strong sales/marketing contributor</p>
+            <p>These are the core pillars crucial to the project's existence and success.</p>
+        </div>
+
+        <div class="tier-card">
+            <h3>🥈 Assistant Tier - Valuable Contributors</h3>
+            <p><strong>Examples:</strong> Medium content developer, subsystem coder, secondary musician/sound designer, part-time marketer with medium impact</p>
+            <p>Contributors who enhance the project significantly but aren't essential for its core existence.</p>
+        </div>
+
+        <div class="tier-card">
+            <h3>🥉 Special Thanks Tier - Meaningful Contributors</h3>
+            <p><strong>Examples:</strong> Light content developer, asset creators, small but notable project improvements</p>
+            <p>Contributors who provided meaningful but smaller contributions worth rewarding.</p>
+        </div>
+
+        <div class="tier-card">
+            <h3>🎈 Fan Tier - Minor Contributors</h3>
+            <p><strong>Examples:</strong> Playtesting and feedback, one-two donated art pieces, minor marketing boosts</p>
+            <p>Minimal assistance that earns credits in the game but no monetary compensation.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="mathematical-formulas">🧮 Mathematical Formulas</h2>
+
+        <h3>📊 Basic Tier Ratios</h3>
+        <ul>
+            <li><strong>Main Tier</strong>: 1.0 (full share)</li>
+            <li><strong>Assistant Tier</strong>: 0.5 (half of main tier share)</li>
+            <li><strong>Special Thanks Tier</strong>: 0.167 (one-third of assistant share, or 1/6 of main share)</li>
+        </ul>
+
+        <h3>⚙️ Core Calculation Formula</h3>
+
+        <pre><code>Total Revenue After Platform Cut = R
+Number of Main Tier Members = M
+Number of Assistant Tier Members = A
+Number of Special Thanks Tier Members = T
+
+Base Share Units = M + (A × 0.5) + (T × 0.167)
+
+Individual Main Share = R ÷ Base Share Units
+Individual Assistant Share = (R ÷ Base Share Units) × 0.5
+Individual Special Thanks Share = (R ÷ Base Share Units) × 0.167</code></pre>
+
+        <h3>🎯 Self-Adjusting Fairness Algorithm</h3>
+
+        <p>To prevent situations where main contributors get unfairly diluted by too many assistants/thankers, a self-adjusting system is implemented:</p>
+
+        <pre><code>Total Contributing Members = M + A + T
+Assistant/Thanker Ratio = (A + T) ÷ M
+
+If Assistant/Thanker Ratio > 5:
+    Main Tier Adjustment Factor = 0.95^(Assistant/Thanker Ratio - 5)
+    Main Tier Minimum = max(0.30, Main Tier Adjustment Factor)
+
+    Adjusted Main Share = Individual Main Share × (Main Tier Minimum ÷ Original Main Percentage)</code></pre>
+
+        <p>This ensures main contributors always receive at least 30% of total revenue, even with large teams.</p>
+
+        <h3>⏰ Payout Frequency Threshold Formula</h3>
+
+        <pre><code>Base Monthly Threshold = €50 × Total Contributing Members
+Base Quarterly Threshold = €15 × Total Contributing Members
+
+If Revenue ≥ Base Monthly Threshold: Monthly Payouts
+If €15 ≤ Revenue per Member < €50: Quarterly Payouts
+If Revenue per Member < €15: Hold until next quarter</code></pre>
+
+        <hr>
+
+        <h2 id="payout-examples">💡 Payout Examples</h2>
+
+        <div class="example-box">
+            <h3>Example 1: Small Team (2 Main, 1 Assistant, 1 Special Thanks)</h3>
+            <p><strong>Revenue:</strong> €1,000 after platform cut</p>
+
+            <pre><code>Base Share Units = 2 + (1 × 0.5) + (1 × 0.167) = 2.667
+
+Individual Main Share = €1,000 ÷ 2.667 = €375.05 each
+Individual Assistant Share = €375.05 × 0.5 = €187.53
+Individual Special Thanks Share = €375.05 × 0.167 = €62.63
+
+Total Check: (€375.05 × 2) + €187.53 + €62.63 = €1,000.21 ✓</code></pre>
+
+            <p><strong>Result:</strong> Main contributors get 75% total, assistant gets 18.8%, thanker gets 6.3% ✅</p>
+        </div>
+
+        <div class="example-box">
+            <h3>Example 2: Medium Team (3 Main, 5 Assistant, 3 Special Thanks)</h3>
+            <p><strong>Revenue:</strong> €2,000 after platform cut</p>
+
+            <pre><code>Base Share Units = 3 + (5 × 0.5) + (3 × 0.167) = 6.001
+
+Individual Main Share = €2,000 ÷ 6.001 = €333.22 each
+Individual Assistant Share = €333.22 × 0.5 = €166.61 each
+Individual Special Thanks Share = €333.22 × 0.167 = €55.65 each
+
+Total Check: (€333.22 × 3) + (€166.61 × 5) + (€55.65 × 3) = €1,999.51 ✓</code></pre>
+
+            <p><strong>Result:</strong> Mains get 50% total, assistants get 41.7% total, thankers get 8.3% total ✅</p>
+        </div>
+
+        <div class="example-box">
+            <h3>Example 3: Large Team with Self-Adjustment (2 Main, 15 Assistant, 10 Special Thanks)</h3>
+            <p><strong>Revenue:</strong> €5,000 after platform cut</p>
+
+            <pre><code>Initial Base Share Units = 2 + (15 × 0.5) + (10 × 0.167) = 11.17
+Assistant/Thanker Ratio = (15 + 10) ÷ 2 = 12.5
+
+Since ratio > 5, apply adjustment:
+Main Tier Adjustment Factor = 0.95^(12.5 - 5) = 0.95^7.5 = 0.688
+Main Tier Minimum = max(0.30, 0.688) = 0.688
+
+Original Main Percentage = (2 × (€5,000 ÷ 11.17)) ÷ €5,000 = 0.179
+
+Since 0.179 < 0.30, boost to minimum 30%:
+Adjusted Main Total = €5,000 × 0.30 = €1,500
+Individual Main Share = €1,500 ÷ 2 = €750 each
+
+Remaining for Others = €5,000 - €1,500 = €3,500
+Other Share Units = (15 × 0.5) + (10 × 0.167) = 9.17
+
+Individual Assistant Share = (€3,500 ÷ 9.17) × 0.5 = €190.74 each
+Individual Special Thanks Share = (€3,500 ÷ 9.17) × 0.167 = €63.69 each</code></pre>
+
+            <p><strong>Result:</strong> Protection ensures main contributors get 30% despite large team size 🛡️</p>
+        </div>
+
+        <hr>
+
+        <h2 id="payout-thresholds">💰 Payout Thresholds</h2>
+
+        <p>Realistic thresholds that scale with team size to minimize transfer fees:</p>
+
+        <h3>📅 Monthly Payout Thresholds</h3>
+        <ul>
+            <li><strong>2-3 members</strong>: €100 total revenue</li>
+            <li><strong>4-6 members</strong>: €200 total revenue</li>
+            <li><strong>7-10 members</strong>: €350 total revenue</li>
+            <li><strong>11-15 members</strong>: €550 total revenue</li>
+            <li><strong>16+ members</strong>: €50 per contributing member</li>
+        </ul>
+
+        <h3>📆 Quarterly Payout Thresholds</h3>
+        <ul>
+            <li><strong>2-3 members</strong>: €30 total revenue</li>
+            <li><strong>4-6 members</strong>: €60 total revenue</li>
+            <li><strong>7-10 members</strong>: €105 total revenue</li>
+            <li><strong>11-15 members</strong>: €165 total revenue</li>
+            <li><strong>16+ members</strong>: €15 per contributing member</li>
+        </ul>
+
+        <h3>⏸️ Hold Thresholds</h3>
+        <p>If revenue falls below quarterly thresholds, funds are held until the next quarter to accumulate enough to justify transfer fees. Very small individual amounts (typically under €15 per person) aren't worth transferring due to banking fees, so we wait until earnings accumulate to meaningful amounts.</p>
+
+        <hr>
+
+        <h2 id="how-payouts-work">⚙️ How Payouts Work</h2>
+
+        <h3>🏗️ Overview & Management System</h3>
+        <p>To handle revenue sharing transparently and efficiently, a comprehensive management system is built around a custom web application. This system tracks all team members, calculates fair distributions, and maintains complete transparency throughout the process.</p>
+
+        <p>The core concept is simple: platforms take their cut, send money to a dedicated "payout hub" account, and the remaining revenue gets distributed according to the tier-based formula using automated calculations that ensure accuracy and fairness.</p>
+
+        <h3>🏗️ Team Building & Contribution Process</h3>
+        <ol>
+            <li><strong>Active Development</strong>: Build the game collaboratively with team members joining at different stages. Some contribute steadily across multiple payout cycles, others may make significant contributions during specific periods.</li>
+            <li><strong>Contribution Evaluation</strong>: The project leader evaluates each member's impact and assigns them to appropriate tiers (Main, Assistant, or Special Thanks) based on:
+                <ul>
+                    <li>Overall project impact and significance</li>
+                    <li>Essentiality to the game's existence and success</li>
+                    <li>Quality and scope of contributions</li>
+                    <li>Future potential and ongoing involvement</li>
+                </ul>
+            </li>
+            <li><strong>Tier Assignment</strong>: Once assigned, tiers are permanent and members are added to the payout list forever. Members can be promoted to higher tiers through additional significant contributions, but never demoted.</li>
+            <li><strong>Payout Eligibility</strong>: New members become eligible for payouts starting from the cycle after their contribution is submitted and evaluated.</li>
+        </ol>
+
+        <h3>💸 Revenue Collection & Hub System</h3>
+        <h4>Platform Revenue Flow:</h4>
+        <ol>
+            <li>Game sales generate revenue on platforms (itch.io, Steam, mobile stores, etc.)</li>
+            <li>Platform takes their standard cut (itch.io: ~15%, Steam: 30%, etc.)</li>
+            <li>Remaining revenue transfers to the dedicated "payout hub" account</li>
+        </ol>
+
+        <h4>Hub Account Setup:</h4>
+        <ul>
+            <li>Dedicated bank account exclusively for project payouts (separate from personal accounts)</li>
+            <li>Managed by project leader for transparency and accountability</li>
+            <li>All incoming and outgoing transactions are documented with timestamps and screenshots</li>
+        </ul>
+
+        <div class="warning-box">
+            <h4>Note on Alternative Methods</h4>
+            <p>Project leaders are encouraged to explore alternative options, like specialized apps or services for handling payouts to multiple members; anything that would work better for handling payouts if it means less fees, more security and better transparency amongst members. The hub account method is simply a baseline approach.</p>
+        </div>
+
+        <h3>📦 Distribution Process</h3>
+        <h4>Automated Calculation:</h4>
+        <ul>
+            <li>The custom web application calculates exact shares using the tier-based formulas</li>
+            <li>It accounts for current team composition with self-adjusting fairness algorithms</li>
+            <li>It generates detailed breakdowns showing how each amount was determined</li>
+            <li>Anyone on the team can get a copy of the team/project file used in the web app and check the split amount for themselves</li>
+        </ul>
+
+        <h4>Payment Distribution:</h4>
+        <ol>
+            <li><strong>Primary Methods</strong>: Bank wire transfers or Stripe for European members</li>
+            <li><strong>International Options</strong>: PayPal for global team members</li>
+            <li><strong>Currency Handling</strong>: Members handle their own currency conversion and local tax obligations</li>
+            <li><strong>Transfer Fees</strong>: Deducted from individual payouts (minimized through the threshold system)</li>
+        </ol>
+
+        <div class="warning-box">
+            <h4>Note on Payment Methods</h4>
+            <p>These payment methods may change and project leaders can suggest other options, except for bitcoin or its derivatives.</p>
+        </div>
+
+        <h4>Documentation & Transparency:</h4>
+        <ul>
+            <li>All transactions logged with screenshots and timestamps</li>
+            <li>Complete payout history maintained in accessible cloud folder, with minimal personally identifiable information for safety and privacy</li>
+            <li>View-only access granted to all contributing tier members</li>
+            <li>Hub account returns to €0 after each distribution cycle</li>
+        </ul>
+
+        <p>In other words, money is earned, payout day comes, money goes from store to hub, hub splits rewards by sending them to members as per tiers until nothing is left in the hub. Then this process repeats.</p>
+
+        <h3>⏰ Payout Frequency & Thresholds</h3>
+        <h4>Timing Decisions Based on Revenue:</h4>
+        <ul>
+            <li><strong>Monthly Payouts</strong>: When revenue exceeds €50 per contributing member</li>
+            <li><strong>Quarterly Payouts</strong>: When revenue is €15-€50 per member</li>
+            <li><strong>Held Payouts</strong>: When revenue falls below €15 per member (accumulated until next quarter)</li>
+        </ul>
+
+        <h4>New Member Integration:</h4>
+        <ul>
+            <li>New contributors included starting from the payout cycle after their contribution deadline</li>
+            <li>Existing members continue receiving their tier-based shares indefinitely</li>
+            <li>No retroactive payments for periods before contribution submission</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="managing-system">🎛️ Managing the System</h2>
+
+        <h3>💻 Central Management Hub: Custom Web Application</h3>
+        <p>The entire system is built around a purpose-designed web application that serves as the central hub for all revenue sharing operations. This offline-capable tool handles everything from team tracking to payout calculations, ensuring complete transparency and accuracy. It can even be used in any other revshare project too!</p>
+
+        <h4>Core Application Features:</h4>
+        <ul>
+            <li><strong>Team Database</strong>: Comprehensive member profiles including names, assigned tiers, contact information, join dates, payment preferences, and detailed contribution notes</li>
+            <li><strong>Automated Calculations</strong>: Real-time payout computation using all tier formulas and self-adjusting algorithms</li>
+            <li><strong>Payout History Logging</strong>: Complete transaction records with dates, amounts, team composition snapshots, and attached proof documentation</li>
+            <li><strong>Visual Timeline</strong>: Interactive payout history with hover details and milestone tracking</li>
+            <li><strong>Report Generation</strong>: Export capabilities for tax documentation, transparency reports, and team summaries</li>
+            <li><strong>Data Management</strong>: Import/export functionality for backups, sharing, and system migration</li>
+            <li><strong>Offline Operation</strong>: Full functionality without internet dependency or cloud storage requirements</li>
+        </ul>
+
+        <p>All data is saved into a 'team-project data file' that can be loaded back into the web app when changes need to be made or calculations/payout commits to timeline need to be done. It contains everything for team info, payout timeline info and project intro info.</p>
+
+        <h4>Technical Specifications:</h4>
+        <ul>
+            <li>Pure HTML/CSS/JavaScript implementation for maximum compatibility</li>
+            <li>Standalone operation with no external dependencies</li>
+            <li>Cross-platform support (desktop and mobile browsers)</li>
+            <li>Responsive design for all screen sizes</li>
+            <li>Secure local data storage with export capabilities</li>
+        </ul>
+
+        <h3>👑 Operational Workflow of the Project Leader</h3>
+        <h4>Day-to-Day Management:</h4>
+        <ol>
+            <li><strong>Contribution Review</strong>: Check through incoming contributions from team members below Main tier to consider their promotion</li>
+            <li><strong>Tier Management</strong>: Update member tiers based on project impact and contribution significance. Remember, promotions are final and eternal so only promote when earned</li>
+            <li><strong>Revenue Monitoring</strong>: Check platform earnings regularly and determine payout timing based on thresholds. Postpone payouts if earnings are too low to avoid crippling bank transfer fees</li>
+            <li><strong>Calculation Processing</strong>: Use the web app to compute exact share distributions per member for each payout cycle</li>
+            <li><strong>Payment Execution</strong>: Process transfers from the hub account to members and document all transactions with logs or screenshots</li>
+        </ol>
+
+        <h4>Payout Cycle Operations:</h4>
+        <ol>
+            <li><strong>Data Verification</strong>: Confirm current team composition and tier assignments in web application</li>
+            <li><strong>Revenue Input</strong>: Enter total available funds after platform cuts and transfer fees</li>
+            <li><strong>Calculation Review</strong>: Verify automated calculations and distribution breakdowns</li>
+            <li><strong>Payment Processing</strong>: Manually execute transfers to all eligible members using preferred payment methods</li>
+            <li><strong>Documentation</strong>: Log complete transaction details with proof screenshots</li>
+            <li><strong>Transparency Update</strong>: Ensure all contributing members have access to updated payout records and updated project-team file</li>
+        </ol>
+
+        <div class="warning-box">
+            <h4>Note on Payout Timing</h4>
+            <p>While payouts are monthly/quarterly, there is no rigid schedule or date because the project leader will have to manually process each payment individually, which takes time and requires careful attention to avoid errors. This is especially true once the number of members goes above 5 people. The extra scrutiny may mean delays of a day or two to ensure everything is correct before everyone gets their money as intended.</p>
+        </div>
+
+        <h3>🔍 Transparency & Accountability Framework</h3>
+        <h4>Multi-Level Access System:</h4>
+        <ul>
+            <li><strong>View-Only Access</strong>: All contributing tier members (Main, Assistant, Special Thanks) can access the complete team-project data file, but not fans since they're not getting paid</li>
+            <li><strong>Leader Management</strong>: Only project leader can modify team-project data, process payouts, and update records</li>
+            <li><strong>Complete Documentation</strong>: Every transaction includes timestamped screenshots of platform earnings and bank distributions</li>
+        </ul>
+
+        <h4>Verification Measures:</h4>
+        <ul>
+            <li><strong>Platform Proof</strong>: Screenshots/export logs from sales platforms showing gross revenue and platform cuts</li>
+            <li><strong>Distribution Evidence</strong>: Bank transfer confirmations, payment processor records, and transaction logs</li>
+            <li><strong>Calculation Transparency</strong>: Detailed breakdowns showing exactly how each member's share was determined via webapp</li>
+            <li><strong>Historical Tracking</strong>: Complete payout timeline with all team changes and payment amounts preserved via webapp</li>
+        </ul>
+
+        <h4>Data Security & Backup:</h4>
+        <ul>
+            <li><strong>Team-Project File</strong>: Main data file kept on project leader's local device offline with a view-only updated copy placed into a cloud drive or repository</li>
+            <li><strong>Backup Files</strong>: Project leader keeps multiple copies in private offline devices and private online file storages</li>
+            <li><strong>Privacy Protection</strong>: Transaction logs, screenshots and team-project file will not contain information about users beyond their alias/name, email address, team role, reward tier and date of last promotion. Sensitive personal information is scrubbed before placing into transparency folders.</li>
+        </ul>
+
+        <div class="warning-box">
+            <h4>Security Considerations</h4>
+            <p>There is a risk a careless or rogue team member may leak files to the general public. This could potentially lead to drama, envy, harassment (doxxing, pressuring, guilting, shaming, extortion) from bad actors. Project leaders should aim for a balance between transparency, trust and security, so that leaks won't ultimately cause damage to team members or put them in unnecessary danger. Vet new contributors carefully using your intuition to sense if they could be a problem before letting them inside the team.</p>
+        </div>
+
+        <h3>👑 Leadership Responsibilities & Decision Framework</h3>
+        <h4>Strategic Management:</h4>
+        <ul>
+            <li><strong>Contribution Evaluation</strong>: Assess new member work quality, project impact, and tier appropriateness using established criteria</li>
+            <li><strong>Tier Advancement</strong>: Promote members based on expanded contributions and increased project value</li>
+            <li><strong>Revenue Optimization</strong>: Manage platform relationships, pricing strategies, and release timing for maximum team benefit</li>
+            <li><strong>System Evolution</strong>: Adapt the system as team grows and project needs change</li>
+        </ul>
+
+        <h4>Operational Duties:</h4>
+        <ul>
+            <li><strong>Financial Management</strong>: Oversee hub account operations, transfer processing, and fee optimization</li>
+            <li><strong>Documentation Maintenance</strong>: Ensure all records are complete, accurate, safe and accessible to team members</li>
+            <li><strong>Communication</strong>: Provide regular updates on earnings, payouts, and system changes</li>
+            <li><strong>Dispute Resolution</strong>: Address any concerns about calculations, tier assignments, or payment issues through transparent discussion</li>
+        </ul>
+
+        <h4>Quality Assurance:</h4>
+        <ul>
+            <li><strong>Data Integrity</strong>: Regular verification of calculations and record accuracy</li>
+            <li><strong>Process Improvement</strong>: Continuously refine workflows based on team feedback and operational experience</li>
+            <li><strong>Compliance</strong>: Ensure all operations meet legal requirements and platform terms of service</li>
+        </ul>
+
+        <div class="warning-box">
+            <h4>Note</h4>
+            <p>This system outlines the general idea, but the details may change based on what obstacles are encountered during implementation.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="team-philosophy">🌟 Team Philosophy</h2>
+
+        <h3>💫 Working Style</h3>
+        <p>The system operates with these principles:</p>
+
+        <ul>
+            <li><strong>Remote freedom</strong>: Work independently, asynchronously, globally</li>
+            <li><strong>No corporate structure</strong>: No salaries, contracts, or monitoring</li>
+            <li><strong>Creative autonomy</strong>: Project leaders provide blueprints, team members choose implementation details</li>
+            <li><strong>Trust-based</strong>: No micromanagement or artificial deadlines</li>
+            <li><strong>Human-paced</strong>: Fast, smart, sustainable, with room for life balance and taking time off</li>
+            <li><strong>Celebration culture</strong>: Recognize good work and support each other</li>
+        </ul>
+
+        <p><em>See "Teamwork Style" document for full details</em></p>
+
+        <h3>📜 Intellectual Property Approach</h3>
+        <p>Following an open IP policy:</p>
+        <ul>
+            <li><strong>No ownership battles</strong>: Game itself as a whole will be MIT licensed, while assets/writing are either CC0 (non-unique general purpose stuff) or CC-BY 4.0 (unique pieces for assets/content), credit belonging to the artist that made them, whom can resell their stuff as asset packs/albums/ebooks by themselves, use/reuse them anywhere they want, but not restrict their use for the base game project or spin-off games that any paid tier member might venture off to make. In other words, the team gets credit for the project, individual artists get credit for the parts they worked on, but no one person owns the IP nor restricts what its assets can be used for.</li>
+            <li><strong>Fork-friendly</strong>: Team members can create spin-offs with different title/brand, differentiated from the base project</li>
+            <li><strong>Piracy cooperation</strong>: Work with pirates rather than fight them. Focus on value, build a community through trust instead of trying to assert arbitrary legal control</li>
+        </ul>
+
+        <h3>⚠️ Bad Actors & Tier Loss</h3>
+        <p>Generally it should never come to this, but if someone clearly tries to sabotage the project, harm members or do something really bad/illegal/evil that cannot be reconciled, then they <strong>will be removed from all future payouts and added to a blacklist</strong>.</p>
+
+        <p>To be clear, it's fine to be odd/quirky/strange/weird or to be slow/lazy/incompetent/unskilled/busy/overwhelmed - no one is expected to be superhuman; team members are expected to be culturally earnest, be kind to others and keep improving their skills. You're welcome to be a maverick, a freelancer, to have different preferences/tastes, to work with another team or company, to simultaneously work on anything you personally want besides the project. There are no restrictions on that and no judgement, even if it competes against the game. Branching and mutations are fine and cool, not viewed as sabotage per se.</p>
+
+        <p>An example of actual evil sabotage is to contaminate code with malware, intentionally introduce defects or bugs with intent to break or weaken it, inject illegal content that will get the team banned off stores/platforms, do smear campaigns or harass/endanger members, to actively screw over the team with lies, manipulation or deception.</p>
+
+        <p>That kind of behavior will rapidly get the culprit onto the blacklist and any earned tiers revoked and all future payments permanently stopped. It will be difficult to regain trust afterwards, even potentially impossible to reconcile once that line is crossed. Stay honest and keep the water well clean for everyone's sake.</p>
+
+        <hr>
+
+        <h2 id="platform-strategy">🚀 Platform Strategy</h2>
+
+        <h3>Phase 1 - Initial Launch</h3>
+        <p>Start on platforms that support individual creators without requiring a registered business entity. This includes Itch.io, Ko-fi, Patreon, BuyMeACoffee and similar services that allow flexible distribution and payment as an individual.</p>
+
+        <h3>Phase 2 - Major Platforms</h3>
+        <p>Once the project generates stable income and it's safe to register as self-employed or establish a business entity, expand to major storefronts. This includes Steam, GOG, and other established digital distribution platforms. Sales from Phase 1 will also cover fees like Steam's $100 entry fee, business registration costs and other similar fees or requirements on other stores/platforms, such as consoles or mobile if the game is ever ported.</p>
+
+        <p>Those costs will be deducted from the hub account money pool after platform cuts/transfer fees but before the reward split between members. By rough estimate, annual earnings for main tier members would need to reach €10k annually per person before a Phase 2 can be done.</p>
+
+        <p>This approach is necessary due to various bureaucratic challenges. See the separate explanation document for more details and alternative ideas that could possibly accelerate transitions to Phase 2 sooner.</p>
+
+        <h3>🌍 Geographic Considerations</h3>
+        <ul>
+            <li><strong>Project leader location</strong>: May vary by team</li>
+            <li><strong>Currency</strong>: Accept USD/EUR/OTHER conversion losses as cost of doing business</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="faq">❓ FAQ</h2>
+
+        <h4>Q: What happens if I join the team later?</h4>
+        <p><strong>A:</strong> You'll be included in payouts starting from the cycle after your contribution is submitted and evaluated. You won't receive retroactive payments for earlier cycles.</p>
+
+        <h4>Q: Can my tier change over time?</h4>
+        <p><strong>A:</strong> Promotions can happen when you significantly increase your impact on the project. However, <strong>demotions do not exist</strong> - once you earn a tier based on your past contributions, you keep receiving that tier's payout forever. This system rewards historical achievements rather than ongoing performance.</p>
+
+        <h4>Q: What if the game never makes money?</h4>
+        <p><strong>A:</strong> No money means no payouts, but you'll still get credit in the game. The system only activates when there's actual revenue to share.</p>
+
+        <h4>Q: How are tier decisions made?</h4>
+        <p><strong>A:</strong> The project leader evaluates based on contribution significance, project impact, and essentiality. It's a mix of measurable metrics (features added, content created) and intangible benefits (problem-solving, team support).</p>
+
+        <h4>Q: What about taxes?</h4>
+        <p><strong>A:</strong> Each team member is responsible for reporting their share as income in their local jurisdiction. The project leader doesn't provide tax advice, they just send the money.</p>
+
+        <p>For example, in Finland, the project leader would take a receipt for money received from the hub account, then report it to the local tax authority as 'individual income', similar to selling old items at a flea market or doing a favor for a friend. It would not classify as salary or royalty. Each country has different requirements, so consult local tax authorities for proper procedures.</p>
+
+        <h4>Q: Can I work on other projects?</h4>
+        <p><strong>A:</strong> Absolutely! No exclusivity requirements. You can even work on competing projects - this system is about collaboration, not control.</p>
+
+        <h4>Q: What if there's a dispute?</h4>
+        <p><strong>A:</strong> The system is designed for transparency to prevent disputes. If issues arise, address them through open discussion and review.</p>
+
+        <h4>Q: Why not just split everything equally?</h4>
+        <p><strong>A:</strong> Equal splits don't account for different contribution levels. Some people contribute more essential work; others provide valuable but smaller additions. This system rewards both fairly.</p>
+
+        <h4>Q: What about transfer fees?</h4>
+        <p><strong>A:</strong> They're subtracted from individual payouts. The threshold system minimizes their impact by ensuring transfers only happen when amounts are substantial enough.</p>
+
+        <h4>Q: Can I see the calculation details?</h4>
+        <p><strong>A:</strong> Yes! The web app shows complete breakdowns of how every amount is calculated, and all team members get read-only access to the team-project data file.</p>
+
+        <h4>Q: What happens if team members leave?</h4>
+        <p><strong>A:</strong> If members leave amicably, they continue receiving their tier's payout from all future revenue cycles, forever. This ensures people aren't penalized for life changes or new opportunities. They're sort of like royalties, but not official and without a contract since teams are just a group of individuals operating under honor and trust. Ultimately, it's the contribution and impact on the project that mattered, not how long you worked or if you stopped working after already contributing notably to the project.</p>
+
+        <h4>Q: What happens if a team member dies?</h4>
+        <p><strong>A:</strong> If the project leader gets a legitimate confirmation, earnings will be rerouted to next of kin. If there's literally no one to receive the money and it bounces back, they will be removed from the list of future payouts and their last share will be recycled into the next payout.</p>
+
+        <h4>Q: What if the project leader disappears/quits/dies?</h4>
+        <p><strong>A:</strong> If the project leader becomes unavailable long-term, the project effectively dies as is. Another street-smart team member with good moral character would need to become the project leader and assume all responsibilities, including setting up their own cloud folders, doing all the accounting and transparency work, and communicating with the team clearly and timely.</p>
+
+        <p>Thankfully, this revenue share system is easy to pick up and use by anyone who can read a manual. Make sure to pick up all the extra documents and the web app too; they're all openly available so you get both the guide, the tools, the mentality, and the whole infrastructure to set up your own zero-budget revshare project.</p>
+
+        <div class="warning-box">
+            <h4>Important Warning About Bad Members/Leaders</h4>
+            <p>Stay sharp, some people may want to scam/manipulate you if you're not careful or too naive; you'll automatically be a target if you handle any kind of money or command any kind of power. Be very careful who you accept into the team and how you deal with them.</p>
+
+            <p>Read up on "narcissistic personality disorder" to detect bad actors early on and read up on "nonviolent communication" by Marshall Rosenberg to know how to communicate safely and respectfully with others, how to motivate a team, while remaining firm against BS, to remain mentally strong and be self-compassionate when things get tough. Another excellent resource is TheraminTrees on YouTube for advanced manipulation threat detection and healing from it if you've been abused before.</p>
+
+            <p>Likewise the same advice of caution applies to team members looking to find a project leader to follow; if you notice a team leader has traits of NPD, throws a temper tantrum rather often when even slightly challenged, presents strange inappropriate requests, or is somehow shifty/toxic/too nice/oddly charismatic, then trust your instincts and do not join nor engage that project, it may be a bad trap. Of course, try to verify your worries before jumping to conclusions, but usually your body may be able to subtly sense something is wrong before you consciously realize it.</p>
+
+            <p>Stay safe out there and never lose your heart despite it all.</p>
+        </div>
+
+        <h4>Q: What about very low revenue periods?</h4>
+        <p><strong>A:</strong> If earnings aren't enough money to justify transfer fees, keep working until they are, or accept that the project didn't succeed financially. Funds accumulate until they reach minimum payout thresholds.</p>
+
+        <hr>
+
+        <div class="highlight-box">
+            <p><em>This system was designed to ensure fair, transparent, and sustainable revenue sharing for creative teams. It prioritizes simplicity, trust, and mutual benefit over complex legal structures.</em></p>
+            <p><strong>Last Updated:</strong> November 2025<br>
+            <strong>Version:</strong> 3.0</p>
+        </div>
+
+        <a href="../index.html" class="back-button" style="margin-top: 40px;">← Back to App</a>
+    </div>
+</body>
+</html>

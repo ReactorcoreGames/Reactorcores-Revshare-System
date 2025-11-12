@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiting Team Members Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a2520 0%, #1a1816 50%, #2d2420 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(42, 37, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(218, 196, 160, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 184, 150, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #dac4a0 0%, #d4b896 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 184, 150, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dac4a0;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(218, 196, 160, 0.3);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4b896;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #dac4a0;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d4b896;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 118, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .highlight-box {
+            background: rgba(201, 168, 118, 0.1);
+            border-left: 4px solid #c9a876;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background: rgba(212, 184, 150, 0.08);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: rgba(26, 24, 22, 0.8);
+            border: 1px solid rgba(201, 168, 118, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #e8e8e8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            background: rgba(26, 24, 22, 0.6);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #dac4a0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            body {
+                padding: 20px 15px;
+            }
+
+            pre {
+                padding: 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to App</a>
+
+        <h1>Recruiting Team Members Template</h1>
+
+        <p>This template helps you attract contributors to your revshare project at different stages. Whether you're looking for your first coder or expanding an established team, you'll find guidance and copy-paste templates for posting on platforms like <strong>r/INAT</strong> (I Need A Team), <strong>r/gameDevClassifieds</strong>, indie dev forums, Discord servers, and similar communities.</p>
+
+        <div class="highlight-box">
+            <p><strong>Two-Stage Approach:</strong> First, you recruit a coder to build a working prototype. Once you have something tangible and playable, you can then recruit additional specialists (artists, musicians, writers, etc.) to join your functioning team.</p>
+        </div>
+
+        <hr>
+
+        <div class="toc">
+            <h2>📋 Table of Contents</h2>
+            <ol>
+                <li><a href="#stage1-prerequisites">Stage 1: Before You Recruit Your First Coder</a></li>
+                <li><a href="#template1">Template 1: Finding Your First Coder</a></li>
+                <li><a href="#stage2-prerequisites">Stage 2: Before You Expand Your Team</a></li>
+                <li><a href="#template2">Template 2: Recruiting Additional Team Members</a></li>
+                <li><a href="#where-to-post">Where to Post These Templates</a></li>
+                <li><a href="#conversion-prompts">Conversion Prompts for Other Formats</a></li>
+                <li><a href="#tips">Tips for Successful Recruiting</a></li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h2 id="stage1-prerequisites">🎯 Stage 1: Before You Recruit Your First Coder</h2>
+
+        <p>Before you post your recruitment notice looking for a coder, you should have something concrete to show. This isn't about being "professional" — it's about being <em>complete enough</em> to give potential teammates a clear sense of what you're asking them to build.</p>
+
+        <h3>What You Should Have:</h3>
+        <ul>
+            <li><strong>A game design showcase or pitch</strong> that communicates your project idea clearly. This could be:
+                <ul>
+                    <li>An HTML page with images and explanations</li>
+                    <li>A video, animation, or slideshow walkthrough of the concept</li>
+                    <li>An audio narration explaining the design by voice</li>
+                    <li>An interactive mockup/demo showing the flow (even if it's not a real prototype)</li>
+                    <li>A comprehensive pitch PDF with art, mockups, and detailed descriptions</li>
+                    <li>Any combination of the above</li>
+                </ul>
+            </li>
+            <li><strong>The showcase/pitch itself IS your evidence</strong> — it demonstrates your skills, your vision, and your commitment to the project</li>
+            <li><strong>Clarity over polish</strong> — what matters is that someone can look at your showcase and understand what you want to create</li>
+        </ul>
+
+        <h3>What NOT to Do:</h3>
+        <ul>
+            <li>Post with just text describing a vague idea in your head that hasn't been fleshed out</li>
+            <li>Recruit without a tangible pitch to show a properly designed framework</li>
+            <li>Be vague about what you're offering or what you bring to the table that the coder wont have to deal with</li>
+            <li>Expect someone to code your game without an actual well-written and well-thoughout plan</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>Why this matters:</strong> Coders get dozens of "idea guy" posts. By having a real showcase — something visual, tangible, thought-out — you immediately stand out as someone who's serious and has actually done the work to design something worth building.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="template1">📝 Template 1: Finding Your First Coder</h2>
+
+        <p>This template is written in first person, as if you're speaking directly to potential teammates. Customize it with your details, keep the authentic tone, and post it where you're recruiting.</p>
+
+        <div class="highlight-box">
+            <p><strong>Revenue Split:</strong> For the initial team of project leader + coder, a simple <strong>50/50 split</strong> is recommended. If the team expands later, refer to the full tiered revshare system.</p>
+        </div>
+
+        <pre><code>[RevShare] Looking for a coder to team up with for [your project type]. I'm handling everything else.
+
+--
+
+## About Me
+[Intro:] Hello, I'm [Your Name/Alias], a [brief description of yourself] from [location].
+
+If you're a coder (or an AI-assisted coder), we could team up to create [platform] games with the intent to release them on [platforms like Itch, Steam, GoG, etc.]. Depending on the game we work on, it could be monetized as [paid game, free with DLC, donations, etc.].
+
+## The Project
+[Describe your project concept here. What makes it interesting? What's the core gameplay or purpose? What need does it fulfill? Be specific but concise.]
+[If you have multiple project options, mention that and explain how the coder can choose which one to work on.]
+
+[IMPORTANT: Link to your game design showcase here — your portfolio site, video walkthrough, PDF doc, interactive mockup, etc.]
+
+## How This Works
+You'll handle the coding (by hand or using AI tools, both are cool), while I handle art, sound, writing, marketing, publishing, guidance, and design. The revenue split will be <strong>50/50</strong> between us.
+
+More people than just us are welcome. If we later bring on additional members (artists, musicians, writers, sound designers, etc.), they'll be included in the revenue share using a tiered system based on contribution impact for the project. Everyone participating will be credited like a rockstar in a manner that includes:
+- Username/alias or real name (or both)
+- Avatar picture (any kind)
+- Up to 3 links/socials
+- A 1-2 paragraph comment/description: what you worked on in the project, plus anything else you want to freely say, developer commentary, etc.
+
+Links would be actual clickable links in-game that will open a web browser. The credits page will work more like a gallery/hall of fame rather than a traditional scrolling credits screen.
+
+## Communication & Workflow
+Ideally we'd work using online chat ([Discord/Telegram/Slack/etc.]) and some project management tool ([Trello/GitHub Projects/etc.]) that keeps us clear on the roadmap to milestones. We'll also have a [GitHub repo/Google Drive/shared folder/etc.] as a central hub for all materials related to the project — whenever you or I need to check on how something should be set up, what design decisions were made, or where to put and get assets, that'd be the place.
+
+This allows us to work independently, collaboratively, without timezone conflicts, globally — all in a clear and organized way. I'll take responsibility for managing this, doing my best to facilitate your work without bothering you or leaving you unclear on what to do next.
+
+There would be no deadlines. I trust the project will be developed as rapidly as it can be because we're both eager for it to succeed as soon as possible, but if something needs to be done right, then it will get the time to do it right. I trust you'll know when to step back and go for an easier/simpler approach if something becomes too hard or costly. I also trust that both of us have actual lives and real-world responsibilities, which will always take higher priority than the project.
+
+## How to Get Started
+1. Check out my game design showcase: [LINK]
+2. [If offering choices: Pick ONE project you'd want to work on]
+3. Contact me at [your email/Discord/preferred contact method]. Tell me about your skill level, [what project you want to work on if applicable], and why. Or ask questions.
+
+Thanks!
+- [Your Name]</code></pre>
+
+        <hr>
+
+        <h2 id="stage2-prerequisites">🎯 Stage 2: Before You Expand Your Team</h2>
+
+        <p>Once you and your coder have built a working prototype, you might want to bring in additional talent — artists, musicians, writers, sound designers, marketers, etc. But before you recruit these specialists, make sure you have the fundamentals in place.</p>
+
+        <h3>What You Should Have:</h3>
+        <ul>
+            <li><strong>A working barebones prototype</strong> with placeholder assets — something that actually runs and demonstrates the core mechanics</li>
+            <li><strong>Screenshots and/or video</strong> showing what you've built so far</li>
+            <li><strong>A playable demo</strong> (even if rough) that people can try</li>
+            <li><strong>Documentation:</strong> The original game design docs plus new docs created during development</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>Why this matters:</strong> Artists, musicians, and other specialists need to see that your project is real, functional, and that the core team can execute. A working prototype proves you're not just talking — you're building. Screenshots + playable demo = proof of skill, communication, progress, and partnership success.</p>
+        </div>
+
+        <h3>What NOT to Do:</h3>
+        <ul>
+            <li>Expand the team before you have a working prototype</li>
+            <li>Promise features or scope that don't exist yet</li>
+            <li>Recruit people when you're still figuring out if the core concept works</li>
+        </ul>
+
+        <div class="info-box">
+            <p><strong>Gentle reminder:</strong> It's tempting to bring on an artist early because you're excited about the project. But without a working prototype, you're asking them to invest time in something that might not pan out. Wait until you have something solid, then recruit with confidence.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="template2">📝 Template 2: Recruiting Additional Team Members</h2>
+
+        <p>This template is for when your project already has a working prototype and you're looking to bring on specialists. It's written in first person to show momentum and authenticity.</p>
+
+        <div class="highlight-box">
+            <p><strong>Revenue Split:</strong> With additional team members, you'll use the tiered revshare system which fairly compensates people based on their contribution level and project impact. Main contributors (like the original coder and project leader) remain in the Main Tier with full shares, while new members are assigned to tiers based on their role and contribution.</p>
+        </div>
+
+        <pre><code>[RevShare] [Project Name] is looking for [describe what you need, not a role title] — we have a working prototype and active development.
+
+--
+
+## About the Project
+Hello, I'm [Your Name], the project leader for [Project Name]. We're building [brief description of the game/project] for [platforms].
+
+We currently have a working prototype with [describe what's implemented — core mechanics, basic systems, etc.]. You can see it in action here:
+- Screenshots: [LINK]
+- Video: [LINK]
+- Playable demo: [LINK if available]
+
+[Optionally: Link to original design docs and development docs]
+
+## What We're Looking For
+Right now, we need help with [describe the problem/need rather than just a role title. Examples below]:
+
+<strong>Examples of how to describe what you need:</strong>
+- "Creating character sprites and environmental art in a [pixel art/hand-drawn/3D] style"
+- "Composing atmospheric music tracks that fit [genre/mood]"
+- "Writing dialogue and narrative content for [number] characters and story beats"
+- "Designing and implementing sound effects for [game actions/environments]"
+- "Building and managing our social media presence and community engagement"
+- "Creating 3D models and animations for [characters/environments/props]"
+
+[Describe specifically what this person would be working on, what assets or content they'd create, what problems they'd solve. Be as concrete as possible.]
+
+## How This Works
+Our team currently consists of [list current team members and their roles — e.g., "myself as project leader/designer/artist, and our coder who built the prototype"]. We work using [tools: Discord, Trello, GitHub, etc.] in an async, remote, no-deadlines environment.
+
+Revenue sharing is handled through a tiered system that compensates people fairly based on their contribution level and impact on the project. You'd be evaluated for an appropriate tier (Main, Assistant, or Special Thanks) based on the scope and significance of your work. All contributing members receive lifetime payouts from revenue.
+
+Everyone participating will be credited on a special in-game page that includes:
+- Username/alias or real name (or both)
+- Avatar picture (any kind)
+- Up to 3 links/socials
+- A 1-2 paragraph comment/description: what you worked on in the project, plus anything else you want to freely say, developer commentary, etc.
+
+Links would be actual clickable links in-game that will open a web browser. The credits page works like a gallery/hall of fame showcasing each member like a rockstar.
+
+## Our Workflow
+We work independently, collaboratively, globally, without timezone conflicts. You'd have access to all project materials ([repo/drive/hub]) and clear guidance on what's needed. I handle project management and make sure you have everything you need to do your work without confusion.
+
+There are no deadlines. We trust that the project develops as rapidly as it can because we're all eager for success, but we prioritize doing things right over doing things fast. We also understand that real life comes first.
+
+## How to Get Started
+1. Check out our prototype: [LINKS to screenshots/video/demo]
+2. If this interests you, contact me at [email/Discord/preferred contact]. Tell me about your experience, show me examples of your work, and let me know why this project appeals to you.
+
+Thanks!
+- [Your Name]</code></pre>
+
+        <hr>
+
+        <h2 id="where-to-post">🌍 Where to Post These Templates</h2>
+
+        <p>Here are recommended platforms for recruiting revshare team members:</p>
+
+        <div class="info-box">
+            <h3>Reddit</h3>
+            <ul>
+                <li><strong>r/INAT</strong> — "I Need A Team" - dedicated to game dev recruiting</li>
+                <li><strong>r/gameDevClassifieds</strong> — job postings and team formation</li>
+                <li><strong>r/IndieGaming</strong> — check their rules about recruitment posts</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Forums & Communities</h3>
+            <ul>
+                <li><strong>TIGSource Forums</strong> — active indie dev community</li>
+                <li><strong>IndieDB</strong> — has recruitment sections</li>
+                <li><strong>GameDev.net Forums</strong> — classifieds section</li>
+                <li><strong>Unity/Unreal/Godot Forums</strong> — depending on your engine</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Discord Servers</h3>
+            <ul>
+                <li><strong>IGDA Discord</strong> — International Game Developers Association</li>
+                <li><strong>Indie Game Developers Discord</strong></li>
+                <li><strong>GameDev League Discord</strong></li>
+                <li><strong>Engine-specific Discord servers</strong> (Unity, Unreal, Godot, etc.)</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="conversion-prompts">🔄 Conversion Prompts for Other Formats</h2>
+
+        <p>Use these AI prompts to adapt the templates for different platforms:</p>
+
+        <div class="info-box">
+            <h3>Convert to HTML (for forums that support HTML)</h3>
+            <pre><code>Convert the following Markdown recruitment post to clean HTML format suitable for forum posting. Use basic HTML tags like &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;strong&gt;, and &lt;em&gt;. Keep styling minimal and compatible with forum restrictions.
+
+[Paste your customized template here]</code></pre>
+        </div>
+
+        <div class="info-box">
+            <h3>Convert to BBCode (for traditional forums)</h3>
+            <pre><code>Convert the following Markdown recruitment post to BBCode format for traditional forum posting. Use tags like [b], [i], [u], [list], [*], [url], [size], and [color]. Keep it readable and well-formatted.
+
+[Paste your customized template here]</code></pre>
+        </div>
+
+        <div class="info-box">
+            <h3>Convert to Rich Text / Plain Text with Formatting</h3>
+            <pre><code>Convert the following Markdown recruitment post to plain text with simple formatting using spacing, dashes, asterisks, and line breaks for visual hierarchy. Make it readable without any markup syntax.
+
+[Paste your customized template here]</code></pre>
+        </div>
+
+        <div class="info-box">
+            <h3>Shorten for Social Media</h3>
+            <pre><code>Condense the following recruitment post into a concise social media post (under 280 characters) while preserving the key information: role needed, project type, compensation structure, and contact method.
+
+[Paste your customized template here]</code></pre>
+        </div>
+
+        <hr>
+
+        <h2 id="tips">💡 Tips for Successful Recruiting</h2>
+
+        <ul>
+            <li><strong>Be specific:</strong> Clearly state what you need and what you're offering in return</li>
+            <li><strong>Show your work:</strong> Always link to your showcase, prototype, screenshots, or demos</li>
+            <li><strong>Be honest:</strong> Don't oversell the project or make promises you can't keep</li>
+            <li><strong>Respect people's time:</strong> Make your post easy to skim with clear sections and formatting</li>
+            <li><strong>Be transparent about AI use:</strong> Many developers appreciate knowing if AI tools are welcomed</li>
+            <li><strong>Set clear expectations:</strong> Be upfront about revenue sharing, workflow, and time commitment (or lack of deadlines)</li>
+            <li><strong>Follow up promptly:</strong> When people reach out, respond quickly and respectfully</li>
+            <li><strong>Show personality:</strong> Let your authentic voice come through — people join teams, not job postings</li>
+        </ul>
+
+        <h3>Common Pitfalls to Avoid</h3>
+        <ul>
+            <li><strong>The "idea guy" trap:</strong> Don't recruit without having done significant design work yourself. Show what you've already created.</li>
+            <li><strong>Premature expansion:</strong> Don't recruit artists, musicians, or writers before you have a working prototype. Wait until you have something real to show.</li>
+            <li><strong>Vague descriptions:</strong> Instead of "looking for an artist," say "looking for someone to create 2D art for characters in a side-view game."</li>
+            <li><strong>Overpromising:</strong> Don't promise revenue, success, or features you can't guarantee. Be realistic and honest.</li>
+            <li><strong>Ignoring the showcase:</strong> Your game design showcase or working prototype is your credibility. Without it, your post looks like everyone else's.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3>Remember</h3>
+            <p>Good team members are attracted to projects that show genuine effort, clear vision, and respectful collaboration. Your recruitment post is your first impression — make it count by being honest, showing your work, and treating potential teammates as creative partners, not just hired hands.</p>
+        </div>
+
+        <a href="../index.html" class="back-button" style="margin-top: 40px;">← Back to App</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Possible Business Models for Releasing a Game Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a2520 0%, #1a1816 50%, #2d2420 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(42, 37, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(218, 196, 160, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 184, 150, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #dac4a0 0%, #d4b896 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 184, 150, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dac4a0;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(218, 196, 160, 0.3);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4b896;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #dac4a0;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d4b896;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 118, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .highlight-box {
+            background: rgba(201, 168, 118, 0.1);
+            border-left: 4px solid #c9a876;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .model-box {
+            background: rgba(212, 184, 150, 0.08);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .model-box h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .pros, .cons {
+            background: rgba(26, 24, 22, 0.4);
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .pros h4, .cons h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #dac4a0;
+        }
+
+        .pros h4 {
+            color: #a8d4a8;
+        }
+
+        .cons h4 {
+            color: #d4a8a8;
+        }
+
+        .example {
+            font-style: italic;
+            color: #c9a876;
+            margin-top: 10px;
+        }
+
+        blockquote {
+            background: rgba(201, 168, 118, 0.15);
+            border-left: 4px solid #d4b896;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #dac4a0;
+        }
+
+        .highlight-box a {
+            transition: all 0.2s ease;
+        }
+
+        .highlight-box a:hover {
+            color: #fff !important;
+            text-decoration: underline !important;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            body {
+                padding: 20px 15px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to App</a>
+
+        <h1>Possible Business Models for Releasing a Game Project</h1>
+
+        <p>In 1993, id Software did something audacious: they gave away the entire first episode of DOOM—not a time-limited demo, not a crippled version, but a complete, polished, standalone experience that left players hungry for more. This wasn't charity; it was brilliant business. Players got genuine value for free, and when they reached that cliffhanger ending, the path to purchasing the full game felt natural, not coercive.</p>
+
+        <p>This principle—<strong>give something valuable for free, then invite people to pay for more</strong>—remains the foundation of ethical, sustainable game monetization. The models below explore various ways to implement this philosophy in 2025, from traditional premium releases to living games with ongoing support.</p>
+
+        <div class="highlight-box">
+            <p><strong>Guiding Principles:</strong> Every model here balances two goals: providing genuine value to players (free or paid) and creating sustainable revenue for your team. There are no dark patterns, no exploitation, no "hope and pray" strategies—just honest approaches that respect both your players and your revenue-sharing partners.</p>
+        </div>
+
+        <p><strong>Context:</strong> This document supports teams using revenue-sharing systems to collaboratively develop games. Your business model affects how revenue flows through your team, when payouts happen, and how sustainable the project becomes. Choose thoughtfully.</p>
+
+        <hr>
+
+        <h2>📋 Table of Contents</h2>
+
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">Viable Business Models</h3>
+            <ol style="margin-left: 20px;">
+                <li><a href="#shareware" style="color: #dac4a0; text-decoration: none;">Classic Shareware Revival</a> — Give a complete episode free, sell the rest</li>
+                <li><a href="#premium" style="color: #dac4a0; text-decoration: none;">Premium "Pay Upfront" Model</a> — Traditional buy-once, own forever</li>
+                <li><a href="#flexible-pricing" style="color: #dac4a0; text-decoration: none;">Flexible Pricing Model</a> — Minimum price + "pay more if you want"</li>
+                <li><a href="#episodic" style="color: #dac4a0; text-decoration: none;">Episodic Release Model</a> — Sell each chapter separately over time</li>
+                <li><a href="#free-dlc" style="color: #dac4a0; text-decoration: none;">Free Base Game + Paid Expansions/DLC</a> — Generous core, monetize additional content</li>
+                <li><a href="#demo" style="color: #dac4a0; text-decoration: none;">Demo + Seamless Full Game Upgrade</a> — Try before you buy, keep your progress</li>
+                <li><a href="#ugc" style="color: #dac4a0; text-decoration: none;">User-Generated Content Marketplace</a> — Platform model with revenue-sharing mods</li>
+                <li><a href="#early-access" style="color: #dac4a0; text-decoration: none;">Early Access / Living Development</a> — Buy now, build together, grow over time</li>
+                <li><a href="#f2p-cosmetics" style="color: #dac4a0; text-decoration: none;">Free-to-Play + Ethical Cosmetics Only</a> — Monetize self-expression, not power</li>
+                <li><a href="#patreon" style="color: #dac4a0; text-decoration: none;">Ongoing Supporter Tiers (Patreon Model)</a> — Subscription-based community support</li>
+                <li><a href="#open-source" style="color: #dac4a0; text-decoration: none;">Open Source + Premium Services</a> — Free code, paid convenience & support</li>
+            </ol>
+
+            <h3 style="margin-top: 20px;">Models to Avoid</h3>
+            <ul style="margin-left: 20px; list-style-type: none;">
+                <li><a href="#avoid" style="color: #d4a8a8; text-decoration: none;">⚠️ Unsustainable Approaches</a> — Pure donations, $0 PWYW, crypto gimmicks, etc.</li>
+            </ul>
+
+            <p style="margin-top: 20px; margin-bottom: 0;"><a href="#final-thoughts" style="color: #c9a876; text-decoration: none; font-weight: 600;">📌 Final Thoughts: Choosing Your Path</a></p>
+        </div>
+
+        <hr>
+
+        <div class="model-box" id="shareware">
+            <h2>🕹️ Classic Shareware Revival</h2>
+            <h3>Give a Complete Episode Free, Sell the Rest</h3>
+
+            <p><strong>How It Works:</strong> Release the first episode, chapter, or act as a complete, standalone experience at no cost. This isn't a demo—it's a fully polished slice of your game with a beginning, middle, and end (albeit with a cliffhanger or taste of what's to come). The full version contains additional episodes/chapters that expand the story, mechanics, or world.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Linear or semi-linear narrative games (story-driven FPS, adventure games, visual novels)</li>
+                <li>Episodic content that can be naturally divided (retro shooters, platformers)</li>
+                <li>Games with strong hooks that leave players wanting more</li>
+                <li>Projects with clear content boundaries (Episode 1 vs Episodes 2-4)</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Generous first impression:</strong> Players receive genuine value, not a time-limited or feature-crippled demo. This builds trust and goodwill.</li>
+                        <li><strong>Viral potential:</strong> A free, quality episode spreads naturally through word-of-mouth, forums, and content creators.</li>
+                        <li><strong>Low friction:</strong> No account required, no DRM hassles—just download and play.</li>
+                        <li><strong>Natural conversion:</strong> If players love the free episode, buying the full game feels like a no-brainer rather than a gamble.</li>
+                        <li><strong>Proven model:</strong> This strategy built id Software's empire and remains effective decades later.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>Significant free investment:</strong> You're giving away 25-33% of your game's content with no guaranteed return.</li>
+                        <li><strong>Conversion dependency:</strong> Revenue depends entirely on convincing free players to purchase the full version.</li>
+                        <li><strong>Content structure requirements:</strong> Your game must naturally divide into discrete episodes or chapters, which may constrain design.</li>
+                        <li><strong>Completion rate matters:</strong> If players don't finish the free episode, they won't be motivated to buy more.</li>
+                        <li><strong>Risk of piracy:</strong> The full version may be pirated, though the free episode mitigates this somewhat by building loyalty.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> PC (Steam, GOG, itch.io, your own site), Web (for browser-friendly games), Consoles (if platform holders allow free content), Mobile (though mobile marketplaces prefer different models).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>The key to this model's success is the quality and completeness of your free episode. It must stand alone as a satisfying experience while simultaneously making players hungry for more. Think of it like a pilot episode for a TV series—if the pilot is mediocre, viewers won't return for season one.</p>
+
+            <p>This model pairs beautifully with grassroots marketing. Players who love your free episode become evangelists, sharing it with friends and communities. The free episode acts as your marketing budget—you're trading content for attention and trust.</p>
+
+            <p>Consider the psychology: when a player invests hours into your free episode and falls in love with it, purchasing the full version feels like supporting something they already value rather than taking a risk on an unknown product. This emotional investment is powerful.</p>
+
+            <p>From a rev-share perspective, the free episode generates no direct revenue but dramatically increases the total addressable audience. Team members must understand this is a long-game strategy where early content serves as marketing that pays off through full-version sales.</p>
+
+            <p class="example"><strong>Examples:</strong> DOOM (1993) — the gold standard; Quake Shareware; Wolfenstein 3D; modern revivals like Ion Fury and DUSK offered substantial free content; Spelunky Classic (free) led to Spelunky HD/2 (paid).</p>
+        </div>
+
+        <div class="model-box" id="premium">
+            <h2>💰 Premium "Pay Upfront" Model</h2>
+            <h3>Traditional Buy-Once, Own Forever</h3>
+
+            <p><strong>How It Works:</strong> The classic model—set a fixed price (e.g., $15-30) and players purchase the complete game upfront. No subscriptions, no microtransactions, no ongoing costs. What you buy is what you get, with potential for optional expansions/DLC later.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Complete, polished games with clear scope (puzzle games, strategy games, narrative experiences)</li>
+                <li>Premium indie titles competing on quality, not price</li>
+                <li>Games targeting players who prefer ownership over subscriptions</li>
+                <li>Projects where the team wants a clean revenue split without ongoing monetization complexity</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Simple and clean:</strong> One price, one purchase, done. Players know exactly what they're getting.</li>
+                        <li><strong>Player trust:</strong> No psychological manipulation, no "games as a service" pressure. Builds respect with your audience.</li>
+                        <li><strong>Revenue clarity:</strong> Every sale generates immediate, predictable income for rev-share calculations.</li>
+                        <li><strong>Sustainable perception:</strong> Players understand they're paying for a finished product, not funding ongoing development.</li>
+                        <li><strong>Works everywhere:</strong> Compatible with all major platforms (Steam, GOG, Epic, consoles).</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>High barrier to entry:</strong> Asking for money upfront requires strong marketing, reviews, or demo to convince players.</li>
+                        <li><strong>Visibility challenge:</strong> Competing with thousands of other premium games; hard to stand out without proven brand or marketing budget.</li>
+                        <li><strong>One-time revenue:</strong> Each player pays once. No recurring income unless you release DLC or expansions.</li>
+                        <li><strong>Price pressure:</strong> Players increasingly expect sales/discounts, which can devalue your game over time.</li>
+                        <li><strong>Must be complete:</strong> Releasing an unfinished premium game destroys trust. Early Access can mitigate this (see separate model).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> PC (Steam, GOG, Epic, itch.io), Consoles (Nintendo Switch, PlayStation, Xbox), Mobile (as a premium app, though less common), Web (less common due to payment friction).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>This model is straightforward but unforgiving. Your game must justify its asking price through quality, content, or unique experience. A $20 game competing against hundreds of others at the same price needs a compelling reason for players to choose it.</p>
+
+            <p>The "free" component here is marketing materials: trailers, screenshots, press coverage, streamer gameplay, and crucially—a demo (see "Demo + Seamless Upgrade" model). Players need confidence before spending, and in the absence of a free trial, social proof becomes critical.</p>
+
+            <p>From a rev-share perspective, this is the cleanest model: income arrives with each sale, distributions are straightforward, and there's no need to track ongoing metrics like retention or lifetime value. However, the team must accept that launch window sales are critical—most premium games see 70-80% of lifetime revenue in the first few months.</p>
+
+            <p>Pair this model with a strong demo, generous refund policy (Steam's 2-hour window), and transparent communication about what the game offers. Players reward honesty.</p>
+
+            <p class="example"><strong>Examples:</strong> Hollow Knight, Celeste, Hades, Slay the Spire, most traditional indie hits; Stardew Valley, Terraria (before ongoing updates), ULTRAKILL, Cruelty Squad.</p>
+        </div>
+
+        <div class="model-box" id="flexible-pricing">
+            <h2>💸 Flexible Pricing Model</h2>
+            <h3>Minimum Price + "Pay More If You Want"</h3>
+
+            <p><strong>How It Works:</strong> Set a reasonable minimum price (e.g., $5-10) that ensures sustainability, but allow customers to pay more if they wish to support the project. This is distinct from pure "pay what you want" ($0 minimum)—you're establishing a floor while giving supporters the option to pay above asking price.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Smaller-scale games (2-6 hour experiences, bite-sized adventures, experimental projects)</li>
+                <li>Games with passionate niche audiences who value supporting creators</li>
+                <li>Projects where the team wants to appear community-friendly without sacrificing sustainability</li>
+                <li>Itch.io releases, Humble Bundle integration, or platforms that support flexible pricing</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Goodwill generator:</strong> Flexible pricing signals trust and community-first values, building positive sentiment.</li>
+                        <li><strong>Minimum floor ensures sustainability:</strong> Unlike $0-minimum PWYW, you're guaranteed a base income from every purchase.</li>
+                        <li><strong>Upside potential:</strong> Enthusiastic players may pay 2-3x the minimum, increasing average revenue per user.</li>
+                        <li><strong>Lower barrier:</strong> A $5-10 minimum is less intimidating than $20-30, encouraging impulse purchases.</li>
+                        <li><strong>Marketing angle:</strong> "Pay what you think it's worth (minimum $X)" can be a compelling hook.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>Lower average revenue:</strong> Most players will pay the minimum, not more, so set the minimum thoughtfully.</li>
+                        <li><strong>Perception risk:</strong> Some players may perceive low pricing as indicating low quality ("why is it so cheap?").</li>
+                        <li><strong>Platform limitations:</strong> Not all storefronts support flexible pricing (Steam doesn't; itch.io does).</li>
+                        <li><strong>Devaluation risk:</strong> If your minimum is too low ($2-3), it's hard to raise prices later without backlash.</li>
+                        <li><strong>Revenue unpredictability:</strong> While better than $0-minimum, you still can't predict how much above-minimum revenue you'll receive.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> PC (itch.io is ideal; Steam doesn't support this), Web (via your own payment system), Mobile (less common), Consoles (not supported).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>The key to making this work is setting a minimum price that genuinely reflects development costs and team compensation. If your game cost $30K in equivalent labor to produce, and you expect 2,000 sales, your minimum should be at least $15 to break even—then hope that some players pay $20-30 to push into profit.</p>
+
+            <p>This model works best when combined with transparency: "We're a small team, this game took X months to make, and we're asking $Y minimum to keep making games. Pay more if you can!" Players respond positively to honest communication.</p>
+
+            <p>Itch.io is the natural home for this model, as it's built into the platform's DNA. Humble Bundle also embraces flexible pricing. For Steam releases, you'd need to stick with fixed pricing or use a separate "supporter pack" DLC that adds cosmetic bonuses for extra payment.</p>
+
+            <p>From a rev-share perspective, this model introduces slight complexity: do supporters who pay above minimum receive any special recognition in contributor calculations? This should be clarified upfront with your team.</p>
+
+            <p class="example"><strong>Examples:</strong> Many successful itch.io games like A Short Hike, LOCALHOST, Butterfly Soup; bundle platforms like Humble Bundle use flexible pricing extensively; Wikipedia's donation model (though not a game) shows how "pay more if you value it" can work at scale.</p>
+        </div>
+
+        <div class="model-box" id="episodic">
+            <h2>🪙 Episodic Release Model</h2>
+            <h3>Sell Each Chapter Separately Over Time</h3>
+
+            <p><strong>How It Works:</strong> Release your game in discrete, self-contained episodes or chapters, each sold separately at a lower price point (e.g., $5-10 per episode). Players purchase episodes individually as they release, or can buy a "season pass" upfront for all planned episodes at a discount. Each episode must deliver a complete arc while contributing to a larger narrative or gameplay progression.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Narrative-driven games with clear story arcs (adventure games, interactive dramas, detective games)</li>
+                <li>Linear progressions that can be segmented without feeling artificially chopped up</li>
+                <li>Teams that need to generate revenue during development to fund later episodes</li>
+                <li>Projects with uncertain scope—each episode's success determines whether more are made</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Cash flow during development:</strong> Episode 1 revenue helps fund Episode 2, creating a sustainable development cycle.</li>
+                        <li><strong>Lower barrier per purchase:</strong> $8 for one episode is more accessible than $40 for the complete season upfront.</li>
+                        <li><strong>Adaptive scope:</strong> If early episodes underperform, you can adjust or conclude the series gracefully. If they succeed, expand the vision.</li>
+                        <li><strong>Sustained engagement:</strong> Regular releases keep your community active and talking between episodes.</li>
+                        <li><strong>Marketing events:</strong> Each episode launch is a new marketing opportunity, keeping the game in the spotlight.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>Momentum risk:</strong> Long gaps between episodes can cause players to lose interest or forget the story.</li>
+                        <li><strong>Completion pressure:</strong> You're committing to finish the series. Abandoning mid-season destroys trust and reputation.</li>
+                        <li><strong>Pacing challenges:</strong> Each episode must feel complete yet leave players wanting more—difficult to balance.</li>
+                        <li><strong>Fragmented player base:</strong> Some players wait for all episodes before starting, reducing launch-window engagement.</li>
+                        <li><strong>Revenue uncertainty:</strong> Later episodes typically sell fewer copies as casual players drop off (the "Telltale problem").</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> PC (Steam, itch.io, Epic—all support episodic releases), Consoles (common for narrative games), Mobile (works but less popular), Web (possible for browser games with save systems).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>The episodic model lives or dies on consistency. Telltale Games pioneered this approach successfully for years, but their downfall came from overextending across too many series simultaneously while quality suffered. If you release Episode 1 to acclaim but take 18 months to release Episode 2, players will have moved on.</p>
+
+            <p>A season pass—where players pay upfront for all episodes at a discount—provides financial security and commits your audience to the full journey. However, it also locks you into delivering on promises, which can be stressful if development hits snags.</p>
+
+            <p>Consider release cadence carefully. Monthly episodes might be too aggressive unless you're working with significant pre-production (like Telltale did). Quarterly releases (every 3-4 months) provide breathing room while maintaining momentum. Anything beyond 6 months between episodes risks losing your audience.</p>
+
+            <p>For rev-share teams, this model creates interesting dynamics: early contributors benefit from all episode sales, while later contributors only share revenue from subsequent episodes. Clear agreements about how episode-specific vs. series-wide contributions are compensated is essential.</p>
+
+            <p class="example"><strong>Examples:</strong> Telltale's The Walking Dead (the gold standard), Life is Strange series, Hitman (2016-2018) episodic structure, Kentucky Route Zero, Resident Evil Revelations 2, Dontnod's episodic adventures.</p>
+        </div>
+
+        <div class="model-box" id="free-dlc">
+            <h2>🎁 Free Base Game + Paid Expansions/DLC</h2>
+            <h3>Generous Core, Monetize Additional Content</h3>
+
+            <p><strong>How It Works:</strong> Release a complete, fully-featured base game for free—this is your generous hook that attracts a massive player base. Then, monetize through optional expansions, story DLCs, new campaigns, or substantial content packs sold as separate purchases. The free game must be genuinely good and complete, not a hollow shell.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Games with expandable content structures (RPGs, strategy games, simulation games)</li>
+                <li>Titles with strong core loops that can be extended with new campaigns, characters, or mechanics</li>
+                <li>Multiplayer or live-service games where a large player base is critical for matchmaking or community</li>
+                <li>Projects where the team can commit to ongoing content development post-launch</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Massive player base:</strong> Free entry removes all barriers, maximizing reach and community size.</li>
+                        <li><strong>Word-of-mouth explosion:</strong> "It's free and actually good!" spreads fast.</li>
+                        <li><strong>Ongoing revenue potential:</strong> DLC/expansions provide recurring income long after launch.</li>
+                        <li><strong>Opt-in monetization:</strong> Players only pay if they love the game and want more—feels fair and ethical.</li>
+                        <li><strong>Platform flexibility:</strong> Works on PC, consoles, mobile—everywhere.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>Massive upfront investment:</strong> You're giving away a complete, polished game with zero guaranteed return.</li>
+                        <li><strong>Conversion challenge:</strong> Most players will never pay. Expect 1-10% conversion rates to DLC purchases.</li>
+                        <li><strong>Perception tightrope:</strong> If the base game feels incomplete or the DLC feels exploitative, backlash will be severe.</li>
+                        <li><strong>Ongoing development burden:</strong> This model demands post-launch content creation, which requires sustained team commitment.</li>
+                        <li><strong>Server/support costs:</strong> A large free player base incurs bandwidth, server, and support expenses without direct revenue.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> PC (Steam, Epic, standalone), Consoles (PlayStation, Xbox, Switch), Mobile (App Store, Google Play—very common model here), Web (less common due to payment friction).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>The critical balance here is "how much game is free?" Too little, and it feels like a demo in disguise. Too much, and players have no incentive to buy DLC. The base game should offer 10-20+ hours of quality content or infinite replayability through procedural/multiplayer systems. DLC should feel like "more of what I love" rather than "the rest of the game they held back."</p>
+
+            <p>Successful examples typically follow this formula: free base game contains complete core experience (e.g., full campaign, all base mechanics, solid content loop), while DLC adds side stories, new characters/classes, cosmetic customization, or expansion campaigns. Players should feel they got their money's worth from the free version before considering DLC.</p>
+
+            <p>This model works exceptionally well for multiplayer games where a large player base is essential for matchmaking, guilds, or social features. A small paid player base leads to dead servers; a massive free base ensures thriving communities. Then, monetize the most engaged players through expansions or seasons.</p>
+
+            <p>For rev-share teams, this creates a delayed payoff structure: months of work generate zero direct revenue, then DLC sales trickle in over time. Team members must be patient and committed to the long game. Clear communication about expected timelines for profitability is crucial.</p>
+
+            <p class="example"><strong>Examples:</strong> Destiny 2 (free base game + paid expansions), Warframe (free-to-play with purchasable content), Path of Exile (free core + supporter packs), Apex Legends (free game + battle passes/cosmetics), Fortnite Save the World (originally), Team Fortress 2 (went free-to-play with cosmetic monetization).</p>
+        </div>
+
+        <div class="model-box" id="demo">
+            <h2>🧩 Demo + Seamless Full Game Upgrade</h2>
+            <h3>Try Before You Buy, Keep Your Progress</h3>
+
+            <p><strong>How It Works:</strong> Release a free demo (typically 1-3 hours or first few levels) that seamlessly upgrades to the full game when purchased. Player saves, progress, and settings carry over—no reinstallation, no lost progress. This is essentially a time-limited or content-limited trial that unlocks with a purchase.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Premium games that benefit from "try before you buy" (puzzle games, action games, strategy games)</li>
+                <li>Titles with strong first impressions that hook players within the first hour</li>
+                <li>Games where restarting from scratch after purchase would be frustrating (RPGs with character builds, strategy games with base-building)</li>
+                <li>Platforms with built-in demo-to-full upgrade infrastructure (Steam, consoles)</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Frictionless upgrade:</strong> Players invest time in the demo, then seamlessly continue when they purchase—no lost progress.</li>
+                        <li><strong>Risk reduction:</strong> Players can verify performance, gameplay feel, and personal interest before committing money.</li>
+                        <li><strong>Platform support:</strong> Steam, GOG, Epic, and consoles have native infrastructure for demo-to-full transitions.</li>
+                        <li><strong>Marketing tool:</strong> Demos appear in special events (Steam Next Fest) and get dedicated visibility, driving awareness.</li>
+                        <li><strong>Clean monetization:</strong> Once upgraded, it's a traditional premium purchase—no ongoing monetization complexity.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>Less generous than shareware:</strong> A 2-hour demo feels more like a trial than a gift, reducing viral potential.</li>
+                        <li><strong>Conversion dependency:</strong> Your demo must hook players fast. If it doesn't, they'll uninstall without purchasing.</li>
+                        <li><strong>Technical complexity:</strong> Implementing seamless save transfer and content unlocking requires careful engineering.</li>
+                        <li><strong>Demo length balance:</strong> Too short, players don't get invested. Too long, they feel satisfied without purchasing.</li>
+                        <li><strong>Support overhead:</strong> Players may encounter demo-specific bugs or upgrade issues, increasing support burden.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> PC (Steam, GOG, Epic—excellent support), Consoles (PlayStation, Xbox, Switch—common practice), Mobile (possible via in-app purchases, though less common for demos), Web (less suitable due to payment integration challenges).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>The demo length is crucial. Too short (30 minutes) and players barely scratch the surface. Too long (5+ hours) and they've experienced enough to feel satisfied without purchasing. The sweet spot is typically 1-2 hours or "until you reach the first major milestone/boss/challenge," whichever comes first. Leave players wanting more at a narrative or gameplay cliffhanger.</p>
+
+            <p>This model pairs perfectly with Steam Next Fest and similar demo-focused events, where visibility for demos is significantly higher than regular releases. A well-timed demo during Next Fest can generate thousands of wishlists and conversations, translating to strong launch-day sales.</p>
+
+            <p>From a player psychology perspective, the investment made during the demo creates commitment. If someone spends 2 hours customizing a character, learning mechanics, and getting emotionally invested, they're far more likely to purchase than if they were starting from scratch post-purchase. This is the "endowment effect" working in your favor.</p>
+
+            <p>For rev-share teams, demos generate no direct revenue but significantly improve conversion rates compared to no demo at all. Studies show games with demos often see 20-40% higher conversion from wishlist to purchase. The demo is an investment in reducing customer acquisition risk.</p>
+
+            <p class="example"><strong>Examples:</strong> Resident Evil Village/2/3 demos, Monster Hunter World/Rise demos, Octopath Traveler demo, Dragon Quest XI demo, most AAA console releases with "trial versions," Factorio's free demo (one of the best conversions in the industry).</p>
+        </div>
+
+        <div class="model-box" id="ugc">
+            <h2>🔨 User-Generated Content Marketplace</h2>
+            <h3>Platform Model with Revenue-Sharing Mods</h3>
+
+            <p><strong>How It Works:</strong> Release a free or low-cost base game engineered for extensibility, then build a curated marketplace where creators can sell mods, levels, campaigns, or assets. The platform takes a percentage (typically 20-30%) of each sale, with the rest going to the creator. You become the game engine provider and marketplace operator.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Data-driven games with robust modding architectures (sandbox builders, strategy games, RPG engines)</li>
+                <li>Projects where community-created content can match or exceed official quality</li>
+                <li>Games with infinite replayability potential through user-generated content (Minecraft-likes, level editors, simulation games)</li>
+                <li>Teams willing to invest heavily in tooling, documentation, and marketplace infrastructure</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Infinite content scaling:</strong> Your community generates orders of magnitude more content than your team ever could.</li>
+                        <li><strong>Self-sustaining ecosystem:</strong> Successful mods drive new player acquisitions, which drives more mod creators, creating a flywheel.</li>
+                        <li><strong>Long-term revenue:</strong> Ongoing mod sales provide passive income years after your core development ends.</li>
+                        <li><strong>Empowered creators:</strong> Talented modders can earn real income, fostering loyalty and exceptional quality.</li>
+                        <li><strong>Marketing through creators:</strong> Every mod release is free marketing for your base platform.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>Massive infrastructure burden:</strong> You must build and maintain a marketplace (payment processing, curation, quality control, customer support).</li>
+                        <li><strong>Curation challenges:</strong> Manually reviewing every mod submission is labor-intensive; automated systems risk quality issues.</li>
+                        <li><strong>Legal complexity:</strong> Copyright, IP ownership, revenue splits, taxes, and platform liability require legal oversight.</li>
+                        <li><strong>Tooling investment:</strong> World-class modding tools, documentation, tutorials, and support are non-negotiable for success.</li>
+                        <li><strong>Unofficial competition:</strong> Free mod sites may circumvent your paid marketplace unless your platform offers superior value (ala Steam Workshop).</li>
+                        <li><strong>Moderation burden:</strong> Inappropriate, stolen, or low-quality content requires constant policing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> PC (ideal—full modding support), Consoles (extremely difficult due to platform restrictions), Mobile (possible but rare due to app store policies), Web (challenging but doable for browser-based games).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>This is the most ambitious model here, essentially transforming your game into a platform business. You're not just making a game; you're building an ecosystem. Success requires technical excellence (robust modding API, easy-to-use tools), infrastructure (payment processing, content delivery, marketplace UI), and community management (quality standards, creator support, dispute resolution).</p>
+
+            <p>The gold standard is Valve's Steam Workshop combined with paid mods (though Skyrim's paid mod experiment failed due to poor execution and community backlash—lessons learned). Roblox demonstrates this model at massive scale: free-to-play core with creator revenue sharing, generating billions annually.</p>
+
+            <p>Key to avoiding backlash: launch with a robust free mod ecosystem first to prove your tools work, then introduce paid mods as an optional monetization avenue for creators—never gatekeep basic modding behind paywalls. The community must feel the platform serves creators, not exploits them.</p>
+
+            <p>For rev-share teams, this model creates long-tail passive income but requires sustained operational commitment. Someone must curate submissions, handle payouts, and maintain infrastructure indefinitely. The upfront investment is enormous, but the payoff can dwarf traditional sales if the ecosystem thrives.</p>
+
+            <p class="example"><strong>Examples:</strong> Roblox (the ultimate example—free platform, creator revenue share), Dreams (PlayStation—user-created games within a game), Farming Simulator mods (official marketplace), Fallout 4/Skyrim Creation Club (curated paid mods), Unity Asset Store / Unreal Marketplace (not games, but the model is identical).</p>
+        </div>
+
+        <div class="model-box" id="early-access">
+            <h2>🚧 Early Access / Living Development</h2>
+            <h3>Buy Now, Build Together, Grow Over Time</h3>
+
+            <p><strong>How It Works:</strong> Release an incomplete but playable version of your game at a reduced price (e.g., $15 for what will eventually be a $30 game). Players purchase Early Access knowing they're buying into ongoing development. As you add features, content, and polish, the price gradually increases until the 1.0 release.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Ambitious games with long development cycles that need funding before completion (sandbox games, complex simulations, sprawling RPGs)</li>
+                <li>Projects with core mechanics that are fun even in incomplete states</li>
+                <li>Teams that communicate transparently and can handle community feedback/pressure</li>
+                <li>Games that benefit from player feedback during development (balance, UX, systems design)</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Funding development:</strong> Early revenue allows you to continue building without external investors or running out of money.</li>
+                        <li><strong>Community co-creation:</strong> Players provide feedback that shapes development, creating investment and ownership in the game's success.</li>
+                        <li><strong>Early adopter discount:</strong> Charging less for Early Access rewards risk-takers and builds loyal fanbases.</li>
+                        <li><strong>Gradual price increases:</strong> As the game improves, raising prices feels justified and rewards early supporters.</li>
+                        <li><strong>Market validation:</strong> If Early Access fails, you learn quickly without sinking years into completion.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>Negative first impressions:</strong> Launching buggy or incomplete can poison your reputation, making recovery difficult.</li>
+                        <li><strong>Burnout risk:</strong> Years of public development with constant community pressure is exhausting.</li>
+                        <li><strong>Feature creep:</strong> Community requests can derail your vision, leading to bloated, unfocused design.</li>
+                        <li><strong>Launch twice problem:</strong> Early Access "launch" often gets all the attention; the actual 1.0 launch feels anticlimactic.</li>
+                        <li><strong>Completion pressure:</strong> You're publicly committed to finishing. Abandoning Early Access destroys your reputation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> PC (Steam is THE platform for Early Access—built-in support and discoverability), Consoles (Xbox Game Preview exists; PlayStation and Switch rare), Mobile (uncommon), Web (possible via itch.io or your own site).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>Early Access is not a safety net for shipping garbage and hoping players won't notice. The minimum viable product must be genuinely fun and demonstrate clear potential. Players are remarkably forgiving of bugs and missing content if the core experience is compelling and the developer communicates openly.</p>
+
+            <p>Transparency is everything. Maintain a public roadmap, post regular development updates, and acknowledge when things go wrong. Games like Factorio, Rimworld, Slay the Spire, Hades, and Valheim succeeded in Early Access because developers treated players as collaborators, not ATMs.</p>
+
+            <p>Set realistic timelines and under-promise, over-deliver. If you think 1.0 will take 18 months, tell players 24 months. Finishing early delights; delays frustrate.</p>
+
+            <p>For rev-share teams, Early Access creates rolling revenue distributions as development progresses. Contributors who join mid-development may negotiate different terms than founding members. Clear versioning of rev-share agreements by development phase prevents disputes.</p>
+
+            <p class="example"><strong>Examples:</strong> Factorio, Rimworld, Valheim, Slay the Spire, Hades, Deep Rock Galactic, Subnautica, Baldur's Gate 3, Minecraft (before official 1.0), Terraria (massive post-1.0 updates blur the line).</p>
+        </div>
+
+        <div class="model-box" id="f2p-cosmetics">
+            <h2>🎨 Free-to-Play + Ethical Cosmetics Only</h2>
+            <h3>Monetize Self-Expression, Not Power</h3>
+
+            <p><strong>How It Works:</strong> Release a completely free game with all gameplay content accessible to everyone. Monetization comes exclusively from cosmetic items—skins, emotes, visual effects, customization options—that have zero impact on gameplay. Players who love the game and want to express individuality or support development can purchase cosmetics; everyone else plays for free forever.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Multiplayer games where social interaction and self-expression matter (battle royales, social games, team-based shooters)</li>
+                <li>Games with strong visual identity and players who care about aesthetics (stylized art styles work best)</li>
+                <li>Live-service games requiring large, healthy player populations for matchmaking</li>
+                <li>Projects where pay-to-win would destroy competitive integrity</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Massive player base:</strong> No barriers to entry means maximum reach and thriving communities.</li>
+                        <li><strong>Ethical monetization:</strong> No pay-to-win, no manipulation, no gameplay locked behind paywalls. Pure and guilt-free.</li>
+                        <li><strong>Ongoing revenue:</strong> New cosmetic releases provide continuous income long after launch.</li>
+                        <li><strong>Whales subsidize free players:</strong> 1-5% of players may spend $50-500+, supporting the entire ecosystem.</li>
+                        <li><strong>Platform agnostic:</strong> Works on PC, consoles, mobile—everywhere.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>Massive upfront investment:</strong> You're building a complete game with no guaranteed revenue.</li>
+                        <li><strong>Low conversion rates:</strong> Only 2-10% of players typically spend anything. You need huge scale to succeed.</li>
+                        <li><strong>Ongoing content treadmill:</strong> Players expect regular cosmetic drops, seasonal content, and updates—forever.</li>
+                        <li><strong>Art-heavy development:</strong> Cosmetics require constant art production, which is expensive and time-consuming.</li>
+                        <li><strong>Comparison to predatory F2P:</strong> Players may be skeptical due to mobile gaming's dark patterns, even if your approach is ethical.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> PC (Steam, Epic, standalone), Consoles (all support F2P + cosmetics), Mobile (ideal platform—common model), Web (works for browser games with integrated payments).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>The critical distinction here is cosmetics-only—no loot boxes with randomized rewards (gambling), no pay-to-skip-grind (selling convenience), no exclusive powerful items. Just "here's a cool skin for $5, buy it if you want." This keeps the game fair and respected.</p>
+
+            <p>Success requires either a massive player base (millions of players) or a smaller, highly engaged community willing to spend. Games like Fortnite, Apex Legends, and League of Legends thrive because tens of millions play for free, while a fraction spend heavily on skins. Indie games can succeed at smaller scale if the community is passionate.</p>
+
+            <p>Battle Passes (season-based reward tracks with free and premium tiers) fit this model perfectly when done ethically: free tier gives value, premium tier ($10) adds cosmetics but doesn't lock gameplay. Players appreciate the value proposition.</p>
+
+            <p>For rev-share teams, this model demands long-term operational commitment. You're not making a game and moving on; you're running a live service with ongoing art production, events, and community management. Staffing must account for perpetual development.</p>
+
+            <p class="example"><strong>Examples:</strong> Fortnite (cosmetics-only, billions in revenue), Apex Legends, League of Legends, Dota 2, Path of Exile (mostly cosmetics), Team Fortress 2, CS:GO/CS2 skins, Fall Guys, Rocket League, Warframe (hybrid—some convenience, mostly cosmetics).</p>
+        </div>
+
+        <div class="model-box" id="patreon">
+            <h2>❤️ Ongoing Supporter Tiers (Patreon Model)</h2>
+            <h3>Subscription-Based Community Support</h3>
+
+            <p><strong>How It Works:</strong> Release your game for free (or very low cost) and offer optional monthly subscription tiers ($5, $10, $20) where supporters receive perks like early access to updates, behind-the-scenes content, exclusive cosmetics, dev commentary, or simply the satisfaction of supporting development. The game remains fully playable without subscribing, but patrons get extras and direct connection to the team.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Ongoing development projects with regular content updates (living games, episodic releases, continuously evolving experiences)</li>
+                <li>Games with passionate, engaged communities who value supporting creators (indie darlings, niche genres)</li>
+                <li>Teams that communicate transparently and build personal relationships with players</li>
+                <li>Projects where behind-the-scenes insights and dev process are genuinely interesting</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Predictable recurring revenue:</strong> Monthly subscriptions provide stable, forecastable income for development.</li>
+                        <li><strong>Deep community bonds:</strong> Patrons feel personally invested in your success, creating loyal evangelists.</li>
+                        <li><strong>Sustainable long-term development:</strong> Ongoing support enables continuous improvement without chasing viral hits.</li>
+                        <li><strong>Creative freedom:</strong> Direct funding from fans means fewer compromises for mass-market appeal.</li>
+                        <li><strong>Rewards engagement:</strong> Active community members voluntarily support, rather than one-time purchases from casual players.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>Requires existing audience:</strong> Patreon works best when you already have fans; launching cold with subscriptions is difficult.</li>
+                        <li><strong>Ongoing obligations:</strong> Subscribers expect regular updates, content, and communication—it's a commitment.</li>
+                        <li><strong>Churn risk:</strong> Subscribers drop off if updates slow, quality dips, or life circumstances change.</li>
+                        <li><strong>Income ceiling:</strong> Unless you have thousands of patrons, monthly revenue may not support a full team.</li>
+                        <li><strong>Perks treadmill:</strong> You must continuously deliver subscriber-exclusive value without alienating free players.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> Platform-agnostic (Patreon, Ko-fi, SubscribeStar work with any game), PC (easiest integration), Web (seamless for browser games), Consoles and Mobile (trickier due to platform policies, but possible via external links).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>This model thrives on transparency and personality. Patrons aren't just buying a game; they're supporting creators they believe in. Regular devlogs, personal updates, candid discussions about challenges, and genuine gratitude go a long way. Think of it as crowdfunding that never ends—you're building a relationship, not just a transaction.</p>
+
+            <p>The key is ensuring free players never feel like second-class citizens. Cosmetics, early access (free players get it later), and behind-the-scenes content are acceptable perks. Gameplay features, essential quality-of-life improvements, or story content exclusively for patrons will breed resentment.</p>
+
+            <p>Patreon works exceptionally well for indie developers building cult followings around unique, heartfelt projects. Dwarf Fortress, for example, sustained decades of development through donations and later Patreon before its Steam release. Many visual novel and RPG Maker developers rely on this model during development.</p>
+
+            <p>For rev-share teams, Patreon income can be distributed monthly based on active contributors. However, managing patron perks (exclusive Discord channels, dev Q&As, early builds) requires dedicated community management—factor this into role allocations.</p>
+
+            <p class="example"><strong>Examples:</strong> Dwarf Fortress (Patreon funded development for years), Starsector (ongoing dev supported by sales + Patreon), numerous visual novel and RPG Maker devs, webcomic creators (relevant model), open-source projects (Blender, Godot funded similarly), many YouTubers/streamers (parallel model).</p>
+        </div>
+
+        <div class="model-box" id="open-source">
+            <h2>🌐 Open Source + Premium Services</h2>
+            <h3>Free Code, Paid Convenience & Support</h3>
+
+            <p><strong>How It Works:</strong> Release your game's source code openly (MIT, GPL, or similar license), allowing anyone to download, modify, and play for free. Monetization comes from selling convenience: official compiled binaries on Steam/stores, cloud saves, multiplayer hosting, official support, premium assets, or "supporter editions" with extras. Technical users can compile for free; everyone else pays for ease and quality-of-life.</p>
+
+            <p><strong>Best Suited For:</strong></p>
+            <ul>
+                <li>Projects where transparency and modifiability are core values (retro games, educational games, tools disguised as games)</li>
+                <li>Games with strong ideological communities (FOSS enthusiasts, indie purists)</li>
+                <li>Developers comfortable with permissive licensing and potential forks</li>
+                <li>Projects where the game itself is simple, but hosting/services/polish add significant value</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✓ Pros</h4>
+                    <ul>
+                        <li><strong>Goodwill and trust:</strong> Open-sourcing signals generosity and confidence, building immense community respect.</li>
+                        <li><strong>Community contributions:</strong> Volunteer developers may fix bugs, add features, or port to new platforms for free.</li>
+                        <li><strong>Longevity:</strong> Even if you stop development, the community can continue the game indefinitely.</li>
+                        <li><strong>Ethical clarity:</strong> No DRM, no secrets, no lock-in. Players own what they download.</li>
+                        <li><strong>Educational value:</strong> Aspiring developers study your code, building reputation and potential future collaborators.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>✗ Cons</h4>
+                    <ul>
+                        <li><strong>Revenue uncertainty:</strong> Many users will compile for free rather than pay, reducing income.</li>
+                        <li><strong>Support burden:</strong> Community forks and modifications create confusion ("which version has X bug?").</li>
+                        <li><strong>Competitive forks:</strong> Someone may fork your project, improve it, and compete directly with you.</li>
+                        <li><strong>Platform restrictions:</strong> Consoles and some mobile stores don't support open-source distribution well.</li>
+                        <li><strong>Asset complications:</strong> Code can be open, but art/music may need separate licensing to protect creators' rights.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p><strong>Platform Compatibility:</strong> PC (GitHub + Steam/itch.io combination is ideal), Web (perfect for browser games), Mobile (challenging due to app store policies), Consoles (nearly impossible—closed ecosystems conflict with open-source ethos).</p>
+
+            <h3>Additional Considerations</h3>
+
+            <p>This model is philosophically driven but commercially viable with the right approach. The majority of users don't know how to compile code or set up development environments—they'll gladly pay $10-15 on Steam for a convenient, auto-updating version with Steam achievements, workshop support, and cloud saves. You're selling ease, not code.</p>
+
+            <p>Dual-licensing is an option: source code is open (GPL), but art assets require separate licensing. This allows code transparency while protecting artists' work and creating a revenue stream through asset packs.</p>
+
+            <p>The "pay what you want with minimum" or "supporter edition" models pair beautifully with open source: the game is free (both as in freedom and price if you compile it), but a $15 "supporter edition" on Steam adds convenience, extras, and supports development. Players appreciate the honesty.</p>
+
+            <p>For rev-share teams, open-source complicates IP ownership and future monetization. Clear agreements about licensing, asset rights, and how community contributions are credited/compensated are essential before releasing code publicly.</p>
+
+            <p class="example"><strong>Examples:</strong> Mindustry (open-source on GitHub, paid on Steam for convenience), Endless Sky (fully open-source, donations optional), Shattered Pixel Dungeon (open-source roguelike, Play Store version pays dev), Cataclysm: Dark Days Ahead, OpenTTD (transport sim—open-source but uses original Transport Tycoon assets legally), Battle for Wesnoth.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="avoid">⚠️ Models to Avoid (Unless This is a Throwaway Project)</h2>
+
+        <p>Not all monetization strategies are created equal. The models below are well-intentioned but rarely sustainable for serious development. Reserve these for game jams, learning projects, or passion experiments where profitability isn't a goal.</p>
+
+        <div class="model-box" style="background: rgba(180, 120, 120, 0.1); border-color: rgba(200, 140, 140, 0.3);">
+            <h3>❌ Pure Donations / Tip Jar Model</h3>
+            <p><strong>The Idea:</strong> Release the complete game for free with no monetization, then ask players to donate if they enjoyed it. Maybe include a PayPal link or Ko-fi button.</p>
+            <p><strong>Why It Fails:</strong> Donation conversion rates are abysmal—typically 0.1-1% of players donate, and those who do average $2-5. Even viral successes rarely generate meaningful income. Players assume "free game" means "developer doesn't need money" or "I'll donate later" (they won't). This only works if you have a massive following who feels personally invested in you (e.g., streamers, established creators).</p>
+            <p><strong>Verdict:</strong> Use this for game jam entries or portfolio pieces where income isn't expected. For real projects, choose any other model.</p>
+        </div>
+
+        <div class="model-box" style="background: rgba(180, 120, 120, 0.1); border-color: rgba(200, 140, 140, 0.3);">
+            <h3>❌ True "Pay What You Want" ($0 Minimum)</h3>
+            <p><strong>The Idea:</strong> Let players download the game and pay whatever they think it's worth, including $0.</p>
+            <p><strong>Why It Fails:</strong> 70-90% of players pay $0. Of those who pay, most pay $1-3. Average revenue per download is typically under $1, making it nearly impossible to fund development. It signals "this isn't worth paying for," even if quality is high. Players with money aren't motivated to pay more; players without money take it free.</p>
+            <p><strong>Better Alternative:</strong> Set a minimum price ($5-10) with "pay more if you want" flexibility (see "Flexible Pricing Model" above). This ensures baseline sustainability while retaining the goodwill gesture.</p>
+            <p><strong>Verdict:</strong> Avoid unless your goal is maximum reach with zero revenue expectations.</p>
+        </div>
+
+        <div class="model-box" style="background: rgba(180, 120, 120, 0.1); border-color: rgba(200, 140, 140, 0.3);">
+            <h3>❌ "We'll Figure Out Monetization Later"</h3>
+            <p><strong>The Idea:</strong> Build the game first, get players hooked, then decide how to charge for it.</p>
+            <p><strong>Why It Fails:</strong> Retrofitting monetization into an existing game with an established free player base almost always creates backlash. Players feel betrayed when free content becomes paywalled. Your design may not support the monetization model you choose later (e.g., trying to add cosmetics to a game with no character customization). Teams waste years building without a financial plan, then struggle to justify continued development when money runs out.</p>
+            <p><strong>Verdict:</strong> Choose your business model before starting development. It affects architecture, scope, and player expectations from day one.</p>
+        </div>
+
+        <div class="model-box" style="background: rgba(180, 120, 120, 0.1); border-color: rgba(200, 140, 140, 0.3);">
+            <h3>❌ Crypto/NFT Gimmicks (Usually)</h3>
+            <p><strong>The Idea:</strong> Integrate cryptocurrency, blockchain, or NFTs as a monetization layer—sell NFT items, create play-to-earn mechanics, or tokenize in-game assets.</p>
+            <p><strong>Why It Usually Fails:</strong> Players are deeply skeptical of crypto in games, associating it with scams, environmental harm, and exploitation. The gaming community has violently rejected nearly every crypto game attempt (see: Ubisoft Quartz backlash, Stalker 2 NFT reversal). Technical complexity is high, regulatory risks are severe, and player bases evaporate when speculation-driven hype fades. Most crypto games prioritize financialization over fun.</p>
+            <p><strong>When It Might Work:</strong> If crypto is genuinely integral to the game's design (e.g., a trading game where blockchain provides transparency), and you're upfront about it from day one, a niche audience may embrace it. But for 99% of games, this is poison.</p>
+            <p><strong>Verdict:</strong> Avoid unless you have a compelling, non-exploitative reason and accept a small, niche audience.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="final-thoughts">Final Thoughts: Choosing Your Path</h2>
+
+        <p>Every business model here represents a trade-off between accessibility, revenue potential, development burden, and ethical clarity. There is no universal "best" model—only the model that best fits your game, your team, and your values.</p>
+
+        <p><strong>Questions to Ask When Choosing:</strong></p>
+        <ul>
+            <li><strong>What's our financial runway?</strong> Do you need immediate revenue (premium upfront), or can you invest months building a free game (F2P, shareware)?</li>
+            <li><strong>What's our game's natural structure?</strong> Episodic story? (Episodic model.) Infinite sandbox? (F2P + cosmetics or UGC marketplace.) Tight, complete experience? (Premium upfront.)</li>
+            <li><strong>How large is our target audience?</strong> Niche game with 10K potential players? (Premium or flexible pricing.) Mass-market potential? (F2P or shareware for maximum reach.)</li>
+            <li><strong>Can we commit to ongoing development?</strong> If not, avoid Early Access, F2P, or subscription models—they demand perpetual work. Choose premium, episodic, or shareware.</li>
+            <li><strong>What's our team's tolerance for risk?</strong> High-risk, high-reward models (F2P, UGC marketplace) can fail completely or succeed massively. Low-risk models (premium, demo + upgrade) provide steadier, smaller returns.</li>
+            <li><strong>What's our community's culture?</strong> Supportive indie community? (Patreon or flexible pricing.) Competitive multiplayer crowd? (F2P + cosmetics.) Retro gaming fans? (Shareware revival.)</li>
+        </ul>
+
+        <p><strong>Hybrid Approaches:</strong> Many successful games combine multiple models. For example: free shareware episode + paid full game + optional Patreon for supporters + eventual DLC expansions. Or: premium upfront launch + cosmetic DLC + ongoing free content updates funded by sales. Don't feel locked into one approach—adapt as your game and community evolve.</p>
+
+        <p><strong>Rev-Share Implications:</strong> Your business model directly affects how and when revenue flows to contributors. Premium upfront generates immediate income but tapers quickly. F2P and subscription models provide long-term trickles. Early Access creates rolling payouts during development. Episodic models benefit early contributors across all episodes. Discuss these timelines with your team transparently so everyone understands expectations.</p>
+
+        <p><strong>Above All: Be Ethical and Honest.</strong> Players reward transparency, fairness, and respect. Every model here avoids dark patterns, manipulation, and exploitation. Stick to this principle, and even if your game doesn't make millions, you'll build a community that trusts and supports you for the long haul.</p>
+
+        <p>Good luck with your project. Choose wisely, communicate clearly, and build something people love.</p>
+
+        <a href="../index.html" class="back-button" style="margin-top: 40px;">← Back to App</a>
+    </div>
+</body>
+</html>

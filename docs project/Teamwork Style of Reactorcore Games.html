@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamwork Style for Revshare Teams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a2520 0%, #1a1816 50%, #2d2420 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(42, 37, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(218, 196, 160, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 184, 150, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #dac4a0 0%, #d4b896 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 184, 150, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dac4a0;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(218, 196, 160, 0.3);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            margin-left: 0;
+            margin-bottom: 30px;
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 25px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+            padding-left: 0;
+        }
+
+        li strong {
+            color: #dac4a0;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: #dac4a0;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d4b896;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 118, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .intro-box {
+            background: rgba(212, 184, 150, 0.15);
+            border: 2px solid rgba(212, 184, 150, 0.3);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .principle {
+            background: rgba(26, 24, 22, 0.4);
+            border-left: 4px solid #c9a876;
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .principle strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        .celebration-steps {
+            background: rgba(201, 168, 118, 0.1);
+            border-radius: 6px;
+            padding: 15px 20px;
+            margin: 15px 0 15px 25px;
+        }
+
+        .celebration-steps ol {
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .celebration-steps li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            body {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to App</a>
+
+        <h1>Teamwork Style for Revshare Teams</h1>
+
+        <div class="intro-box">
+            <p>This document outlines a recommended teamwork philosophy for running a successful revshare creative project. It emphasizes trust, autonomy, and human-paced collaboration — perfect for indie game development teams working remotely without corporate structures.</p>
+        </div>
+
+        <hr>
+
+        <h2>Core Principles</h2>
+
+        <ul>
+            <li>
+                <div class="principle">
+                    <strong>🌍 We work remotely and freely:</strong> Independently, collaboratively, asynchronously, without timezones, globally. All in a clear and organized way. The project leader provides clear general instructions on what can be tackled next and what is needed, and you are the expert at what you do, doing it in the way you feel most comfortable and applying even some of your own flair and creativity to it if you feel like it. This is a project shaped by the makers, where <em>the project leader merely provides a guided framework/canvas that needs to be filled in/colored, akin to a coloring book.</em></p>
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🤝 We are not a company:</strong> There is no salary, no commitment obligations, no workers benefits, no contracts, no monitoring, no written agreements, and no NDAs. We are a group of individuals that got together to make a thing, get their cut and be free to do anything we wish afterwards. <em>Almost akin to a heist team. We are bound by honor and respect of each other to do the right thing that will help all of us succeed and be happy.</em> Each member will be in the project for their own self-fulfilling reasons, but together we support and care for each other.
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🎨 The project leader provides the blueprints, but you choose the materials and paint:</strong> Metaphorically speaking, the vision/design provided has a clear predefined structure, bones, if you will, that are already more or less set in stone, but the <em>meat and skin (content, appearance, nuances) that goes over those bones is something you can inject your own personality/creativity/style/preferences into quite freely</em>. This applies to coding, art, sound, writing, music, marketing, community management, etc.
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🔓 We don't micromanage:</strong> We trust everyone on the team is smart enough to do what they've signed up for, smart enough to <em>figure it out on their own or by asking (a friend, a team member, online, an AI, whoever can help)</em>. Most likely you'll be the best expert on the specific tools you are using. We don't impose particular technologies or software for you to use - instead you will use what you're most comfortable and proficient with and the rest of us adapt to you.
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>⏰ We don't have deadlines:</strong> If something takes longer to do properly, then so be it. The project leader trusts your inner wisdom to see if a particular task you're doing should be done in a simpler way if you encounter a moment where you go "oh crap, <em>this is gonna take me way longer than it would make sense to do it this way</em>" and you will find a way to scale back and find an easier, faster, cheaper method that still is great.
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🧭 We recognize our limits:</strong> Working on something as complex as a video game project is hard. Feel free to take the easy way when it makes sense. By this we mean use cheaper/faster/easier solutions if something feels like it's too tough to do than what you wanted originally. Or take the time and study it properly. Or take a break and refresh yourself if you feel overwhelmed. <em>Always try to look for the best/fastest solution given your available resources and skill level.</em>
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>💙 We are merciful:</strong> If you make a terrible mistake, our goal is to restore/fix/reroute the situation. <em>Never to punish, guilt or shame.</em> By default, we trust you have a good moral character, are kind to others and try your best to do the right thing. If you're clumsy, we just ask you to fix what you broke, do better, improve and learn so that it won't repeat.
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🛡️ We do not punish when it comes to correcting evil misbehaviour:</strong> You will know that if you do evil, people will naturally stop respecting you, you lose your reputation, people will shun you or they may even retaliate to protect themselves. Being outcasted will be far more painful and final of a consequence for those who decides to do malice. Everyone has need for safety, justice and protection to safeguard themselves - <em>the goal is not to hurt back those who did bad to us, but always to regain safety for ourselves.</em>
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🔥 We do not reward to attempt to motivate behaviour:</strong> If you work on the project, your primary drive must be from within. No one can give that to you. Praise and punishments are both two sides of the same coin; they're judgements of other people, they work only for a short time and feel hollow afterwards. Instead we celebrate and give gratitude for good work. Still, generally <em>you work on the project because you yourself actually believe its a good idea.</em>
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🎉 We celebrate:</strong> If you do good, the project leader and hopefully others will take time to express their gratitude for a job well done. <em>This is not a reward to motivate others, it's a way to signal that we like what you do and that you're doing the right thing.</em> Good work makes our lives more wonderful, we gain happiness, hope and energy to keep going. A structured way to express gratitude is to say:
+
+                    <div class="celebration-steps">
+                        <ol>
+                            <li>What the person actually did.</li>
+                            <li>How it made thing cooler/better.</li>
+                            <li>How it felt to you. (satisfied, happy, awesome, positively surprised, etc.)</li>
+                            <li>Say "Thank you".</li>
+                        </ol>
+                        <p style="margin-top: 12px; margin-bottom: 0;"><em>(You can express this in a shorter way too, the main goal is to somehow convey those parts in the gratitude. Saying just "you're good", "good job", or "I like this" is not enough - it lacks the vital information what they did and how it helped you. Always try to connect the gratitude/praise to something tangible. Do it right and you'll see the other person light up in a way that'll make both of you feel good on the inside, ready to take on whatever comes next. Check out 'Nonviolent Communication' by Marshall Rosenberg on youtube for more info.)</em></p>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>💬 We don't have meetings:</strong> If you have something to announce or get feedback on, don't wait for a specific day or hour. Just send it and people will get back to it when they can. If team members happen to be online at the same time, then sure they can chat in real time if available. That said, <em>we don't require people to be present in real time to discuss something;</em> asynchronous communication can happen in dense packets of information that you can mull over, format for readability/clarity and have it be revisitable as a document for later use. People can read it in peace without having the pressure or anxiety to respond immediately on the spot, leading to a more relaxed, better quality messaging overall, even if it feels slower.
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>📅 We check in <em>at least once a month:</em></strong> Generally we try to let people in the team know that we are still alive and what we're focusing on project-wise or give a simple status update. This is especially needed if you've announced that you're working on something, even if it's going slowly, even if there are delays or even if you've hit some obstacles. <em>People may get anxious if theres no response or information flowing from you and they're waiting on something from you to complete.</em>
+
+                    <p style="margin-top: 15px; margin-bottom: 15px;">This is the only way of knowing if someone is actually doing something and alive, since <em>we cannot read minds nor do we have surveillance to track anyone.</em> It's always up to you to self-report where you're at when there are expectations placed on you.</p>
+
+                    <p style="margin-top: 15px; margin-bottom: 15px;">This can be done any time, even more often than once a month, even every day if you feel like it, or if you want to quit or take an extended break with or without a date when you're likely to return. <em>If you don't do this, there will be worry you're possibly gone/dead/quit and someone else may be brought in to continue the work you left.</em></p>
+
+                    <p style="margin-top: 15px; margin-bottom: 0;">Obviously <em>if you've already completed your part of the project and the "ball is not in your court", then you do not need to check in.</em> Checking in happens by just posting in the project's Discord server in the general channel. Even something simple "hey I'm still alive, I'm dealing with/working on XYZ, will get back to you atleast in a week or so" is totally fine.</p>
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🏃 We go as fast as we can, but at a human pace though:</strong> The project leader trusts that the project will be developed as rapidly as possible because everyone is eager for it to succeed as soon as possible, but <em>if something needs to be done right, then it will get the time to do it right.</em> Team members are trusted to be intelligent enough to notice if a particular strategy or idea ends up being too hard or costly and to know when to step back and go for an easier/simpler approach.
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🌱 We stay healthy:</strong> The project leader trusts that all team members have actual lives and IRL stuff to take care of, which will always take higher priority than the project. Eat well, sleep well, drink water, go outside and walk/bike/row/swim/etc, play games, watch movies, chill and take days off. <em>Do whatever that makes you happy, keeps you sane, healthy and strong.</em>
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🤲 We may have different views/perspectives and that's fine:</strong> The project is here to make a good game first and foremost. Politically, religiously, mentality/philosophy/ideology wise, team members may have differences that may conflict with each other, but the expectation is that <em>these things can be kept outside of the project and the team can just make a good game, polish it, maintain it, update it, and get paid.</em> Usually the design pitch of the project will be clear enough to let potential members know what to expect before teaming up and beginning to build it.
+                </div>
+            </li>
+
+            <li>
+                <div class="principle">
+                    <strong>🤖 AI tech is welcome:</strong> If you have a calculator and you need to do math, just use it. Same thing with AI. This point is included because there is a strong narrative push going around online about 'AI hatred' that tries to guilt and shame people from using AI or taking the easy way when it comes to anything creative. Those people are often trying to sabotage or slow you down to get an advantage over you. Feel free to disregard their loud, yet hollow voices. <em>AI technology is awesome.</em>
+                </div>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>Why This Approach Works</h2>
+
+        <p>This teamwork philosophy is built on <strong>trust, autonomy, and respect</strong>. It recognizes that creative people do their best work when they feel:</p>
+
+        <ul style="list-style: disc; margin-left: 30px;">
+            <li>Trusted to make their own decisions</li>
+            <li>Free from artificial pressure and micromanagement</li>
+            <li>Valued for their contributions</li>
+            <li>Supported when things get difficult</li>
+            <li>Able to balance work with their personal lives</li>
+        </ul>
+
+        <p>By removing corporate structures, unnecessary bureaucracy, and performance anxiety, this system allows teams to focus on what matters: <strong>creating something great together</strong>.</p>
+
+        <hr>
+
+        <h2>Implementing This Style</h2>
+
+        <p>If you're a project leader considering this approach:</p>
+
+        <ul style="list-style: disc; margin-left: 30px;">
+            <li><strong>Communicate clearly</strong> about project vision and expectations from the start</li>
+            <li><strong>Document decisions</strong> so team members can work independently</li>
+            <li><strong>Create safe spaces</strong> for questions and feedback (Discord, forums, etc.)</li>
+            <li><strong>Lead by example</strong> — show trust, vulnerability, and appreciation</li>
+            <li><strong>Be patient</strong> — this style requires adjustment for people used to corporate environments</li>
+        </ul>
+
+        <p>If you're a team member joining a project with this philosophy:</p>
+
+        <ul style="list-style: disc; margin-left: 30px;">
+            <li><strong>Take ownership</strong> of your work and decisions</li>
+            <li><strong>Communicate proactively</strong> about your progress and challenges</li>
+            <li><strong>Ask for help</strong> when you need it — it's encouraged!</li>
+            <li><strong>Respect others'</strong> time, boundaries, and working styles</li>
+            <li><strong>Stay engaged</strong> with monthly check-ins and project updates</li>
+        </ul>
+
+        <hr>
+
+        <div class="intro-box">
+            <p><strong>Remember:</strong> This isn't about being lazy or unstructured. It's about being smart with how we work together. <em>Trust, freedom, and mutual respect create better games and happier teams than any amount of corporate oversight ever could.</em></p>
+        </div>
+
+        <a href="../index.html" class="back-button" style="margin-top: 40px;">← Back to App</a>
+    </div>
+</body>
+</html>
