@@ -1,10 +1,10 @@
-# Reactorcore's Revenue Share System
+# 💰 Reactorcore's Revenue Share System
 
 A comprehensive standalone offline web application for project leaders running revenue-sharing creative teams with transparent, fair, and automatically-calculated splits.
 
 ---
 
-## What Is This?
+## 🎯 What Is This?
 
 This is a complete, zero-budget solution for managing revenue-sharing (revshare) teams. Perfect for indie game developers, creative collectives, and collaborative projects where compensation needs to be fair, transparent, and scalable.
 
@@ -20,7 +20,7 @@ This is a complete, zero-budget solution for managing revenue-sharing (revshare)
 
 ---
 
-## Why This System Works
+## ✨ Why This System Works
 
 **The Problem:** How do you compensate people fairly when contributions vary wildly in scope and impact? How do you keep it simple long-term without making anyone's head explode?
 
@@ -28,9 +28,9 @@ This is a complete, zero-budget solution for managing revenue-sharing (revshare)
 
 ---
 
-## Core Features
+## 🚀 Core Features
 
-### Tiered Contribution System
+### 🏆 Tiered Contribution System
 - **Main Tier** - Essential contributors (project wouldn't exist without them)
 - **Assistant Tier** - Valuable contributors (significantly enhance the project)
 - **Special Thanks** - Meaningful contributors (smaller but notable contributions)
@@ -38,17 +38,17 @@ This is a complete, zero-budget solution for managing revenue-sharing (revshare)
 
 Once you earn a tier, you keep it forever. Promotions happen based on increased contributions, but no demotions.
 
-### Self-Balancing Protection
+### ⚖️ Self-Balancing Protection
 Mathematical safeguards ensure main contributors always receive at least 30% of revenue, preventing unfair dilution as teams grow with assistants and helpers.
 
-### Smart Payout Timing
+### ⏰ Smart Payout Timing
 - **Monthly** payouts when revenue is strong (€50+ per member)
 - **Quarterly** payouts when lean (€15-50 per member)
 - **Hold funds** when amounts are too small to justify transfer fees
 
 Minimizes bank fees and maximizes what your team actually receives.
 
-### Complete Toolkit
+### 🛠️ Complete Toolkit
 
 **Team & Credits Management:**
 - Comprehensive member profiles with tiers, roles, and payment info
@@ -80,7 +80,7 @@ This system includes 12 comprehensive guides covering:
 
 ---
 
-## Who Is This For?
+## 👥 Who Is This For?
 
 **Perfect for:**
 - Indie game development teams
@@ -103,7 +103,7 @@ This system includes 12 comprehensive guides covering:
 
 ---
 
-## Quick Start
+## 🚦 Quick Start
 
 1. **Open the web app** - Load `index.html` in your browser
 2. **Read the Home tab** - Understand the system philosophy and workflow
@@ -118,7 +118,7 @@ The complete journey is outlined in the app's Home tab with 10 detailed steps.
 
 ---
 
-## Technical Details
+## 🔧 Technical Details
 
 - **Pure HTML/CSS/JavaScript** - No frameworks, no dependencies
 - **Offline-capable** - Works without internet after initial load
@@ -129,33 +129,33 @@ The complete journey is outlined in the app's Home tab with 10 detailed steps.
 
 ---
 
-## Documentation
+## 📚 Documentation
 
 The app includes a comprehensive **Info & FAQ** tab with links to 12 detailed documentation files:
 
-### Core System
+### 📖 Core System
 - **Revenue Share System v3.0** - Complete system documentation with formulas, examples, and FAQ
 - **User Guide** - Step-by-step walkthrough for project leaders
 - **Teamwork Style** - Collaborative philosophy for revshare teams
 
-### Project Setup
+### 🔨 Project Setup
 - **Infrastructure Setup** - Lean four-tool setup for running projects remotely
 - **Team Onboarding Template** - Copy-paste template for new members
 - **Interactive Credits System** - Hall-of-fame style credits implementation
 
-### Growing Your Project
+### 🌱 Growing Your Project
 - **Recruiting Template** - Ready-to-use recruitment posts
 - **Zero Budget Marketing** - Grassroots long-term promotion strategies
 - **Business Models** - 7 different approaches for releasing games
 
-### Legal & Philosophy
+### ⚖️ Legal & Philosophy
 - **IP Law & Copyright Policy** - Open, permissive collaboration approach
 - **Why IP Law is a Bad Idea** - Deep dive into alternatives
 - **Licensing Guide** - MIT, CC0, and CC-BY 4.0 implementation
 
 ---
 
-## How It Works
+## 🔄 How It Works
 
 1. **Revenue flows in** from platforms (Itch.io, Steam, etc.) after they take their cut
 2. **Money transfers** to your dedicated "hub account" (separate from personal money)
@@ -167,7 +167,7 @@ The app includes a comprehensive **Info & FAQ** tab with links to 12 detailed do
 
 ---
 
-## Privacy & Security
+## 🔒 Privacy & Security
 
 - **No cloud storage** - All data lives in your local JSON files
 - **No tracking** - Zero analytics, zero data collection
@@ -177,13 +177,13 @@ The app includes a comprehensive **Info & FAQ** tab with links to 12 detailed do
 
 ---
 
-## License
+## 📜 License
 
 This Revenue Share System is released under the **MIT License** - free to use, modify, and distribute.
 
 ---
 
-## Author
+## 👤 Author
 
 **Reactorcore**
 
@@ -193,7 +193,7 @@ This Revenue Share System is released under the **MIT License** - free to use, m
 
 ---
 
-## Support & Feedback
+## 💬 Support & Feedback
 
 Found a bug? Have a suggestion? Open an issue on this repository or reach out via the links above.
 
