@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creator Outreach Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a2520 0%, #1a1816 50%, #2d2420 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(42, 37, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(218, 196, 160, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 184, 150, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #dac4a0 0%, #d4b896 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 184, 150, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dac4a0;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(218, 196, 160, 0.3);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4b896;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #dac4a0;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d4b896;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 118, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .highlight-box {
+            background: rgba(201, 168, 118, 0.1);
+            border-left: 4px solid #c9a876;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background: rgba(212, 184, 150, 0.08);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+        }
+
+        .warning-box {
+            background: rgba(218, 120, 80, 0.08);
+            border-left: 4px solid #da7850;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: rgba(26, 24, 22, 0.8);
+            border: 1px solid rgba(201, 168, 118, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #e8e8e8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            background: rgba(26, 24, 22, 0.6);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #dac4a0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .checklist {
+            background: rgba(212, 184, 150, 0.05);
+            border: 1px solid rgba(212, 184, 150, 0.15);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .checklist li {
+            list-style-type: none;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "□";
+            position: absolute;
+            left: 0;
+            color: #c9a876;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            body {
+                padding: 20px 15px;
+            }
+
+            pre {
+                padding: 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to App</a>
+
+        <h1>Content Creator Outreach Guide</h1>
+
+        <p>This guide helps you approach content creators — YouTubers, streamers, game reviewers, magazine writers, and anyone else with an audience — to cover your game project. Learn how to find the right people, craft the perfect pitch email, and maximize your chances of getting coverage — all while respecting their time and making the process as frictionless as possible.</p>
+
+        <div class="highlight-box">
+            <p><strong>The Golden Rule:</strong> Busy content creators appreciate emails that are ultra-concise, visually clear, and require minimal effort to evaluate. Your goal is to make it effortless for them to decide if they want to cover your game.</p>
+        </div>
+
+        <hr>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#finding-youtubers">Finding the Right Content Creators</a></li>
+                <li><a href="#best-practices">Best Practices for Outreach</a></li>
+                <li><a href="#dream-email">The "Dream Email" Template</a></li>
+                <li><a href="#html-formatting">Generating HTML Emails with AI</a></li>
+                <li><a href="#follow-up">Follow-Up Etiquette</a></li>
+                <li><a href="#mistakes">Common Mistakes to Avoid</a></li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h2 id="finding-youtubers">Finding the Right Content Creators</h2>
+
+        <p>Not all content creators are right for your game. The key is finding people whose content and audience naturally align with what you've built — whether they're YouTubers, Twitch streamers, game journalists, magazine reviewers, or critics.</p>
+
+        <h3>Where to Look</h3>
+        <ul>
+            <li><strong>YouTube Search:</strong> Search for your game's genre + "gameplay" or "let's play" (e.g., "roguelike gameplay", "puzzle game let's play")</li>
+            <li><strong>Twitch Categories:</strong> Check who streams games in your category</li>
+            <li><strong>Similar Games:</strong> Look up games similar to yours and see who's covering them — YouTubers, streamers, reviewers, journalists</li>
+            <li><strong>Steam Curator Lists:</strong> Many content creators are Steam Curators — browse curators in your genre</li>
+            <li><strong>Gaming Publications:</strong> Look for indie-focused sites like PC Gamer, Rock Paper Shotgun, Indie Games Plus, Kotaku indie sections</li>
+            <li><strong>Indie Game Communities:</strong> Follow hashtags like #indiegame, #indiedev on Twitter/X to discover creators who focus on indie titles</li>
+            <li><strong>Game Subreddits:</strong> Communities like r/indiegaming often have creator members who actively look for new games</li>
+        </ul>
+
+        <h3>What to Look For</h3>
+        <ul>
+            <li><strong>Genre Match:</strong> Do they regularly cover games like yours?</li>
+            <li><strong>Indie-Friendly:</strong> Do they cover indie games or only AAA titles?</li>
+            <li><strong>Audience Size:</strong> Don't just chase big channels — mid-tier creators (10k-100k subs) often have more engaged audiences and are more responsive</li>
+            <li><strong>Upload Frequency:</strong> Active channels are more likely to respond and feature your game quickly</li>
+            <li><strong>Community Engagement:</strong> Do they interact with their audience? This suggests they'll care about bringing quality content</li>
+            <li><strong>Contact Info:</strong> Check their About page or video descriptions for business email addresses</li>
+        </ul>
+
+        <div class="info-box">
+            <h3>Pro Tip: Create a Spreadsheet</h3>
+            <p>Track potential content creators with columns for:</p>
+            <ul>
+                <li>Name / Channel / Publication</li>
+                <li>Email address</li>
+                <li>Audience size (subs/readers/followers)</li>
+                <li>Why they're a good fit</li>
+                <li>Date contacted</li>
+                <li>Response status</li>
+            </ul>
+            <p>This helps you stay organized, avoid duplicate outreach, and prepare for mass sending.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="best-practices">Best Practices for Outreach</h2>
+
+        <h3>Timing Matters</h3>
+        <ul>
+            <li><strong>Tuesday-Thursday mornings</strong> (9am-11am in their timezone) tend to get better response rates</li>
+            <li><strong>Avoid Mondays</strong> (inbox overload) and <strong>weekends</strong> (personal time)</li>
+            <li><strong>Consider their upload schedule:</strong> If they post on Fridays, reach out early in the week so they have time to consider your game</li>
+        </ul>
+
+        <h3>Personalization (Without Overdoing It)</h3>
+        <ul>
+            <li><strong>Mention 1 specific video</strong> they made that relates to your game — shows you actually watch their content</li>
+            <li><strong>Don't write an essay</strong> about how much you love their channel — they've heard it before and it wastes their time</li>
+            <li><strong>Use their name</strong> if you know it, but don't stress if you only have their channel name</li>
+        </ul>
+
+        <h3>Respect Their Time</h3>
+        <ul>
+            <li><strong>Keep it scannable:</strong> They should be able to evaluate your email in under 30 seconds</li>
+            <li><strong>Don't ask for a response:</strong> Phrases like "Let me know what you think!" add pressure. Just provide the key and let them decide.</li>
+            <li><strong>No attachments:</strong> Use image links instead of attachments (attachments can trigger spam filters and require extra clicks)</li>
+            <li><strong>One email, one game:</strong> Don't pitch multiple projects in the same email</li>
+        </ul>
+
+        <div class="warning-box">
+            <p><strong>What NOT to Do:</strong></p>
+            <ul>
+                <li>Don't send follow-up emails if they don't respond (they saw it, they're just not interested)</li>
+                <li>Don't ask them to reply confirming they received it</li>
+                <li>Don't apologize for "bothering" them — you're offering content, not asking for a favor</li>
+                <li>Don't send mass emails with "Dear Content Creator" or "Dear YouTuber" or visible CC'd addresses</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="dream-email">The "Dream Email" Template</h2>
+
+        <p>This template is based on what busy content creators have explicitly said they appreciate: ultra-short, visual, and frictionless. It works for YouTubers, streamers, game reviewers, journalists, and anyone else who covers games.</p>
+
+        <div class="highlight-box">
+            <p><strong>Philosophy:</strong> Every element serves a purpose. Remove anything that doesn't directly help them decide if they want to cover your game. Respect their time by making evaluation effortless.</p>
+        </div>
+
+        <h3>Plain Text Version (Minimal)</h3>
+        <pre><code>Subject: [Your Game Title] — [One Word Genre] Game
+
+Hi [Name/Channel Name],
+
+I'm [Your Name], dev of [Game Title]. Thought it might fit your channel. Free key below if you want to check it out.
+
+---
+
+[GAME TITLE]
+
+[One paragraph description: What is it? What makes it interesting? What's the core hook?]
+
+Gameplay GIF: [link to hosted animated GIF]
+
+Steam Key: XXXXX-XXXXX-XXXXX
+(or Download: [link] | Steam Page: [link])
+
+Screenshot 1 (Gameplay): [link]
+Screenshot 2 (UI/Menu): [link]
+
+Youtube Video: [link]
+Store Page: [link]
+
+Quick Details:
+• Price: [amount or "Free"]
+• Release Date: [date as DD.MM.YYYY]
+• Status: ["Full Release", "Early Access", "Alpha version" or "Beta version"]
+• Platforms: [PC/Mac/Linux/Console/Mobile/Tablet/VR]
+• Genre: [genre tags]
+• Players: [Singleplayer / Multiplayer (Co-op/Collab/PvP/PvE/Async)]
+• Controls: [Keyboard+Mouse / Gamepad / Touch / VR Control / Other]
+• Playtime: [~5 hours / 20+ hours / Endless / Session-based (~30 min per run)] (optional)
+• Languages: [English / English + Spanish + French / etc.] (optional)
+• Content Warnings: [Violence / Gore / Mature Themes / Flashing Lights / etc.] (optional)
+• Accessibility: [Subtitles / Colorblind modes / Remappable controls / etc.] (optional)
+
+(Note: Only include Quick Details that are relevant to your game — don't force unnecessary items)
+
+About: [1 paragraph about you as the developer and the project's origin/inspiration, plus info about who is publisher]
+(Example: "I'm a solo developer from Portland who spent 2 years building this as a love letter to classic puzzle games. Publishing with TinyBuild or Self-published.")
+---
+
+Thanks,
+[Your Name]
+[Optional: Twitter/Website link/Other]</code></pre>
+
+        <hr>
+
+        <h2 id="html-formatting">Generating HTML Emails with AI</h2>
+
+        <p>Plain text emails work great, but HTML emails let you add visual polish that makes your game instantly more appealing. Instead of coding HTML manually, let AI do the work for you.</p>
+
+        <h3>Why HTML Emails?</h3>
+        <ul>
+            <li><strong>Images are instantly visible</strong> — no clicking links, the GIF and screenshots appear right when they open the email</li>
+            <li><strong>Color matching</strong> — style the email to match your game's theme and aesthetic</li>
+            <li><strong>Better visual hierarchy</strong> — key info stands out clearly</li>
+            <li><strong>More professional presentation</strong> — looks polished and complete</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>The Workflow:</strong> Prepare your content once, use an AI prompt to generate formatted HTML, then mass send to your curated list. Simple and efficient.</p>
+        </div>
+
+        <h3>Step-by-Step Workflow</h3>
+
+        <h4>Step 1: Host Your Images</h4>
+        <p>First, upload your images to an image hosting service so they can be embedded in emails:</p>
+        <ul>
+            <li>Use <strong>PostImages.org</strong> or similar</li>
+            <li>Upload: 1 animated GIF (gameplay, loop, microtrailer, under 5MB) + 2 screenshots (gameplay and UI)</li>
+            <li>Copy the direct image URLs (not the page links)</li>
+        </ul>
+
+        <p>Create a small text file (<code>email-prep.txt</code>) and paste your image links:</p>
+        <pre><code>GIF: https://i.postimg.cc/xxxxx/gameplay.gif
+Screenshot A (Gameplay): https://i.postimg.cc/xxxxx/screenshot1.png
+Screenshot B (UI/Menu): https://i.postimg.cc/xxxxx/screenshot2.png</code></pre>
+
+        <h4>Step 2: Fill Out the Plain Text Template</h4>
+        <p>In the same <code>email-prep.txt</code> file, copy the plain text email template from above and fill it out with your game's details. Replace all the <code>[bracketed placeholders]</code> with your actual information.</p>
+
+        <p><strong>Optional:</strong> You can use AI to help fill this out too. Just provide the template plus your game design docs/context and ask it to complete the template.</p>
+
+        <pre><code>Fill out the following email template using the project context and documents I'm providing below.
+
+TEMPLATE TO FILL OUT:
+---
+[Paste the plain text email template here]
+---
+
+PROJECT CONTEXT:
+[Paste your game design docs, pitch document, or any relevant context about your project here]
+
+INSTRUCTIONS:
+- Replace all [bracketed placeholders] with accurate information from the project context
+- Keep the tone authentic and concise
+- Only include Quick Details that are relevant (don't force unnecessary items)
+- Make the description paragraph compelling but brief (3-5 sentences max)
+- Keep the "About" paragraph to 1-2 sentences</code></pre>
+
+        <h4>Step 3: Generate HTML Email with AI</h4>
+        <p>Now use this AI prompt to convert your filled-out template into a beautiful HTML email. Copy the entire prompt below and paste it into ChatGPT, Claude, or any AI assistant:</p>
+
+        <div class="info-box">
+            <h3>AI Prompt Template</h3>
+            <pre><code>Convert the following plain text game pitch email into a professional HTML email with inline styles.
+
+REQUIREMENTS:
+- Use inline CSS styles (no external stylesheets or classes)
+- Embed images directly using &lt;img&gt; tags with the provided URLs
+- Images should be visible immediately when the email opens (no attachments)
+- Clean, scannable visual hierarchy
+- Mobile-responsive (max-width: 600px)
+- Color scheme adapted to match the game's theme (use [PRIMARY_COLOR] below)
+- Professional but not corporate — keep it authentic and indie-friendly
+
+PRIMARY COLOR FOR EMAIL STYLING:
+[Specify a hex color that matches your game's theme, e.g., #2c5aa0 for blue, #8b2c2c for dark red, #4ecdc4 for cyan, etc.]
+
+PLAIN TEXT EMAIL TO CONVERT:
+---
+[Paste your filled-out plain text template here]
+---
+
+OUTPUT:
+Provide the complete HTML email code that I can copy and paste directly into my email client's HTML composer.</code></pre>
+        </div>
+
+        <h4>Step 4: Copy HTML into Your Email Client</h4>
+        <p>Once the AI generates the HTML:</p>
+        <ol>
+            <li>Copy the entire HTML code</li>
+            <li>Open your email client (Gmail, Outlook, Thunderbird, etc.)</li>
+            <li>Switch to HTML mode or "Insert HTML" option</li>
+            <li>Paste the code</li>
+            <li>Send yourself a test email first to verify everything looks good</li>
+        </ol>
+
+        <h4>Step 5: Mass Send to Your Curated List</h4>
+        <p>Once you've verified the email looks perfect, it's time to send it to your curated list of content creators:</p>
+
+        <div class="info-box">
+            <h3>Mass Sending Options</h3>
+            <ul>
+                <li><strong>Gmail/Outlook BCC Method:</strong> Add all addresses to BCC (blind carbon copy) — recipients won't see each other's emails. Keep batches under 50 addresses to avoid spam filters.</li>
+                <li><strong>Mail Merge Tools:</strong> Use tools like <strong>Mailmeteor</strong> (for Gmail), <strong>Yet Another Mail Merge</strong> (Google Sheets addon), or <strong>Thunderbird's Mail Merge</strong> addon to personalize the "Hi [Name]" field for each recipient automatically.</li>
+                <li><strong>Email Marketing Services:</strong> Tools like <strong>Mailchimp</strong>, <strong>Sendinblue</strong>, or <strong>Buttondown</strong> (all have free tiers) let you import your contact list and send personalized HTML emails to hundreds of people effortlessly.</li>
+            </ul>
+            <p><strong>Important:</strong> Even when mass sending, the email should look personal and targeted. Use mail merge to at least personalize their name in the greeting.</p>
+        </div>
+
+        <h3>Choosing Your Email Color</h3>
+        <p>Pick one primary color that matches your game's mood and visual theme. Here are some examples:</p>
+        <ul>
+            <li><strong>Dark, ominous, gothic atmosphere:</strong> Deep purples/dark reds (<code>#5a2c5a</code>, <code>#8b2c2c</code>)</li>
+            <li><strong>Vibrant, energetic, playful tone:</strong> Bright, punchy colors (<code>#ff6b6b</code>, <code>#ff9f1c</code>, <code>#4ecdc4</code>)</li>
+            <li><strong>Clean, calm, minimalist feel:</strong> Muted, sophisticated tones (<code>#6c757d</code>, <code>#495057</code>, <code>#8d99ae</code>)</li>
+            <li><strong>Sleek, futuristic, high-tech vibe:</strong> Electric blues/cyans (<code>#00d4ff</code>, <code>#0084ff</code>, <code>#00ffff</code>)</li>
+            <li><strong>Warm, cozy, inviting mood:</strong> Earthy greens/warm oranges (<code>#6a994e</code>, <code>#f77f00</code>, <code>#d4a574</code>)</li>
+            <li><strong>Gritty, industrial, post-apocalyptic:</strong> Rust oranges/steel grays (<code>#a8652c</code>, <code>#5a5a5a</code>, <code>#7a6a55</code>)</li>
+            <li><strong>Mysterious, ethereal, dreamlike:</strong> Soft purples/muted blues (<code>#9d84b7</code>, <code>#6b8cae</code>, <code>#a5b3c7</code>)</li>
+            <li><strong>Intense, aggressive, action-packed:</strong> Bold reds/deep oranges (<code>#d62828</code>, <code>#f77f00</code>, <code>#c1121f</code>)</li>
+        </ul>
+
+        <div class="info-box">
+            <h3>Testing Checklist</h3>
+            <p>Before mass sending, verify:</p>
+            <ul>
+                <li>Send test email to yourself first</li>
+                <li>Check on desktop and mobile</li>
+                <li>Verify all images load and are visible immediately</li>
+                <li>Click all links to ensure they work</li>
+                <li>Check in multiple email clients if possible (Gmail, Outlook, Apple Mail)</li>
+                <li>Confirm Steam key/download link is correct and active</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="follow-up">Follow-Up Etiquette</h2>
+
+        <h3>When They Respond</h3>
+        <ul>
+            <li><strong>Reply quickly:</strong> Thank them briefly, answer any questions, offer additional keys/materials if needed</li>
+            <li><strong>Don't ask for commitments:</strong> Avoid "When will you cover it?" or "Can you let me know when the video is up?"</li>
+            <li><strong>Offer additional support:</strong> "If you need extra keys for a giveaway or have any questions, just let me know."</li>
+        </ul>
+
+        <h3>When They Don't Respond</h3>
+        <ul>
+            <li><strong>Don't follow up.</strong> Seriously. If they're interested, they'll reach out or just make the video.</li>
+            <li><strong>Don't take it personally.</strong> They get dozens of emails daily. Silence just means "not right now" or "not a fit."</li>
+            <li><strong>Move on to the next creator.</strong> There are thousands of content creators out there.</li>
+        </ul>
+
+        <h3>After They Cover Your Game</h3>
+        <ul>
+            <li><strong>Thank them publicly:</strong> Retweet/share their video, leave a genuine comment</li>
+            <li><strong>Send a quick thank-you email:</strong> Short and sweet. "Thanks for covering [game], really appreciate it!"</li>
+            <li><strong>Offer update keys:</strong> When you release major updates, send them a note: "Hey, [game] just got a huge update. New key if you want to revisit: [key]"</li>
+            <li><strong>Don't overdo it:</strong> One thank you is enough. Don't pester them for future coverage.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3>Building Relationships</h3>
+            <p>If a creator covers your game and seems genuinely interested, you've started a relationship. When your next project launches, they'll be more likely to cover it. But don't abuse this — only reach out when you have something truly worth their time.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="mistakes">Common Mistakes to Avoid</h2>
+
+        <h3>The "Long Story" Email</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> "Hi! I've been a fan of your channel for 5 years and I remember when you played [game] back in 2019 and it was so funny when you did [thing]. Anyway, I've been working on this game for 3 years and it's been such a journey. I started during the pandemic and had to learn coding from scratch..."</p>
+            <p><strong>Why it fails:</strong> They don't have time to read your life story. Get to the point.</p>
+        </div>
+
+        <h3>The "Desperate Plea" Email</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> "Please please please cover my game! I've worked so hard and really need your help. I've sent this to 50 other YouTubers and nobody has responded. This would mean the world to me!"</p>
+            <p><strong>Why it fails:</strong> Desperation is a turnoff. You're offering content, not begging for charity.</p>
+        </div>
+
+        <h3>The "Vague Pitch" Email</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> "Hey, I made a cool game. Want to check it out? Let me know and I'll send you a key."</p>
+            <p><strong>Why it fails:</strong> No details, no images, no key. They have to reply just to learn what your game even is.</p>
+        </div>
+
+        <h3>The "Attachment Bomb" Email</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> [Email with 6 image attachments, a PDF press kit, and a zip file of assets]</p>
+            <p><strong>Why it fails:</strong> Attachments trigger spam filters and require downloading. Host images online and link them.</p>
+        </div>
+
+        <h3>The "Demand Response" Email</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> "Let me know by Friday if you're interested so I can send keys to other YouTubers."</p>
+            <p><strong>Why it fails:</strong> You're adding pressure and creating artificial urgency. Keys don't expire. Let them decide on their own timeline.</p>
+        </div>
+
+        <h3>The "Generic Mass Email" Slip-Up</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> "Dear Content Creator, We are reaching out to select influencers..." or visible CC'd email addresses</p>
+            <p><strong>Why it fails:</strong> Shows you didn't personalize it at all. They know they're one of hundreds.</p>
+        </div>
+
+        <hr>
+
+        <h2>Final Checklist</h2>
+
+        <div class="checklist">
+            <p><strong>Before mass sending, verify:</strong></p>
+            <ul>
+                <li>Sent a test email to yourself and it looks perfect</li>
+                <li>All images load instantly (GIF + screenshots)</li>
+                <li>Steam key or download link works</li>
+                <li>All other links are clickable and correct</li>
+                <li>Email is scannable in under 30 seconds</li>
+                <li>No spelling or grammar errors</li>
+                <li>Personalized greeting (at minimum their name)</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Remember</h3>
+            <p>The best outreach emails are effortless to evaluate. Content creators are busy people who appreciate clarity, brevity, and respect for their time. Give them everything they need to make a decision in 30 seconds, then step back and let them do their thing.</p>
+
+            <p>If your game is a good fit for their audience, they'll cover it. If not, move on to the next creator. There's an audience out there for every game — your job is to find the right people and make it easy for them to say yes.</p>
+        </div>
+
+        <a href="../index.html" class="back-button" style="margin-top: 40px;">← Back to App</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Building & Discord Management Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a2520 0%, #1a1816 50%, #2d2420 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(42, 37, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(218, 196, 160, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 184, 150, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #dac4a0 0%, #d4b896 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 184, 150, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dac4a0;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(218, 196, 160, 0.3);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4b896;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #dac4a0;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d4b896;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 118, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .highlight-box {
+            background: rgba(201, 168, 118, 0.1);
+            border-left: 4px solid #c9a876;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background: rgba(212, 184, 150, 0.08);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+        }
+
+        .warning-box {
+            background: rgba(218, 120, 80, 0.08);
+            border-left: 4px solid #da7850;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background: rgba(106, 153, 78, 0.08);
+            border-left: 4px solid #6a994e;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: rgba(26, 24, 22, 0.8);
+            border: 1px solid rgba(201, 168, 118, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #e8e8e8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            background: rgba(26, 24, 22, 0.6);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #dac4a0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            body {
+                padding: 20px 15px;
+            }
+
+            pre {
+                padding: 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to App</a>
+
+        <h1>Community Building & Discord Management Guide</h1>
+
+        <p>Building a community around your game is about creating a space where players feel welcome, valued, and excited to participate. This guide covers setting up a Discord server, managing difficult situations, celebrating your best community members, and avoiding burnout while keeping your community healthy and engaged.</p>
+
+        <div class="highlight-box">
+            <p><strong>Core Philosophy:</strong> You're not building an audience — you're building a community. The difference? Audiences consume content passively. Communities participate, contribute, and advocate for your game because they feel ownership and belonging.</p>
+        </div>
+
+        <hr>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#getting-started">Getting Started: Do You Need a Discord?</a></li>
+                <li><a href="#discord-setup">Discord Server Setup</a></li>
+                <li><a href="#engagement">Building Engagement Without Burnout</a></li>
+                <li><a href="#difficult-people">Handling Difficult People & PR Issues</a></li>
+                <li><a href="#celebrating">Celebrating Your Community Champions</a></li>
+                <li><a href="#growth">Growing Your Community Organically</a></li>
+                <li><a href="#common-mistakes">Common Mistakes to Avoid</a></li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h2 id="getting-started">Getting Started: Do You Need a Discord?</h2>
+
+        <p>Not every game needs a Discord server. Before you create one, ask yourself:</p>
+
+        <h3>You Probably SHOULD Create a Discord If:</h3>
+        <ul>
+            <li>Your game has multiplayer or co-op elements (players need to find teammates)</li>
+            <li>You're building the game publicly and want community feedback during development</li>
+            <li>Your game has mod support or user-generated content</li>
+            <li>You want a direct line to your most engaged players for beta testing and feedback</li>
+            <li>You enjoy interacting with players and have time to be present (even if just occasionally)</li>
+        </ul>
+
+        <h3>You Probably DON'T Need a Discord If:</h3>
+        <ul>
+            <li>Your game is a small, single-player experience with no ongoing updates</li>
+            <li>You don't have time or energy to moderate/participate (a dead Discord is worse than no Discord)</li>
+            <li>You're extremely private and don't want direct player interaction</li>
+            <li>You're still very early in development with nothing to show or discuss yet</li>
+        </ul>
+
+        <div class="info-box">
+            <h3>The "Soft Launch" Approach</h3>
+            <p>Start with a simple Discord server and grow it gradually. Don't overthink the setup. Begin with 5-6 basic channels and add more as your community needs them. It's easier to add channels than to remove unused ones later.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="discord-setup">Discord Server Setup</h2>
+
+        <p>Here's a minimal, functional Discord setup that works for most indie game communities:</p>
+
+        <h3>Essential Channels (Start Here)</h3>
+        <ul>
+            <li><strong>#welcome:</strong> Rules, introductions, links to game/store page</li>
+            <li><strong>#announcements:</strong> Dev updates, patch notes, events (read-only except for you/mods)</li>
+            <li><strong>#general:</strong> Main discussion about your game</li>
+            <li><strong>#feedback-and-bugs:</strong> Players report issues and suggest features</li>
+            <li><strong>#off-topic:</strong> Random chat, memes, other games — keeps noise out of main channels</li>
+            <li><strong>#media:</strong> Players share screenshots, videos, fan art</li>
+        </ul>
+
+        <h3>Optional Channels (Add Later If Needed)</h3>
+        <ul>
+            <li><strong>#looking-for-group:</strong> If multiplayer/co-op — players find teammates</li>
+            <li><strong>#modding:</strong> If you support mods</li>
+            <li><strong>#content-creators:</strong> For YouTubers/streamers covering your game</li>
+            <li><strong>#spoilers:</strong> Late-game discussion without spoiling new players</li>
+            <li><strong>#dev-chat:</strong> Behind-the-scenes development talk</li>
+        </ul>
+
+        <h3>Roles & Permissions</h3>
+        <p>Keep it simple at first:</p>
+        <ul>
+            <li><strong>Developer/Team:</strong> You and your team members (different color, post in announcements)</li>
+            <li><strong>Moderators:</strong> Trusted community members who help manage (if server grows large)</li>
+            <li><strong>Supporters:</strong> People who bought the game or backed on Kickstarter (optional, nice badge of honor)</li>
+            <li><strong>Everyone Else:</strong> Default member role</li>
+        </ul>
+
+        <div class="warning-box">
+            <h3>Don't Over-Complicate Roles</h3>
+            <p>Avoid creating 15 different role tiers, special VIP roles, or complex leveling systems. These create hierarchy and exclusivity that harm community vibes. Keep it simple and welcoming.</p>
+        </div>
+
+        <h3>Server Rules (Keep Them Simple)</h3>
+        <p>Post these in your #welcome channel:</p>
+        <ol>
+            <li><strong>Be respectful:</strong> No harassment, hate speech, or personal attacks</li>
+            <li><strong>Stay on topic:</strong> Use appropriate channels (off-topic stuff goes in #off-topic)</li>
+            <li><strong>No spam:</strong> Don't flood channels, no self-promotion without asking first</li>
+            <li><strong>Spoilers:</strong> Use spoiler tags or move to #spoilers channel</li>
+            <li><strong>Listen to mods:</strong> If asked to stop something, stop</li>
+        </ol>
+
+        <p>That's it. Don't write a legal document — keep it friendly and clear.</p>
+
+        <hr>
+
+        <h2 id="engagement">Building Engagement Without Burnout</h2>
+
+        <p>The biggest mistake indie devs make: treating their Discord like a 24/7 customer service job. You'll burn out fast. Here's how to stay engaged without losing your mind:</p>
+
+        <h3>Set Boundaries Early</h3>
+        <ul>
+            <li><strong>You don't owe constant presence:</strong> Check in when you have time — daily, every few days, or weekly. Be consistent, not omnipresent.</li>
+            <li><strong>Pin a "Dev Schedule" message:</strong> Let people know when you're typically active (e.g., "I check Discord on Tuesdays and Fridays")</li>
+            <li><strong>Use "Do Not Disturb" mode:</strong> Turn off @mentions and notifications when you're working or need a break</li>
+            <li><strong>It's okay to disappear during crunch:</strong> Tell your community "Going dark for 2 weeks to finish the update" and DO IT</li>
+        </ul>
+
+        <h3>Easy Ways to Stay Engaged</h3>
+        <ul>
+            <li><strong>Weekly Dev Update:</strong> One message every Friday summarizing what you worked on that week (even if it's "fixed bugs, not much visible progress")</li>
+            <li><strong>Screenshot Saturdays:</strong> Share a screenshot/GIF of something you're working on</li>
+            <li><strong>Ask Questions:</strong> "Which feature should I prioritize next?" or "What enemy type would you like to see?" — makes people feel heard</li>
+            <li><strong>Celebrate Milestones:</strong> Hit 100 wishlists? 1000 members? Share it! Let your community celebrate with you.</li>
+            <li><strong>React with Emojis:</strong> Even if you don't have time to reply, dropping a 👀 or ❤️ on messages shows you're reading</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3>The "Office Hours" Approach</h3>
+            <p>Some devs set specific "office hours" — e.g., Tuesdays 7-9pm — where they're guaranteed to be active and answer questions. Outside those hours, they're offline. This trains your community to expect presence at certain times without demanding 24/7 availability.</p>
+        </div>
+
+        <h3>Let the Community Self-Moderate</h3>
+        <p>As your server grows, veteran members will naturally start answering new player questions, sharing tips, and helping each other. <strong>Let this happen.</strong> Don't feel like YOU have to answer everything. In fact, when community members answer questions, thank them publicly — it reinforces helpful behavior.</p>
+
+        <hr>
+
+        <h2 id="difficult-people">Handling Difficult People & PR Issues</h2>
+
+        <p>Every community eventually deals with drama, trolls, entitled demands, or negative feedback that feels personal. Here's how to handle it without losing your cool.</p>
+
+        <h3>Types of Difficult People & How to Handle Them</h3>
+
+        <h4>1. The Entitled Demander</h4>
+        <p><strong>Behavior:</strong> "You NEED to add [feature] or this game will fail!" / "Why isn't [thing] fixed yet? This is unacceptable!"</p>
+        <p><strong>How to Handle:</strong></p>
+        <ul>
+            <li>Acknowledge their passion: "I appreciate you care enough to give feedback!"</li>
+            <li>Set expectations: "I'm tracking feature requests, but I can't promise timelines for everything"</li>
+            <li>Don't argue or justify: You don't owe explanations for every design decision</li>
+            <li>If they continue being aggressive, warn once, then mute/kick if needed</li>
+        </ul>
+
+        <h4>2. The Chronic Complainer</h4>
+        <p><strong>Behavior:</strong> Every message is negative. Nothing is ever good enough. Constant comparisons to other games.</p>
+        <p><strong>How to Handle:</strong></p>
+        <ul>
+            <li>Acknowledge specific feedback when it's constructive</li>
+            <li>Ignore vague negativity ("this game sucks") — don't engage</li>
+            <li>If they're dragging down server mood, DM them privately: "Hey, I notice you seem unhappy with the game. What's going on?"</li>
+            <li>Sometimes they're frustrated and just need to be heard. Sometimes they're trolls. DMs help you figure out which.</li>
+        </ul>
+
+        <h4>3. The Troll / Provocateur</h4>
+        <p><strong>Behavior:</strong> Posts inflammatory messages to get reactions. Insults other members. Deliberate rule-breaking.</p>
+        <p><strong>How to Handle:</strong></p>
+        <ul>
+            <li><strong>Do not engage publicly.</strong> Trolls feed on attention.</li>
+            <li>Warn once via DM: "This behavior isn't welcome here. Stop or you'll be removed."</li>
+            <li>If they continue, ban immediately without explanation. You don't owe trolls a debate.</li>
+            <li>Use Discord's "Delete Messages" option when banning to remove their spam from the server</li>
+        </ul>
+
+        <h4>4. The Overly Attached Fan</h4>
+        <p><strong>Behavior:</strong> Messages you constantly, overshares personal info, gets upset if you don't respond immediately, crosses boundaries.</p>
+        <p><strong>How to Handle:</strong></p>
+        <ul>
+            <li>Be kind but firm: "I appreciate your support, but I need to focus on development. I can't respond to every message."</li>
+            <li>Don't feel guilty for setting boundaries — their emotions are not your responsibility</li>
+            <li>If they ignore boundaries, mute or block. Protect your mental health.</li>
+        </ul>
+
+        <h4>5. The Backseat Developer</h4>
+        <p><strong>Behavior:</strong> "You should use Unreal instead of Unity" / "Just add multiplayer, it's easy" / Unsolicited design lectures.</p>
+        <p><strong>How to Handle:</strong></p>
+        <ul>
+            <li>Thank them for the suggestion, then redirect: "I've already committed to this tech stack, but I appreciate the input!"</li>
+            <li>Create a #suggestions channel to contain this behavior</li>
+            <li>Ignore most of it — you're the developer, not them</li>
+        </ul>
+
+        <div class="warning-box">
+            <h3>The "One Warning" Rule</h3>
+            <p>For most rule-breaking behavior: <strong>Warn once, ban on second offense.</strong> Don't give trolls 5 chances. Protect your community's vibe by removing people who consistently make it worse. You're not running a rehabilitation program — you're building a game.</p>
+        </div>
+
+        <h3>Handling PR Crises</h3>
+
+        <p>Sometimes a controversy erupts — a bad patch, a controversial design decision, a miscommunication that blows up. Here's how to handle it:</p>
+
+        <ol>
+            <li><strong>Take a breath before responding:</strong> Don't fire off a defensive message in the heat of the moment. Wait 30 minutes.</li>
+            <li><strong>Acknowledge the issue clearly:</strong> "I understand people are upset about [thing]. Here's what happened..."</li>
+            <li><strong>Explain your reasoning (if appropriate):</strong> Help people understand the context or constraints</li>
+            <li><strong>Outline what you're doing to fix it:</strong> If it's a bug, when's the patch? If it's a design choice, are you reconsidering?</li>
+            <li><strong>Thank people for their patience:</strong> Even when they're angry, acknowledge their investment in your game</li>
+            <li><strong>Move on:</strong> Don't keep relitigating the issue. Make your statement, take action, and move forward.</li>
+        </ol>
+
+        <div class="success-box">
+            <h3>Example Crisis Response (Good)</h3>
+            <p><em>"Hey everyone, I know the latest patch broke saves for some players. This wasn't caught in testing and I'm really sorry. I'm working on a hotfix right now and it'll be out within 24 hours. If your save is corrupted, DM me and I'll help you manually recover it. Thanks for your patience — I'll do better on testing next time."</em></p>
+            <p><strong>Why this works:</strong> Acknowledges the problem, takes responsibility, provides a timeline, offers help, doesn't make excuses.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="celebrating">Celebrating Your Community Champions</h2>
+
+        <p>Your best community members — the ones who answer questions, share your game, create content, and keep the vibes positive — deserve recognition. Here's how to celebrate them without creating toxic competition:</p>
+
+        <h3>Simple Ways to Celebrate Good Community Members</h3>
+
+        <ul>
+            <li><strong>Public Thank-Yous:</strong> Shout them out in #announcements: "Big thanks to @User for helping new players this week!"</li>
+            <li><strong>Special Role/Badge:</strong> Create a "Community Helper" role for people who consistently contribute (don't make it a competition — just give it when you notice someone being awesome)</li>
+            <li><strong>Feature Their Content:</strong> Share their fan art, videos, or streams on your social media and in Discord</li>
+            <li><strong>Beta Access:</strong> Invite helpful members to test new features early</li>
+            <li><strong>In-Game Recognition:</strong> Add their name to credits, or create an NPC named after them (ask permission first!)</li>
+            <li><strong>Personal Messages:</strong> A quick DM saying "Hey, just wanted to say I really appreciate you helping keep this community welcoming" goes a long way</li>
+        </ul>
+
+        <h3>Creating a "Hall of Fame" Channel</h3>
+
+        <p>Some servers have a #community-highlights or #hall-of-fame channel where they showcase:</p>
+        <ul>
+            <li>Amazing fan art or creations</li>
+            <li>Funny moments or memorable quotes from the community</li>
+            <li>Impressive gameplay achievements</li>
+            <li>Community members who went above and beyond</li>
+        </ul>
+
+        <p>This creates a positive, celebratory culture where people feel valued.</p>
+
+        <div class="info-box">
+            <h3>Avoid Creating Hierarchies</h3>
+            <p>Don't create 10 tiers of "VIP" roles that people have to grind for. This creates FOMO, resentment, and clique behavior. Instead, celebrate individuals authentically when they do something cool — not because they hit an arbitrary metric.</p>
+        </div>
+
+        <h3>Celebrating Milestones Together</h3>
+
+        <p>When your game or community hits a milestone, celebrate WITH your community, not just FOR them:</p>
+
+        <ul>
+            <li><strong>10,000 wishlists:</strong> "We hit 10k wishlists! You all made this happen. Here's a new trailer to celebrate!"</li>
+            <li><strong>1,000 Discord members:</strong> Host a community game night or Q&A stream</li>
+            <li><strong>Launch day:</strong> Thank everyone who supported you along the way</li>
+            <li><strong>Positive review milestones:</strong> Share and celebrate when someone leaves a heartfelt review</li>
+        </ul>
+
+        <p>Make them feel like they're part of the journey, not just spectators.</p>
+
+        <hr>
+
+        <h2 id="growth">Growing Your Community Organically</h2>
+
+        <p>You don't need 10,000 members to have a great community. A small, engaged group is better than a massive, dead server. That said, here's how to grow naturally:</p>
+
+        <h3>Where to Promote Your Discord</h3>
+        <ul>
+            <li><strong>Steam Store Page:</strong> Link to Discord in your description and community hub</li>
+            <li><strong>In-Game:</strong> Add a "Join Our Discord" button in your main menu or pause screen</li>
+            <li><strong>Social Media Bios:</strong> Twitter, YouTube, TikTok — link everywhere</li>
+            <li><strong>End of Videos/Streams:</strong> If you make dev vlogs, end with "Join our Discord for updates!"</li>
+            <li><strong>Reddit Posts:</strong> When sharing updates on r/gamedev or r/IndieGaming, mention your Discord</li>
+        </ul>
+
+        <h3>What Makes People Want to Join?</h3>
+        <ul>
+            <li><strong>Active development:</strong> People want to watch a game being made and feel involved</li>
+            <li><strong>Direct dev interaction:</strong> Chance to talk to the creator(s)</li>
+            <li><strong>Exclusive updates:</strong> Early looks at features, behind-the-scenes content</li>
+            <li><strong>Helpful community:</strong> Answers to questions, tips, strategy discussions</li>
+            <li><strong>Fun vibes:</strong> Positive, welcoming atmosphere where they feel comfortable participating</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3>Quality Over Quantity</h3>
+            <p>100 active, engaged members who chat regularly and care about your game are infinitely more valuable than 10,000 lurkers who joined and never came back. Focus on creating a space people WANT to participate in, not just join.</p>
+        </div>
+
+        <hr>
+
+        <h2 id="common-mistakes">Common Mistakes to Avoid</h2>
+
+        <h3>Mistake 1: Creating a Discord Too Early</h3>
+        <div class="warning-box">
+            <p><strong>Problem:</strong> You create a server when you have 5 followers and nothing to show. It sits empty for months.</p>
+            <p><strong>Why it fails:</strong> Dead servers feel depressing and give the impression your project is dead too.</p>
+            <p><strong>Fix:</strong> Wait until you have at least 50-100 interested people (wishlists, followers, etc.) before launching a Discord.</p>
+        </div>
+
+        <h3>Mistake 2: Over-Moderating or Under-Moderating</h3>
+        <div class="warning-box">
+            <p><strong>Over-moderating:</strong> Deleting every off-topic message, warning people for minor stuff, creating tons of restrictive rules.</p>
+            <p><strong>Under-moderating:</strong> Letting trolls run wild, ignoring harassment, allowing spam because you don't want to be "mean".</p>
+            <p><strong>Fix:</strong> Find the balance. Let conversation flow naturally, but step in when someone is harming the community vibe.</p>
+        </div>
+
+        <h3>Mistake 3: Treating Feedback as Demands</h3>
+        <div class="warning-box">
+            <p><strong>Problem:</strong> Someone suggests a feature and you immediately feel obligated to add it (or defensive about why you won't).</p>
+            <p><strong>Why it fails:</strong> You lose creative control and burn out trying to please everyone.</p>
+            <p><strong>Fix:</strong> Thank people for feedback, consider it genuinely, but remember: YOU are making the game. Not a committee.</p>
+        </div>
+
+        <h3>Mistake 4: Neglecting the Server After Launch</h3>
+        <div class="warning-box">
+            <p><strong>Problem:</strong> You're active pre-launch, then disappear once the game is out.</p>
+            <p><strong>Why it fails:</strong> Community feels abandoned. Mod support dies. Players lose interest.</p>
+            <p><strong>Fix:</strong> Plan for post-launch engagement. Even just a monthly update or occasional visit keeps things alive.</p>
+        </div>
+
+        <h3>Mistake 5: Taking Everything Personally</h3>
+        <div class="warning-box">
+            <p><strong>Problem:</strong> Negative feedback feels like a personal attack. You argue with critics or spiral into self-doubt.</p>
+            <p><strong>Why it fails:</strong> You burn out emotionally and damage relationships with your community.</p>
+            <p><strong>Fix:</strong> Separate your self-worth from your game's reception. Not everyone will like what you make — that's okay. Focus on the people who DO care.</p>
+        </div>
+
+        <hr>
+
+        <h2>Final Thoughts</h2>
+
+        <div class="highlight-box">
+            <h3>Remember</h3>
+            <p>Your community is made up of real people who genuinely care about your game. They're not metrics, not "engagement numbers," not customers to be managed. Treat them like human beings — be authentic, be kind, set boundaries, and celebrate the good ones.</p>
+
+            <p>Building a community takes time. You won't have 1,000 members overnight, and that's fine. Start small, stay consistent, and create a space where people feel welcome. The rest will follow naturally.</p>
+        </div>
+
+        <a href="../index.html" class="back-button" style="margin-top: 40px;">← Back to App</a>
+    </div>
+</body>
+</html>

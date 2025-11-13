@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Store Page Optimization Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2a2520 0%, #1a1816 50%, #2d2420 100%);
+            background-attachment: fixed;
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(42, 37, 32, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(218, 196, 160, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #d4b896 0%, #c9a876 100%);
+            color: #1a1816;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 184, 150, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 184, 150, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #dac4a0 0%, #d4b896 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 184, 150, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #dac4a0;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(218, 196, 160, 0.3);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(201, 168, 118, 0.3);
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #d4b896;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #c9a876;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 1.05rem;
+        }
+
+        strong {
+            color: #dac4a0;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d4b896;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 118, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .highlight-box {
+            background: rgba(201, 168, 118, 0.1);
+            border-left: 4px solid #c9a876;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background: rgba(212, 184, 150, 0.08);
+            border: 1px solid rgba(212, 184, 150, 0.2);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+        }
+
+        .warning-box {
+            background: rgba(218, 120, 80, 0.08);
+            border-left: 4px solid #da7850;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: rgba(26, 24, 22, 0.8);
+            border: 1px solid rgba(201, 168, 118, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #e8e8e8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            background: rgba(26, 24, 22, 0.6);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #dac4a0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .checklist {
+            background: rgba(212, 184, 150, 0.05);
+            border: 1px solid rgba(212, 184, 150, 0.15);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+
+        .checklist li {
+            list-style-type: none;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "□";
+            position: absolute;
+            left: 0;
+            color: #c9a876;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            body {
+                padding: 20px 15px;
+            }
+
+            pre {
+                padding: 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">← Back to App</a>
+
+        <h1>Steam Store Page Optimization Guide</h1>
+
+        <p>Your Steam store page is often the first (and only) chance to convince someone to buy your game. This guide helps you create a compelling store presence that converts browsers into buyers — covering everything from writing descriptions to choosing the right screenshots, videos, and tags.</p>
+
+        <div class="highlight-box">
+            <p><strong>The Core Truth:</strong> You have about 30 seconds to grab someone's attention. Everything on your store page should answer: "Why should I care about this game?" Make it instantly clear, visually compelling, and easy to understand.</p>
+        </div>
+
+        <hr>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#capsule-images">Capsule Images & Header</a></li>
+                <li><a href="#trailer">Trailer & Gameplay Video</a></li>
+                <li><a href="#screenshots">Screenshots That Sell</a></li>
+                <li><a href="#description">Writing Your Description</a></li>
+                <li><a href="#tags-categories">Tags & Categories</a></li>
+                <li><a href="#pricing">Pricing Strategy</a></li>
+                <li><a href="#wishlists">Wishlists & Launch Timing</a></li>
+                <li><a href="#common-mistakes">Common Mistakes to Avoid</a></li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h2 id="capsule-images">Capsule Images & Header</h2>
+
+        <p>Capsule images are the small thumbnails that appear in Steam search results, recommendations, and browsing. They're the #1 most important visual element — if your capsule doesn't catch attention, nobody clicks through to your store page.</p>
+
+        <h3>What Makes a Good Capsule Image?</h3>
+        <ul>
+            <li><strong>Readable at small sizes:</strong> Text should be legible even when thumbnail is tiny (120x45px)</li>
+            <li><strong>Clear focal point:</strong> One main character, object, or scene — not cluttered with details</li>
+            <li><strong>High contrast:</strong> Stand out against Steam's dark blue/gray background</li>
+            <li><strong>Genre-obvious:</strong> Someone should instantly know what type of game this is</li>
+            <li><strong>No walls of text:</strong> Game title + maybe one tagline maximum</li>
+        </ul>
+
+        <h3>Capsule Image Sizes You Need</h3>
+        <ul>
+            <li><strong>Small Capsule:</strong> 231x87px (search results, recommendations)</li>
+            <li><strong>Main Capsule:</strong> 616x353px (store page header, big picture mode)</li>
+            <li><strong>Header Image:</strong> 460x215px (library view)</li>
+        </ul>
+
+        <div class="info-box">
+            <h3>Quick Test</h3>
+            <p>Shrink your capsule image down to 120x45px (about the size of a postage stamp). Can you still:</p>
+            <ul>
+                <li>Read the game title clearly?</li>
+                <li>Identify the genre/theme at a glance?</li>
+                <li>See the main visual focal point?</li>
+            </ul>
+            <p>If not, simplify! Remove clutter, increase contrast, make text bigger.</p>
+        </div>
+
+        <h3>What NOT to Do</h3>
+        <div class="warning-box">
+            <ul>
+                <li><strong>Don't use in-game screenshots as capsules</strong> — they're usually too detailed and don't read well at small sizes</li>
+                <li><strong>Don't use tiny font sizes</strong> — if your game title isn't readable at thumbnail size, redesign it</li>
+                <li><strong>Don't overload with information</strong> — "Game Title", "Epic Tagline", "Coming 2025", "Publisher Logo", "Awards Badge" all competing for space = visual mess</li>
+                <li><strong>Don't use low-contrast colors</strong> — light blue text on dark blue background disappears against Steam's UI</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="trailer">Trailer & Gameplay Video</h2>
+
+        <p>Your trailer is the second most important element after the capsule. Most people will watch the first 10 seconds and decide whether to keep watching or close the page.</p>
+
+        <h3>The First 10 Seconds Rule</h3>
+        <p><strong>Show gameplay immediately.</strong> No logos, no studio intro, no slow fade-ins. Start with the most exciting, representative moment of your game. You can add credits at the end for people who are already hooked.</p>
+
+        <h3>Trailer Structure That Works</h3>
+        <ol>
+            <li><strong>0-10 seconds:</strong> Hook — most exciting gameplay moment, core loop visible</li>
+            <li><strong>10-30 seconds:</strong> Core mechanics — show what you actually DO in the game</li>
+            <li><strong>30-60 seconds:</strong> Variety — different environments, modes, features</li>
+            <li><strong>60-90 seconds:</strong> Polish & vibe — show off visuals, audio, atmosphere</li>
+            <li><strong>Final 5 seconds:</strong> Title card, release date, platforms, wishlist CTA</li>
+        </ol>
+
+        <div class="highlight-box">
+            <p><strong>Length:</strong> Aim for 60-90 seconds. Most people won't watch beyond that. If your game needs longer to explain, add a second "Gameplay Deep Dive" video as a supplement.</p>
+        </div>
+
+        <h3>What to Show vs. What to Skip</h3>
+        <p><strong>Show:</strong></p>
+        <ul>
+            <li>Actual gameplay (not cutscenes or story beats)</li>
+            <li>Core mechanics in action</li>
+            <li>What makes your game unique or interesting</li>
+            <li>The player experience (what it FEELS like to play)</li>
+            <li>Polished, exciting moments that represent the game accurately</li>
+        </ul>
+
+        <p><strong>Skip:</strong></p>
+        <ul>
+            <li>Long intros or studio logos</li>
+            <li>Slow panning shots of environments with no action</li>
+            <li>Tutorial screens or UI-heavy menus</li>
+            <li>Anything that requires explanation (show, don't tell)</li>
+            <li>Misleading "target footage" that doesn't represent the actual game</li>
+        </ul>
+
+        <h3>Quick GIF Alternative</h3>
+        <p>Can't afford to make a fancy trailer? Use an <strong>animated GIF</strong> (under 5MB) showing 10-15 seconds of core gameplay on loop. It's not ideal, but it's better than nothing. Upgrade to a proper trailer as soon as you can.</p>
+
+        <hr>
+
+        <h2 id="screenshots">Screenshots That Sell</h2>
+
+        <p>You can upload up to 10 screenshots. The first 5 are the most important because they appear above the fold on most screens.</p>
+
+        <h3>What Makes a Great Screenshot?</h3>
+        <ul>
+            <li><strong>Shows gameplay, not menus:</strong> Screenshots should show players PLAYING, not navigating UI</li>
+            <li><strong>Variety:</strong> Different environments, mechanics, situations — not 10 shots of the same level</li>
+            <li><strong>Polished moments:</strong> Cool explosions, beautiful scenery, interesting puzzles, exciting action</li>
+            <li><strong>Representative:</strong> Don't show content that's 1% of the game and ignore the other 99%</li>
+            <li><strong>High resolution:</strong> 1920x1080 minimum, though Steam supports up to 3840x2160</li>
+        </ul>
+
+        <h3>Screenshot Lineup Strategy</h3>
+        <p>Think of your first 5 screenshots as a story:</p>
+        <ol>
+            <li><strong>Screenshot 1:</strong> The most visually impressive moment — grab attention immediately</li>
+            <li><strong>Screenshot 2:</strong> Core gameplay loop — show what you actually DO</li>
+            <li><strong>Screenshot 3:</strong> Unique feature or mechanic — what makes your game special</li>
+            <li><strong>Screenshot 4:</strong> Variety/depth — different environment or mode</li>
+            <li><strong>Screenshot 5:</strong> Another "wow" moment — end strong</li>
+        </ol>
+
+        <p>Screenshots 6-10 can show more variety, edge cases, cool details, or specific features for people who are already interested.</p>
+
+        <div class="info-box">
+            <h3>UI in Screenshots: Yes or No?</h3>
+            <p><strong>Keep UI visible</strong> in most screenshots. It shows the game is real and functional. However, avoid screenshots that are ONLY UI (inventory screens, skill trees, settings menus). Exception: if your game's UI is a major selling point (e.g., a management sim with a complex interface).</p>
+        </div>
+
+        <h3>Creating Screenshots</h3>
+        <ul>
+            <li><strong>Use in-game photo mode if available</strong> — lets you capture perfect angles and moments</li>
+            <li><strong>Disable FPS counters, debug info, watermarks</strong> — keep it clean</li>
+            <li><strong>Play through and capture 50+ screenshots</strong> — then pick the best 10</li>
+            <li><strong>Get feedback</strong> — show your lineup to someone who hasn't seen your game and ask what they think it's about</li>
+            <li><strong>Update regularly</strong> — as your game improves, replace old screenshots with better ones</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="description">Writing Your Description</h2>
+
+        <p>Your store description has two parts: the <strong>Short Description</strong> (appears in search results, ~300 characters) and the <strong>Long Description</strong> (appears on the store page, unlimited length).</p>
+
+        <h3>Short Description (The Hook)</h3>
+        <p>This is your elevator pitch. Answer these questions in 1-2 sentences:</p>
+        <ul>
+            <li>What type of game is this? (genre)</li>
+            <li>What do you DO in this game? (core loop)</li>
+            <li>What makes it interesting or unique? (hook)</li>
+        </ul>
+
+        <p><strong>Example (Good):</strong> "A roguelike deckbuilder where you use physical tokens instead of cards. Flip, stack, and combine tokens to create devastating combos and survive an endless dungeon."</p>
+
+        <p><strong>Example (Bad):</strong> "An epic adventure awaits in a world of mystery and danger. Can you uncover the secrets and save the realm? Featuring stunning graphics and immersive gameplay!"</p>
+
+        <h3>Long Description Structure</h3>
+        <ol>
+            <li><strong>Opening paragraph:</strong> Expand on your short description — what is this game, who is it for?</li>
+            <li><strong>Core features (bullet points):</strong> 5-8 key features that define your game</li>
+            <li><strong>Gameplay details:</strong> Explain mechanics, progression, what players experience</li>
+            <li><strong>Content overview:</strong> How much content? (levels, playtime, replayability)</li>
+            <li><strong>Who will enjoy this?:</strong> "If you liked [similar games], you'll love this"</li>
+            <li><strong>Development status (if Early Access):</strong> What's done, what's coming, timeline</li>
+        </ol>
+
+        <div class="highlight-box">
+            <h3>Writing Tips</h3>
+            <ul>
+                <li><strong>Be specific, not vague:</strong> "12 unique enemy types" beats "tons of enemies"</li>
+                <li><strong>Use active voice:</strong> "Explore dangerous ruins" beats "ruins can be explored"</li>
+                <li><strong>Show, don't tell:</strong> "Combine fire and ice spells to create steam explosions" beats "creative spell system"</li>
+                <li><strong>Avoid marketing fluff:</strong> Skip "epic", "revolutionary", "next-gen", "AAA quality" — just describe what it IS</li>
+                <li><strong>Be honest:</strong> Overpromising leads to negative reviews and refunds</li>
+            </ul>
+        </div>
+
+        <h3>Using Steam's Rich Text Formatting</h3>
+        <p>Steam supports basic formatting in descriptions:</p>
+        <ul>
+            <li><code>[b]bold text[/b]</code> for emphasis</li>
+            <li><code>[i]italic text[/i]</code> for subtle emphasis</li>
+            <li><code>[h1]Major Heading[/h1]</code> through <code>[h3]</code> for section breaks</li>
+            <li><code>[list][*]bullet point[/list]</code> for lists</li>
+            <li><code>[url=link]text[/url]</code> for external links</li>
+        </ul>
+
+        <p>Use formatting sparingly — don't make your description look like a ransom note with bold, italics, and headings everywhere.</p>
+
+        <hr>
+
+        <h2 id="tags-categories">Tags & Categories</h2>
+
+        <p>Tags help people find your game through Steam's search and recommendation systems. Choose them carefully.</p>
+
+        <h3>How to Choose Tags</h3>
+        <ul>
+            <li><strong>Start with genre:</strong> Roguelike, Platformer, RPG, Strategy, etc.</li>
+            <li><strong>Add core mechanics:</strong> Deckbuilding, Turn-Based, Real-Time, Puzzle, etc.</li>
+            <li><strong>Include themes/setting:</strong> Sci-Fi, Fantasy, Horror, Post-Apocalyptic, etc.</li>
+            <li><strong>Add playstyle tags:</strong> Singleplayer, Multiplayer, Co-op, Atmospheric, Relaxing, Difficult, etc.</li>
+            <li><strong>Be accurate:</strong> Don't tag "Multiplayer" if your game is singleplayer-only</li>
+        </ul>
+
+        <div class="info-box">
+            <h3>Research Your Tags</h3>
+            <p>Look at 5-10 successful games similar to yours. What tags do they use? Which tags appear most often? Use those as a starting point, then customize to your specific game.</p>
+        </div>
+
+        <h3>Primary Category</h3>
+        <p>Steam lets you choose one primary category (formerly "genre"). This affects where your game appears in browse lists. Choose the category that best represents your game's core identity, not aspirational categories that might get more visibility but don't fit.</p>
+
+        <hr>
+
+        <h2 id="pricing">Pricing Strategy</h2>
+
+        <p>Pricing is part psychology, part market research, part gut feeling. Here's a practical approach:</p>
+
+        <h3>Research Comparable Games</h3>
+        <ol>
+            <li>Find 5-10 games similar to yours in genre, scope, and quality</li>
+            <li>Note their prices (ignore big AAA titles — focus on indie games)</li>
+            <li>Check their review counts and scores</li>
+            <li>See what DLC or expansions they offer and at what price</li>
+        </ol>
+
+        <h3>Pricing Tiers for Indie Games</h3>
+        <ul>
+            <li><strong>$0.99-$2.99:</strong> Very small games, experimental projects, mobile ports</li>
+            <li><strong>$4.99-$9.99:</strong> Short indie games (2-5 hours), roguelikes, puzzle games</li>
+            <li><strong>$14.99-$19.99:</strong> Solid indie experiences (10-20 hours), polished mechanics</li>
+            <li><strong>$24.99-$29.99:</strong> Large indie games (30+ hours), ambitious scope</li>
+            <li><strong>$34.99+:</strong> Premium indie experiences with AAA-adjacent production values</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3>The "Launch Discount" Strategy</h3>
+            <p>Many indie devs launch at 10-20% off for the first week. This rewards early supporters, creates urgency, and helps build initial momentum. However, this also trains customers to wait for sales. Consider your goals carefully.</p>
+        </div>
+
+        <h3>Regional Pricing</h3>
+        <p>Steam auto-suggests prices for different regions based on your base USD price. Review these suggestions — in many regions, games are cheaper to account for purchasing power differences. Don't just accept defaults; research what competitors charge in those regions.</p>
+
+        <hr>
+
+        <h2 id="wishlists">Wishlists & Launch Timing</h2>
+
+        <p>Wishlists are Steam's most powerful marketing tool for indie devs. When someone wishlists your game, Steam notifies them when it launches or goes on sale.</p>
+
+        <h3>Why Wishlists Matter</h3>
+        <ul>
+            <li><strong>Launch visibility:</strong> More wishlists = more visibility in Steam's algorithm on launch day</li>
+            <li><strong>Direct notifications:</strong> Every wishlist is a potential customer who's already interested</li>
+            <li><strong>Sales leverage:</strong> When you run a sale, wishlist holders get notified — instant spike in purchases</li>
+            <li><strong>Validation:</strong> High wishlist count shows your game has demand before launch</li>
+        </ul>
+
+        <h3>Building Wishlists Before Launch</h3>
+        <ul>
+            <li><strong>Release a "Coming Soon" page early:</strong> 3-6 months before launch minimum</li>
+            <li><strong>Share everywhere:</strong> Reddit, Discord, Twitter, dev blogs — link to your Steam page</li>
+            <li><strong>Participate in Steam Next Fest:</strong> Free demo event with massive exposure (if you qualify)</li>
+            <li><strong>Offer a playable demo:</strong> People are more likely to wishlist after trying it</li>
+            <li><strong>Update your page regularly:</strong> New screenshots, GIFs, dev updates keep your page active</li>
+        </ul>
+
+        <h3>Launch Timing Considerations</h3>
+        <ul>
+            <li><strong>Avoid November/December:</strong> Huge AAA releases and holiday sales drown out indie games</li>
+            <li><strong>Avoid competing with major events:</strong> Don't launch on the same day as a big industry event or AAA blockbuster</li>
+            <li><strong>Mid-week launches work well:</strong> Tuesday-Thursday gives you time to respond to issues before the weekend</li>
+            <li><strong>Consider Steam seasonal sales:</strong> Launching 2-3 months before a sale gives you time to build reviews, then capitalize on sale traffic</li>
+        </ul>
+
+        <div class="info-box">
+            <h3>Launch Day Checklist</h3>
+            <ul>
+                <li>Store page fully updated with final trailer, screenshots, description</li>
+                <li>Game build tested and stable</li>
+                <li>Community hub set up (discussions, announcements)</li>
+                <li>Social media posts scheduled</li>
+                <li>Press/YouTubers contacted 1-2 weeks prior with keys</li>
+                <li>Support email/Discord ready to handle issues</li>
+                <li>First patch ready in case critical bugs appear</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="common-mistakes">Common Mistakes to Avoid</h2>
+
+        <h3>Mistake 1: Treating Your Store Page Like a Resume</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> "I spent 3 years building this game solo using Unity and C#. I learned so much and overcame many challenges..."</p>
+            <p><strong>Why it fails:</strong> Customers don't care about your journey — they care if the game is fun. Save the dev story for blog posts and interviews.</p>
+            <p><strong>Fix:</strong> Focus on what the player experiences, not what you experienced making it.</p>
+        </div>
+
+        <h3>Mistake 2: Vague, Generic Descriptions</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> "An epic adventure with stunning visuals, immersive gameplay, and endless possibilities!"</p>
+            <p><strong>Why it fails:</strong> Says nothing specific. Could describe 10,000 different games.</p>
+            <p><strong>Fix:</strong> Be concrete. "A turn-based tactics game where you command a squad of 4 mechs through 30 story missions."</p>
+        </div>
+
+        <h3>Mistake 3: Too Many Screenshots of the Same Thing</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> 10 screenshots of the first level from slightly different angles</p>
+            <p><strong>Why it fails:</strong> Looks like your game has no variety or content</p>
+            <p><strong>Fix:</strong> Show different levels, mechanics, situations, and moments</p>
+        </div>
+
+        <h3>Mistake 4: Ignoring Mobile/Small Screen Preview</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> Designing everything to look perfect on your 4K monitor</p>
+            <p><strong>Why it fails:</strong> Many people browse Steam on phones or laptops with small screens</p>
+            <p><strong>Fix:</strong> Preview your capsule images and screenshots at small sizes before uploading</p>
+        </div>
+
+        <h3>Mistake 5: Overpricing Based on Effort, Not Value</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> "I worked on this for 5 years, so it should cost $40!"</p>
+            <p><strong>Why it fails:</strong> Price reflects market value and player experience, not your time investment</p>
+            <p><strong>Fix:</strong> Research what similar games charge and price competitively</p>
+        </div>
+
+        <h3>Mistake 6: Launching With No Wishlist Base</h3>
+        <div class="warning-box">
+            <p><strong>Bad:</strong> Creating "Coming Soon" page and launching 2 weeks later with 50 wishlists</p>
+            <p><strong>Why it fails:</strong> Zero launch momentum, no algorithm boost, invisible to most players</p>
+            <p><strong>Fix:</strong> Build wishlists for 3-6 months minimum before launch. Delay if needed.</p>
+        </div>
+
+        <hr>
+
+        <h2>Final Thoughts</h2>
+
+        <div class="highlight-box">
+            <h3>Remember</h3>
+            <p>Your Steam store page is never "finished." Treat it as a living document that evolves as your game develops. Update screenshots as visuals improve, refine your description based on player feedback, and test different capsule images to see what performs better.</p>
+
+            <p>The goal isn't perfection — it's clarity. Players should understand what your game is, what makes it interesting, and whether it's for them within 30 seconds. Everything else is details.</p>
+        </div>
+
+        <a href="../index.html" class="back-button" style="margin-top: 40px;">← Back to App</a>
+    </div>
+</body>
+</html>
