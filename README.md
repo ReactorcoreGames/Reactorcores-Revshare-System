@@ -2,6 +2,9 @@
 
 A comprehensive standalone offline web application for project leaders running revenue-sharing creative teams with transparent, fair, and automatically-calculated splits.
 
+**Use it directly here:**
+https://reactorcoregames.github.io/Reactorcores-Revshare-System/index.html
+
 ---
 
 ## 🎯 What Is This?
@@ -69,7 +72,7 @@ Minimizes bank fees and maximizes what your team actually receives.
 - Full transaction logging
 
 **Documentation Library:**
-This system includes 12 comprehensive guides covering:
+This system includes 15 comprehensive guides covering:
 - Revenue share system formulas and philosophy
 - Project infrastructure setup (Discord, Trello, Drive, GitHub)
 - Team onboarding and recruiting templates
@@ -77,6 +80,7 @@ This system includes 12 comprehensive guides covering:
 - Business models for game releases
 - Teamwork culture and remote collaboration
 - IP law, licensing, and copyright policies
+- Marketing outreach, community management, store optimization
 
 ---
 
