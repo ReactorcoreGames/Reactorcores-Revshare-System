@@ -3,8 +3,9 @@
 A comprehensive standalone offline web application for project leaders running revenue-sharing creative teams with transparent, fair, and automatically-calculated splits.
 
 **Use it directly here:**
-- **New link:** https://rc-revshare-system.reactorcoregames.workers.dev/
-- **Alt:** https://reactorcore.itch.io/reactorcores-revshare-system
+- **Mirror 1:** https://rc-revshare-system.reactorcoregames.workers.dev/
+- **Mirror 2:** https://reactorcoregames.github.io/Reactorcores-Revshare-System/
+- **Mirror 3:** https://reactorcore.itch.io/reactorcores-revshare-system
 
 ---
 
